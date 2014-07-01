@@ -95,4 +95,20 @@
     });
     /* .Табы */
 
+    /* uniform */
+    if( $('input[type=checkbox]')  ){ //сделать норм подкл
+        $('head').append("<link rel='stylesheet' type='text/css'  href='/css/uniform.default.min.css'/>");
+        $('head').append("<link rel='stylesheet' type='text/css'  href='/css/uniform.select.css'/>"); //стили select
+        $('head').append("<link rel='stylesheet' type='text/css'  href='/css/uniform.checkbox.css'/>"); //стили checkbox
+        $('head').append("<link rel='stylesheet' type='text/css'  href='/css/uniform.radio.css'/>"); //стили radio
+        $.getScript( '/js/lib/jquery.uniform.min.js', function() {
+
+            $('input[type=checkbox]').uniform();
+            $('input[type=radio]').uniform();
+            $('select').uniform();
+
+        });
+    }
+    /* /uniform */
+
 });

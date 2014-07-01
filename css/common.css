@@ -21,6 +21,19 @@ img{
     border: none;
 }
 
+input{
+    font-family:tahoma;
+    font-size:12px;
+    padding: 0 10px;
+}
+
+textarea{
+    font-family:tahoma;
+    font-size:12px;
+    padding: 5px 10px;
+    height: 70px;
+}
+
 #overflow_div {
     position: relative;
     width: 100%;
@@ -29,7 +42,6 @@ img{
     overflow: hidden;
 }
 
-/*content*/
 .content-wraper {
     position: relative;
 
@@ -194,6 +206,42 @@ img{
 }
 :-ms-input-placeholder { /* Internet Explorer 10+ */
     color: #333;
+}
+
+input.success, textarea.success{
+    background: url('../img/informer-success.png') top right no-repeat #fff;
+    border-color:#00cc00;
+}
+
+input.warning, textarea.warning{
+    background: url('../img/informer-warning.png') top right no-repeat #fff;
+    border-color: #cc0000;
+}
+
+input.error, textarea.error{
+    background: url('../img/informer-error.png') top right no-repeat #fff;
+    border-color: #cc0000;
+}
+
+label{
+    cursor: pointer;
+}
+
+.informer {
+    position: relative;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: none;
+    background: #FFF7BD;
+}
+
+.informer .bg {
+    position: absolute;
+    right: 49%;
+    top: -9px;
+    width: 11px;
+    height: 9px;
+    background: url('../img/informer-bg.png') left top no-repeat;
 }
 /*/STANDART STYLES*/
 
@@ -736,6 +784,57 @@ header .phone {
     display: block;
 }
 /*---------/TABS------------*/
+
+
+/*---------FORM------------*/
+form .item {
+    display: block;
+    margin: 0px 0px 10px 0px;
+    position: relative;
+}
+
+form .item span {
+    display: inline-block;
+    width: 100%;
+}
+/*---------/FORM------------*/
+
+
+/*---------FAQ------------*/
+.faq-container{
+    margin-top: 20px;
+    background: #fff;
+}
+
+.faq .item {
+    position: relative;
+    margin: 0 0 20px 0;
+}
+
+.faq .name {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #777;
+}
+
+.faq .date {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #333;
+    font-weight: bold;
+}
+
+.faq .answer {
+    padding: 25px 0px 10px 0px;
+}
+
+.faq .question {
+    padding: 20px 40px;
+    background: #eee;
+}
+/*---------/FAQ------------*/
 
 
 /*---------FOOTER------------*/
