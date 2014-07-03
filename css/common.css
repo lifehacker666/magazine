@@ -461,9 +461,18 @@ header .phone {
     margin:0;
     padding:0;
 }
+
 .catalog-menu li,.catalog-menu .item{
     display:block;
     margin-bottom:2px;
+}
+
+.catalog-menu a:hover,.catalog-menu .item a:hover{
+    background: #B9B9B9;
+}
+
+.catalog-menu a.selected,.catalog-menu .item a.selected{
+    background: #B9B9B9;
 }
 
 .catalog-menu li a,.catalog-menu .item a{
