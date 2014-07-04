@@ -11,6 +11,9 @@
         $(this).addClass("selected");
     });
 
+    //чтобы при активном пункте ПОДменю соответсвующий пункт МЕНЮ был неактивным
+    $('.catalog-menu li.selected ul li.selected').parent().parent().removeClass('selected');
+
     /* Стартуем слайдеры */
     if( $(".standart_slider").is(".index_slider") ){
         $.getScript( '/js/lib/jquery.standart_slider.js', function() {

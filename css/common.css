@@ -467,11 +467,11 @@ header .phone {
     margin-bottom:2px;
 }
 
-.catalog-menu a:hover,.catalog-menu .item a:hover{
+.catalog-menu li:hover a:hover{
     background: #B9B9B9;
 }
 
-.catalog-menu a.selected,.catalog-menu .item a.selected{
+.catalog-menu li.selected > a{
     background: #B9B9B9;
 }
 
