@@ -42,7 +42,7 @@
     /* /Стартуем слайдеры */
 
     /* placeholder */
-    if( $('input[placeholder]', $('input[placeholder]'))  ){
+    if( $('input').attr('placeholder') ||  $('textarea').attr('placeholder') ) {
         $.getScript( '/js/lib/jquery.placeholder.js', function() {
 
             $('input[placeholder], textarea[placeholder]').placeholder();
@@ -99,19 +99,58 @@
     /* .Табы */
 
     /* uniform */
-    if( $('input[type=checkbox]')  ){ //сделать норм подкл
+    if( $('select') ){ //select
         $('head').append("<link rel='stylesheet' type='text/css'  href='/css/uniform.default.min.css'/>");
         $('head').append("<link rel='stylesheet' type='text/css'  href='/css/uniform.select.css'/>"); //стили select
-        $('head').append("<link rel='stylesheet' type='text/css'  href='/css/uniform.checkbox.css'/>"); //стили checkbox
-        $('head').append("<link rel='stylesheet' type='text/css'  href='/css/uniform.radio.css'/>"); //стили radio
         $.getScript( '/js/lib/jquery.uniform.min.js', function() {
 
-            $('input[type=checkbox]').uniform();
-            $('input[type=radio]').uniform();
             $('select').uniform();
 
         });
     }
+    if(  $('input[type=checkbox]')  ){ //checkbox
+//        $('head').append("<link rel='stylesheet' type='text/css'  href='/css/uniform.default.min.css'/>");
+        $('head').append("<link rel='stylesheet' type='text/css'  href='/css/uniform.checkbox.css'/>"); //стили checkbox
+        $.getScript( '/js/lib/jquery.uniform.min.js', function() {
+
+            $('input[type=checkbox]').uniform();
+
+        });
+    }
+    if(  $('input[type=radio]')  ){ //radio
+//        $('head').append("<link rel='stylesheet' type='text/css'  href='/css/uniform.default.min.css'/>");
+        $('head').append("<link rel='stylesheet' type='text/css'  href='/css/uniform.radio.css'/>"); //стили radio
+        $.getScript( '/js/lib/jquery.uniform.min.js', function() {
+
+            $('input[type=radio]').uniform();
+
+        });
+    }
     /* /uniform */
+
+    /* jquery-ui-range */
+    if( $('div').is('#range')  ){
+        $('head').append("<link rel='stylesheet' type='text/css'  href='/css/jquery-ui.css'/>");
+        $.getScript( '/js/lib/jquery-ui.min.js', function() {
+
+            $( "#range" ).slider({
+                range: true,
+                values: [ 17, 67 ]
+            });
+
+        });
+    }
+    /* /jquery-ui-range */
+
+    /* scrollbar */
+    if( $('div').is('.content-with-scroll') ){
+        $('head').append("<link rel='stylesheet' type='text/css'  href='/css/jquery.scrollbar.css'/>");
+        $.getScript( '/js/lib/jquery.scrollbar.min.js', function() {
+
+            $('.content-with-scroll').scrollbar();
+
+        });
+    }
+    /* /scrollbar */
 
 });
