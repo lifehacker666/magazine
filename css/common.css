@@ -32,6 +32,7 @@ textarea{
     font-size:12px;
     padding: 5px 10px;
     height: 70px;
+    overflow: auto;
 }
 
 #overflow_div {
@@ -165,7 +166,6 @@ textarea{
     color: #000;
 }
 
-
 .viewport{
     position: relative;
     overflow: hidden;
@@ -174,19 +174,6 @@ textarea{
 .item-empty{
     width: 100%;
     display: inline-block;
-}
-
-.img-container{
-    width: 360px;
-    height: 360px;
-    line-height: 360px;
-    text-align: center;
-}
-
-.img-container img {
-    max-width: 360px;
-    max-height: 360px;
-    vertical-align: middle;
 }
 
 .placeholder {
@@ -247,7 +234,6 @@ label{
 
 
 
-/*стили для магазина*/
 /*---------HEADER------------*/
 header{
     height: 70px;
@@ -446,11 +432,6 @@ header .phone {
 
 .index_slider .to_left:hover, .index_slider .to_right:hover{
     background: #66e3f1;
-}
-
-
-.index_slider .to_right{
-
 }
 /*---------/INDEX SLIDER------------*/
 
@@ -754,11 +735,6 @@ header .phone {
 .tovar_slider .to_left:hover, .tovar_slider .to_right:hover{
     background: #66e3f1;
 }
-
-
-.tovar_slider .to_right{
-
-}
 /*---------/TOVAR SLIDER------------*/
 
 
@@ -798,7 +774,7 @@ header .phone {
 /*---------FORM------------*/
 form .item {
     display: block;
-    margin: 0px 0px 10px 0px;
+    margin: 0 0 10px 0;
     position: relative;
 }
 
@@ -836,7 +812,7 @@ form .item span {
 }
 
 .faq .answer {
-    padding: 25px 0px 10px 0px;
+    padding: 25px 0 10px 0;
 }
 
 .faq .question {
