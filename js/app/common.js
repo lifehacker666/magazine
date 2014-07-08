@@ -99,15 +99,6 @@
     /* .Табы */
 
     /* uniform */
-    if( $('select') ){ //select
-        $('head').append("<link rel='stylesheet' type='text/css'  href='/css/uniform.default.min.css'/>");
-        $('head').append("<link rel='stylesheet' type='text/css'  href='/css/uniform.select.css'/>"); //стили select
-        $.getScript( '/js/lib/jquery.uniform.min.js', function() {
-
-            $('select').uniform();
-
-        });
-    }
     if(  $('input[type=checkbox]')  ){ //checkbox
 //        $('head').append("<link rel='stylesheet' type='text/css'  href='/css/uniform.default.min.css'/>");
         $('head').append("<link rel='stylesheet' type='text/css'  href='/css/uniform.checkbox.css'/>"); //стили checkbox
@@ -126,7 +117,30 @@
 
         });
     }
+    if( $('select').is('.uniform') ){ //select
+        $('head').append("<link rel='stylesheet' type='text/css'  href='/css/uniform.default.min.css'/>");
+        $('head').append("<link rel='stylesheet' type='text/css'  href='/css/uniform.select.css'/>"); //стили select
+        $.getScript( '/js/lib/jquery.uniform.min.js', function() {
+
+            $('select.uniform').uniform();
+
+        });
+    }
     /* /uniform */
+
+    /* selectik */
+    if( $('select').is('.selectik') ){
+        $('head').append("<link rel='stylesheet' type='text/css'  href='/css/selectik.css'/>");
+        $.getScript( '/js/lib/jquery.mousewheel.js', function() {
+            $.getScript( '/js/lib/jquery.selectik.min.js', function() {
+
+                $('select.selectik').selectik({maxItems: 8, minScrollHeight: 20});
+
+            });
+
+        });
+    }
+    /* /selectik */
 
     /* jquery-ui-range */
     if( $('div').is('#range')  ){
