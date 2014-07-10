@@ -5,14 +5,18 @@
     $('.padding-right').hide();
     /* /Переносим правый блок вправо */
 
-    //активный пункт меню
+
+    /* Активный пункт меню */
     $('.menu-top > li').click(function() {
         $(this).parent().find('.selected').removeClass("selected");
         $(this).addClass("selected");
     });
+    /* /Активный пункт меню */
 
-    //чтобы при активном пункте ПОДменю соответсвующий пункт МЕНЮ был неактивным
+
+    /* Чтобы при активном пункте ПОДменю соответсвующий пункт МЕНЮ был неактивным */
     $('.catalog-menu li.selected ul li.selected').parent().parent().removeClass('selected');
+
 
     /* Стартуем слайдеры */
     if( $(".standart_slider").is(".index_slider") ){
@@ -41,6 +45,7 @@
     }
     /* /Стартуем слайдеры */
 
+
     /* placeholder */
     if( $('input').attr('placeholder') ||  $('textarea').attr('placeholder') ) {
         $.getScript( '/js/lib/jquery.placeholder.js', function() {
@@ -50,6 +55,7 @@
         });
     }
     /* /placeholder */
+
 
     /* Динамическое подключение fancybox */
     if( jQuery("a").is(".fancybox-thumb") ){
@@ -85,6 +91,7 @@
     }
     /* /Динамическое подключение fancybox */
 
+
     /* Табы */
     $('.tabs .item').click(function() {
         tab = $(this);
@@ -96,7 +103,8 @@
         $('.tabs-container .tab').removeClass("active");
         $('.tabs-container .tab').eq(number_tab).addClass('active');
     });
-    /* .Табы */
+    /* /Табы */
+
 
     /* uniform */
     if(  $('input[type=checkbox]')  ){ //checkbox
@@ -128,6 +136,7 @@
     }
     /* /uniform */
 
+
     /* selectik */
     if( $('select').is('.selectik') ){
         $('head').append("<link rel='stylesheet' type='text/css'  href='/css/selectik.css'/>");
@@ -142,19 +151,110 @@
     }
     /* /selectik */
 
-    /* jquery-ui-range */
-    if( $('div').is('#range')  ){
+
+    /* Slider-range с возможностью вводить значения */
+    /* НЕ ЗАБЫТЬ:
+    подставить перед document.ready условия, проверяющие, заданы ли параметры слайдера range через php, либо подставляющие дефолтные значения
+    ( они здесь находятся внизу файла) */
+    if( $('div').is('.slider-range')  ){
         $('head').append("<link rel='stylesheet' type='text/css'  href='/css/jquery-ui.css'/>");
         $.getScript( '/js/lib/jquery-ui.min.js', function() {
+            var slider_range, input_value_1, input_value_2;
 
-            $( "#range" ).slider({
+            // параметры, задаваемые пользователем в инпутах
+            input_value_1 = $( ".slider_range_input_values.input_value1" );
+            input_value_2 = $( ".slider_range_input_values.input_value2" );
+            if( input_value_1.val() != "" )
+                slider_range_val1 = input_value_1.val();
+            if(input_value_2.val() != "" )
+                input_value_2 = input_value_2.val();
+
+            slider_range = $( ".slider-range" ).slider({
                 range: true,
-                values: [ 17, 67 ]
+                min: slider_range_min,
+                max: slider_range_max,
+                values: [ slider_range_val1, slider_range_val2 ],
+                step: slider_range_step,
+                slide: function( event, ui ) { //cобытие происходит на каждое движении мыши, при перетаскивании рукоятки ползунка
+
+                    stepRange( parseInt(ui.values[ 0 ]),  parseInt(ui.values[ 1 ]), slider_range_max);
+                },
+                stop: function( event, ui ) { //событие происходит в момент завершения перетаскивания рукоятки ползунка.
+
+                    stepRange( parseInt(ui.values[ 0 ]),  parseInt(ui.values[ 1 ]), slider_range_max);
+
+                }
             });
 
+            //дефолтные значения цены у input-ов
+            input_value_1.val( slider_range_val1 );
+            input_value_2.val( slider_range_val2 );
+
+            inputRestriction(input_value_1);
+            inputRestriction(input_value_2);
+
+            // при вводе значения в инпут 1 проверять, боьше, либо равно оно значению в инпуте 2
+            input_value_1.change(function(){
+
+                var val1 = parseInt($(this).val());
+                var val2 = parseInt(input_value_2.val());
+                var stepRangeVal = Math.max(Math.round( slider_range_max * 0.05 ), 1); //вычисление минимального расстояния, которое остается между бегунками
+                if( val2 - val1 < stepRangeVal ){
+                    val2 = Math.min(val1 + stepRangeVal, slider_range_max);
+                    val1 = val2 - stepRangeVal;
+                    input_value_1.val(val1);
+                    input_value_2.val(val2);
+                }
+                slider_range.slider({ values: [ val1, val2 ] });
+
+            });
+
+            // при вводе значения в инпут 2 проверять, меньше, либо равно оно значению в инпуте 1
+            input_value_2.change(function(){
+
+                var val1 = parseInt(input_value_1.val());
+                var val2 = parseInt($(this).val());
+                var stepRangeVal = Math.max(Math.round( slider_range_max * 0.05 ), 1); //вычисление минимального расстояния, которое остается между бегунками
+                if( val2 - val1 < stepRangeVal ){
+                    val1 = Math.max(val2 - stepRangeVal, 0);
+                    val2 = val1 + stepRangeVal;
+                    input_value_1.val(val1);
+                    input_value_2.val(val2);
+                }
+                slider_range.slider({ values: [ val1, val2 ] });
+
+            });
+
+            //ф-я позволяющая вводить в инпут только цифры
+            function inputRestriction (item){
+                item.keypress(function(event){
+                    if( (event.which >57 || event.which < 48) && event.which != 8 )
+                        event.preventDefault();
+                })
+                    .change(function(){
+                        input_value_1.val(input_value_1.val());
+                        input_value_2.val(input_value_2.val());
+                    });
+            }
+
+            function stepRange(val1, val2 ,max) {
+
+                var stepRangeVal = Math.max(Math.round( max * 0.05 ), 1); //вычисление минимального расстояния, которое остается между бегунками
+
+                if( val2 - val1 < stepRangeVal ){
+                    val2 = Math.min( val1 + stepRangeVal, max );
+                    val1 = val2 - stepRangeVal;
+                }
+
+                // записываются значения бегунков в input-ы цены "от ... до"
+                input_value_1.val( val1 );
+                input_value_2.val( val2 );
+                slider_range.slider({ values: [ val1, val2 ] });
+            }
         });
     }
-    /* /jquery-ui-range */
+    /* /Slider-range с возможностью вводить значения */
+
 
     /* scrollbar */
     if( $('div').is('.content-with-scroll') ){
@@ -168,3 +268,21 @@
     /* /scrollbar */
 
 });
+
+
+/* условия, проверяющие, заданы ли параметры слайдера range через php, либо подставляющие дефолтные значения */
+if( slider_range_val1 == null )
+    var slider_range_val1 = 7500;
+
+if( slider_range_val2 == null )
+    var slider_range_val2 = 24000;
+
+if( slider_range_min == null )
+    var slider_range_min = 0;
+
+if( slider_range_max == null )
+    var slider_range_max = 32000;
+
+if( slider_range_step == null )
+    var slider_range_step = 50;
+/* /условия, проверяющие, заданы ли параметры слайдера range через php, либо подставляющие дефолтные значения */
