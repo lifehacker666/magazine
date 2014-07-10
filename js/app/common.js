@@ -100,7 +100,7 @@
 
     /* uniform */
     if(  $('input[type=checkbox]')  ){ //checkbox
-//        $('head').append("<link rel='stylesheet' type='text/css'  href='/css/uniform.default.min.css'/>");
+        $('head').append("<link rel='stylesheet' type='text/css'  href='/css/uniform.default.min.css'/>");
         $('head').append("<link rel='stylesheet' type='text/css'  href='/css/uniform.checkbox.css'/>"); //стили checkbox
         $.getScript( '/js/lib/jquery.uniform.min.js', function() {
 
@@ -118,7 +118,7 @@
         });
     }
     if( $('select').is('.uniform') ){ //select
-        $('head').append("<link rel='stylesheet' type='text/css'  href='/css/uniform.default.min.css'/>");
+//        $('head').append("<link rel='stylesheet' type='text/css'  href='/css/uniform.default.min.css'/>");
         $('head').append("<link rel='stylesheet' type='text/css'  href='/css/uniform.select.css'/>"); //стили select
         $.getScript( '/js/lib/jquery.uniform.min.js', function() {
 

@@ -834,6 +834,17 @@ form .item span {
 /*---------/FAQ------------*/
 
 
+/*---------LIST STYLE------------*/
+ul.style{
+    list-style-image: url('../img/list-style-image.png');
+}
+
+ul.style li{
+    padding-left: 10px;
+}
+/*---------/LIST STYLE------------*/
+
+
 /*---------FOOTER------------*/
 footer {
     position: relative;
