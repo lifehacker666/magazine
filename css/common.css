@@ -183,11 +183,6 @@ select{
     overflow: hidden;
 }
 
-.item-empty{
-    width: 100%;
-    display: inline-block;
-}
-
 .placeholder {
     color: #333;
 }
@@ -525,20 +520,41 @@ header .phone {
 
 
 /*---------CATALOG------------*/
-.catalog .catalog-container{
-    text-align: justify;
-    padding: 10px;
+.catalog .catalog-bg {
     background: #dedede;
+    padding: 1px 0;
+    /*padding для того чтобы скрыть выступающий снизу бэграунд марджином*/
 }
 
-.catalog .item{
-    display: inline-block;
+.catalog .catalog-container{
+    text-align: justify;
+    /*либо  text-align: center;*/
+    /*скрываем марджинами бэграунд сверху (от паддинга в 1px) и снизу (от псевдоэлемента)*/
+    margin-bottom: -43px;
+    margin-top: -1px;
+    padding: 10px 0;
+}
+
+.catalog .catalog-container:after {
+    content: ' i i i i i i i i ';
+    word-spacing: 158px;
+    padding-left: 158px;
+    /*паддинг и word-spacing равны на несколько пикс меньще, чем ширина блока (или вообще равны)*/
+    visibility: hidden;
+}
+
+.catalog .item {
+    display : inline-block;
+    width : 160px;
+    background: #bababa;
     vertical-align: top;
-    width: 160px;
-    background: #fff;
     margin: 0 0 15px 0;
     padding: 5px 0;
     text-align: center;
+
+    /*эмуляция inline-block для IE6-7*/
+    /*display : inline;*/
+    /*zoom : 1;*/
 }
 
 .catalog .img-container{
