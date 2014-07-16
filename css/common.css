@@ -905,6 +905,7 @@ footer .masterweb {
 }
 /*---------/FOOTER------------*/
 
+
 /*---------OTHER STYLES------------*/
 .toTop {
     width:100px;
@@ -916,5 +917,10 @@ footer .masterweb {
     left:10px;
     cursor:pointer;
     display:none;
+}
+
+.see-all{
+    display: inline-block;
+    cursor: pointer;
 }
 /*---------/OTHER STYLES------------*/

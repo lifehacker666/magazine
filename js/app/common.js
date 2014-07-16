@@ -286,6 +286,35 @@
     });
     /* /кнопка Наверх */
 
+
+    /* свернуть-развенуть */
+    $('.parametr.block').find('.checkbox-container').removeClass('expand').hide();
+    $('.see-all').html('Показать всё');
+//    по умолчанию показываем только 4 пункта у каждой характеристики
+
+
+    $('.parametr.block').each(function(index) {
+        for (var i = 0; i <= 3; i++) {
+            $(this).find('.checkbox-container').eq(i).show();
+        }
+    });
+
+    $('.see-all').click(function() {  // при клике на "Показать всё"
+        if ( $(this).hasClass('expand')){
+            $(this).parent().find('.checkbox-container').hide();
+            for (var i = 0; i <= 3; i++) {
+                $(this).parent().find('.checkbox-container').eq(i).show();
+            }
+            $(this).removeClass('expand');
+            $(this).html('Показать всё');
+        }else{
+            $(this).parent().find('.checkbox-container').show();
+            $(this).addClass('expand');
+            $(this).html('Свернуть');
+        }
+    });
+    /* /свернуть-развенуть */
+
 });
 
 
