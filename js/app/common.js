@@ -267,6 +267,7 @@
     }
     /* /scrollbar */
 
+
     /* кнопка Наверх */
     $(function() {
         $('body').append('<div class="toTop">НАВЕРХ</div>');

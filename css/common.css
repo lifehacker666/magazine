@@ -70,6 +70,11 @@ select{
     background-color: #d1feaf;
 }
 
+.content-hidden{
+    width: 1000px;
+    overflow: hidden;
+}
+
 .overflower {
     width: 105%;
 }
