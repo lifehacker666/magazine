@@ -863,11 +863,20 @@ form .item span {
 
 /*---------LIST STYLE------------*/
 ul.style{
-    list-style-image: url('../img/list-style-image.png');
+    list-style: none;
 }
 
 ul.style li{
-    padding-left: 10px;
+    position: relative;
+}
+
+ul.style li:before{
+    content: url('../img/list-style-image.png');
+    width: 5px;
+    height: 9px;
+    position: absolute;
+    top: 0;
+    left: -13px;
 }
 /*---------/LIST STYLE------------*/
 
