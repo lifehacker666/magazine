@@ -136,6 +136,12 @@ select{
     clear: both;
 }
 
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 .h1{
     font-size: 2em;
     margin: 0.67em;
