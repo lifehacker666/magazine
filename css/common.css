@@ -861,6 +861,37 @@ form .item span {
 /*---------/FAQ------------*/
 
 
+/*---------PRICE------------*/
+.price{
+
+}
+
+.price-table{
+    border-collapse: collapse;
+    text-align: center;
+    width: 100%;
+}
+
+.price-table tr th{
+    border: 1px solid #a5a5a5;
+    font-weight: bold;
+}
+
+.price-table tr td{
+    border: 1px solid #a5a5a5;
+}
+
+.price-table td span{
+    float: left;
+    line-height: 24px;
+}
+
+.price-table td .button{
+    float: right;
+}
+/*---------/PRICE------------*/
+
+
 /*---------LIST STYLE------------*/
 ul.style{
     list-style: none;
