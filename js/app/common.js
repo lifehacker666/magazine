@@ -20,25 +20,27 @@
 
     /* Стартуем слайдеры */
     if( $(".standart_slider").is(".index_slider") ){
-        $.getScript( '/js/lib/jquery.standart_slider.js', function() {
+        $.getScript( '/js/lib/jquery.standart.slider.js', function() {
 
             $('.index_slider').standart_slider({
                 timeout:12000,
                 time: 400,
                 timer:1, /* Включение-выключение перелистывания */
-                size:1 /* Количество отображаемых обьектов в окне показов */
+                size:1, /* Количество отображаемых обьектов в окне показов */
+                type: 'scroll_horiz'
             });
 
         });
     }
     if( $(".standart_slider").is(".tovar_slider") ){
-        $.getScript( '/js/lib/jquery.standart_slider.js', function() {
+        $.getScript( '/js/lib/jquery.standart.slider.js', function() {
 
             $('.tovar_slider').standart_slider({
                 timeout:12000,
                 time: 400,
                 timer:1, /* Включение-выключение перелистывания */
-                size:1 /* Количество отображаемых обьектов в окне показов */
+                size:1, /* Количество отображаемых обьектов в окне показов */
+                type: 'scroll_horiz'
             });
 
         });

@@ -17,9 +17,10 @@ jQuery.fn.standart_slider = function(options){
 		time: 400, /* Время на перелистывание в милисекундах */
 		timeout:10000, /* Время между перелистыванием */
 		timer:1, /* Включение-выключение перелистывания */
-		size:1 /* Количество отображаемых обьектов в окне показов */
+		size:1, /* Количество отображаемых обьектов в окне показов */
+        type: 'scroll_horiz' /* тип анимации слайдера (scroll_horiz - горизонатальная прокрутка, fade - затухание) */
 	},options);
-	
+
 	return this.each(function() { /* Пробегаемся по каждому слайдеру */
 		var $this = $(this);
 		var current_item = 1;
@@ -33,6 +34,23 @@ jQuery.fn.standart_slider = function(options){
 		/* Убираем / Показываем специальный слой */
 		var $block = $this.find('.' + options.show_hide_block);
 		var $first_block_checker = $item.first().find('.' + options.show_hide_checker);
+
+        //ф-я выбора анимации
+        function animateType(){
+            if ( options.type == 'scroll_horiz') {
+                $list.animate({left: -(current_item - 1) * item_width}, options.time);
+            } else if ( options.type == 'fade' ) {
+                $list.find('.' + options.item + '.' + options.selected).removeClass(options.selected).animate({opacity: 0}, options.time);
+                $item.eq(current_item-1).addClass(options.selected).animate({opacity: 1}, options.time);
+            }
+        }
+
+        animateType();
+        // для нормальной анимации в ie8
+        if ( options.type == 'fade' ){
+            $item.css('opacity', 0);
+        }
+
 		if( $first_block_checker.val() == 1 ){
 			$block.show();
 		} else {
@@ -59,8 +77,9 @@ jQuery.fn.standart_slider = function(options){
 			
 			$button.removeClass(options.selected);
 			jQuery($button.eq(current_item-1)).addClass(options.selected);
-			
-			$list.animate({left:-(current_item-1)*item_width},options.time);
+
+            animateType();
+
 			if( $item.eq(current_item-1).find('.' + options.show_hide_checker).val() == 1 ){
 				$block.show();
 			} else {
@@ -83,8 +102,9 @@ jQuery.fn.standart_slider = function(options){
 			
 			$button.removeClass(options.selected);
 			jQuery($button.eq(current_item-1)).addClass(options.selected);
-			
-			$list.animate({left:-(current_item-1)*item_width},options.time);
+
+            animateType();
+
 			if( $item.eq(current_item-1).find('.' + options.show_hide_checker).val() == 1 ){
 				$block.show();
 			} else {
@@ -103,7 +123,8 @@ jQuery.fn.standart_slider = function(options){
 			}
 			$button.removeClass(options.selected);
 			jQuery($button.eq(current_item-1)).addClass(options.selected);
-			$list.animate({left:-(current_item-1)*item_width},options.time);
+
+            animateType();
 		};
 		
 		var cicle;
@@ -116,7 +137,9 @@ jQuery.fn.standart_slider = function(options){
 			current_item = $button.index(this)+1;	
 			$button.removeClass(options.selected);
 			jQuery($button.eq(current_item-1)).addClass(options.selected);
-			$list.animate({left:-(current_item-1)*item_width},options.time);
+
+            animateType();
+
 			if( options.timer )
 				cicle = setInterval( interval ,options.timeout );
 		});
