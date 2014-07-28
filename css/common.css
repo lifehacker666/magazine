@@ -266,7 +266,7 @@ header .logo{
     float: left;
 }
 
-header .phone {
+header .contacts {
     float: right;
 }
 /*---------/HEADER------------*/
@@ -903,7 +903,7 @@ footer .content{
     height: 150px;
 }
 
-footer .phone {
+footer .contacts {
     float: left;
 }
 
