@@ -274,65 +274,87 @@ header .contacts {
 
 /*---------MENU-TOP------------*/
 /*---------/core menu top------------*/
-.menu-top,.menu-top li ul{
-    margin:0;
-    padding:0;
-    list-style:none;
+.menu-top{
+
 }
 
-.menu-top-container{
-    float: left;
+.menu-top ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
-.menu-top > li{
+/* Обнуляем шрифт и lone-height у родителя*/
+.menu-top > ul{
+    text-align: justify;
+    line-height: 0;
+    font-size: 1px;
+    background: #F5F5F5;
+}
+
+/* доп элемент для выравнивания по ширине */
+.menu-top li.helper {
+    width: 100%;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.menu-top > ul > li{
     display: inline-block;
     position: relative;
     z-index: 5;
+
+    /* Востанавливаем у потомков, кроме последнего*/
+    line-height: normal;
+    font-size: 14px;
+
+    /* Без него в Opera будет отступ под элементами */
+    vertical-align: top;
 }
 
-.menu-top li ul{
+.menu-top ul li ul{
     display:none;
     position:absolute;
     width:120px;
     left: 0;
 }
-.menu-top li:hover ul{display:block}
+.menu-top ul li:hover ul{display:block}
 /*---------/core menu top------------*/
 
 /*---------main menu-top------------*/
-.menu-top > li{
+.menu-top > ul > li{
     background-color:#F5F5F5;
     text-align:center;
 }
 
-.menu-top > li:hover{background-color: #c9c9c9;}
-.menu-top > li.selected{background-color:#c9c9c9;}
+.menu-top > ul > li:hover{background-color: #c9c9c9;}
+.menu-top > ul > li.selected{background-color:#c9c9c9;}
 
-.menu-top > li > a{
+.menu-top > ul > li > a{
     display: block;
     padding:10px 10px;
-    border-top:1px solid #c9c9c9;
-    border-right:1px solid #c9c9c9;
+    border:1px solid #c9c9c9;
     text-decoration:none;
 }
 /*---------/main menu-top------------*/
 
 /*---------sub menu-top------------*/
-.menu-top li ul{
+.menu-top ul li ul{
     background-color:#ffffff;
     border:1px solid #E8E8E8;
 }
 
-.menu-top li ul li{
+.menu-top ul li ul li{
     text-align:left;
     padding:5px 5px 5px 15px;
 }
 
-.menu-top li ul li a{
+.menu-top ul li ul li a{
     text-decoration:none;
 }
 
-.menu-top li ul li a:hover{
+.menu-top ul li ul li a:hover{
     color:#553CCF;
 }
 /*---------/sub menu-top------------*/

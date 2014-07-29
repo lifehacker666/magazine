@@ -7,7 +7,7 @@
 
 
     /* Активный пункт меню */
-    $('.menu-top > li').click(function() {
+    $('.menu-top ul > li').click(function() {
         $(this).parent().find('.selected').removeClass("selected");
         $(this).addClass("selected");
     });
