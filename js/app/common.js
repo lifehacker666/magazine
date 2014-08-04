@@ -374,6 +374,6 @@ function setInputFileName(obj){
  */
 function clearInputFile(obj){
     obj.parent().html('').hide()
-        .parent().val('')
+        .parent().parent().find('input[type=file]').val('')
 }
 /* /кастомный input file */
