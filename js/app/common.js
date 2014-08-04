@@ -317,6 +317,13 @@
     });
     /* /свернуть-развенуть */
 
+
+    /* jquery.form*/
+    if( $(".open-popup").is('div') ){
+        $.getScript( '/js/lib/jquery.form.min.js', function() {});
+    }
+    /* jquery.form*/
+
 });
 
 
