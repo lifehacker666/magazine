@@ -336,3 +336,37 @@ if( slider_range_max == null )
 if( slider_range_step == null )
     var slider_range_step = 50;
 /* /условия, проверяющие, заданы ли параметры слайдера range через php, либо подставляющие дефолтные значения */
+
+
+/* кастомный input file */
+/**
+ * Кастомный инпут - клик
+ */
+function customInputFile(obj){
+    obj.click();
+}
+
+/**
+ * Вставляет название файла в кастомный инпут
+ * @param obj
+ */
+function setInputFileName(obj){
+    if( obj.val() !== ''){
+        obj.parent().find('.file-name').html('<img class="clear-input-file" src="img/close.png" onclick="clearInputFile($(this))" alt=""/>')
+            .css('display','inline-block')
+            .append(obj.val().replace(/.*[\\\/](.*)/, "$1"))
+            .parent().parent().find('.validation-informer').hide();
+    } else{
+        obj.parent().find('.file-name').html('');
+    }
+}
+
+/**
+ * Очистка поля файл
+ * @param obj
+ */
+function clearInputFile(obj){
+    obj.parent().html('').hide()
+        .parent().val('')
+}
+/* /кастомный input file */

@@ -934,6 +934,42 @@ ul.style li:before{
 /*---------/LIST STYLE------------*/
 
 
+/*---------INPUT FILE------------*/
+.input-file-container{
+    margin: 13px 0 0 0;
+    text-align: center;
+    width: 279px;
+}
+
+.input-file-container input[type=file]{
+    display:block;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}
+
+.input-file-container .input-file-custom .span1{
+    color: #006699;
+    cursor: pointer;
+    border-bottom: 1px dotted #006699;
+}
+
+.input-file-container .input-file-custom .file-name{
+    position: relative;
+    display: none;
+}
+
+.input-file-container .clear-input-file{
+    cursor: pointer;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 3px;
+    right: -19px;
+}
+/*---------/ INPUT FILE------------*/
+
+
 /*---------FOOTER------------*/
 footer {
     position: relative;

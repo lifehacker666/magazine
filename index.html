@@ -156,6 +156,17 @@
                                    <li>Пункт 4</li>
                                </ul>
 
+                               <div class="input-file-container">
+                                   <input type="file" onchange="setInputFileName($(this))"/>
+                                   <div class="input-file-custom">
+                                       <span class="span1" onclick="customInputFile( $(this).parent().parent().find('input[type=file]') )">Прикрепить файл</span>
+                                       <span class="span2">(не более 4 МБ)</span>
+                                       <div class="file-name">
+                                           <img class="clear-input-file" src="img/close.png" alt=""/>
+                                       </div>
+                                   </div>
+                               </div>
+
                            </div>
                        </div>
 
