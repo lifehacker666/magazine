@@ -18,7 +18,8 @@ jQuery.fn.standart_slider = function(options){
 		timeout:10000, /* Время между перелистыванием */
 		timer:1, /* Включение-выключение перелистывания */
 		size:1, /* Количество отображаемых обьектов в окне показов */
-        type: 'scroll_horiz' /* тип анимации слайдера (scroll_horiz - горизонатальная прокрутка, fade - затухание) */
+        type: 'scroll_horiz', /* тип анимации слайдера (scroll_horiz - горизонатальная прокрутка, fade - затухание) */
+        action: 'click' /*по какому событию будут срабатывать кнопки перелистывания (напр,'click, mouseover') */
 	},options);
 
 	return this.each(function() { /* Пробегаемся по каждому слайдеру */
@@ -131,18 +132,19 @@ jQuery.fn.standart_slider = function(options){
 		if( options.timer )
 			cicle = setInterval( interval ,options.timeout);
 
-		$button.click(function(){
-			if( options.timer )
-				clearInterval(cicle);
-			current_item = $button.index(this)+1;	
-			$button.removeClass(options.selected);
-			jQuery($button.eq(current_item-1)).addClass(options.selected);
+        $button.bind(options.action, function(e){
+            if( options.timer )
+                clearInterval(cicle);
+            current_item = $button.index(this)+1;
+            $button.removeClass(options.selected);
+            jQuery($button.eq(current_item-1)).addClass(options.selected);
 
+            $list.stop();
             animateType();
 
-			if( options.timer )
-				cicle = setInterval( interval ,options.timeout );
-		});
+            if( options.timer )
+                cicle = setInterval( interval ,options.timeout );
+        });
 		
 	});
 };

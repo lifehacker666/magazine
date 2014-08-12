@@ -95,15 +95,18 @@
 
 
     /* Табы */
-    $('.tabs .item').click(function() {
-        tab = $(this);
-        number_tab = $('.tabs .item').index(tab);
+    $('.tabs-controls .item').on('click', function(e){
+        e.preventDefault();
 
-        $('.tabs .item').removeClass("active");
-        tab.addClass("active");
+        var item = $(this),
+            contentItem = $('.tabs-list .item'),
+            itemPosition = item.index();
 
-        $('.tabs-container .tab').removeClass("active");
-        $('.tabs-container .tab').eq(number_tab).addClass('active');
+        contentItem.eq(itemPosition)
+            .add(item)
+            .addClass('active')
+            .siblings()
+            .removeClass('active');
     });
     /* /Табы */
 
