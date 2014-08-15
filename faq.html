@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Test</title>
+    <title>Вопрос-ответ</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <!-- STANDART -->
@@ -83,7 +83,29 @@
 
                             <div class="faq block">
                               <h2>Вопрос - ответ</h2>
-                                <a class="button" href="#">Задать вопрос</a>
+
+                                <form id="faq-form" action="" method="">
+                                    <div class="validation-container">
+                                        <div class="marker">*</div>
+                                        <input class="name" name="question[name]" type="text" placeholder="Введите Ваше имя...">
+                                        <div class="validation-informer"></div>
+                                    </div>
+                                    <div class="validation-container">
+                                        <div class="marker">*</div>
+                                        <input class="phone" name="question[phone]" type="text" placeholder="Введите Ваш телефон...">
+                                        <div class="validation-informer"></div>
+                                    </div>
+                                    <div class="validation-container">
+                                        <input class="email" name="question[email]" type="text" placeholder="Введите Ваш e-mail...">
+                                        <div class="validation-informer"></div>
+                                    </div>
+                                    <div class="validation-container">
+                                        <div class="marker">*</div>
+                                        <textarea class="question-textarea" name="question[text]" placeholder="Введите Ваш вопрос..."></textarea>
+                                        <div class="validation-informer"></div>
+                                    </div>
+                                    <input class="button" type="submit" value="Задать вопрос">
+                                </form>
 
                                 <div class="faq-container">
 
@@ -119,13 +141,13 @@
                             <nav class="catalog-menu-container block">
                                 <ul class="catalog-menu">
                                     <div class="h2">Каталог продукции</div>
-                                    <li class="selected"><a href="#">Телевизоры</a></li>
-                                    <li>
+                                    <li><a href="#">Телевизоры</a></li>
+                                    <li class="selected">
                                         <a href="#">Телефоны</a>
                                         <ul class="catalog-menu">
-                                            <li><a href="#">Телевизоры</a></li>
-                                            <li><a href="#">Телефоны</a></li>
-                                            <li><a href="#">Принтеры</a></li>
+                                            <li class="selected active-link"><a href="#">Подпункт 1</a></li>
+                                            <li><a href="#">Подпункт 2</a></li>
+                                            <li><a href="#">Подпункт 3</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="#">Принтеры</a></li>

@@ -489,7 +489,7 @@ header .contacts {
     background: #B9B9B9;
 }
 
-.catalog-menu li.selected > a{
+.catalog-menu li.selected.active-link > a{
     background: #B9B9B9;
 }
 
@@ -503,6 +503,10 @@ header .contacts {
 .catalog-menu li ul{
     margin:5px 0 5px 0;
     padding:0;
+}
+
+.catalog-menu li.selected ul{
+
 }
 
 .catalog-menu li ul li{
@@ -853,14 +857,14 @@ form .item span {
     margin: 0 0 20px 0;
 }
 
-.faq .name {
+.faq .item .name {
     position: absolute;
     top: 0;
     left: 0;
     color: #777;
 }
 
-.faq .date {
+.faq .item .date {
     position: absolute;
     top: 0;
     right: 0;
@@ -868,13 +872,14 @@ form .item span {
     font-weight: bold;
 }
 
-.faq .answer {
+.faq .item .answer {
     padding: 25px 0 10px 0;
 }
 
-.faq .question {
+.faq .item .question {
     padding: 20px 40px;
     background: #eee;
+    border-radius: 6px;
 }
 /*---------/FAQ------------*/
 
@@ -1065,5 +1070,22 @@ footer .masterweb {
     max-height: 200px;
     overflow: auto;
     background-color: #fff;
+}
+
+/* Формы. валидация*/
+.validation-container {
+    position: relative;
+}
+.validation-container .marker {
+    position: absolute;
+    top: 13px;
+    left: -13px;
+    color: #F45B28;
+}
+.validation-container .validation-informer {
+    display: none;
+    color: #F45B28;
+    margin: 1px 0 7px 0;
+    text-align: left;
 }
 /*---------/OTHER STYLES------------*/
