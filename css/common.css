@@ -1003,6 +1003,33 @@ ul.style li:before{
 /*---------/SOCIALS------------*/
 
 
+/*---------PAGINATION------------*/
+.pagination{
+
+}
+
+.pagination .item{
+    display: inline-block;
+    text-align: center;
+    padding: 4px 6px;
+    margin-right: 6px;
+    background: #fff;
+    border: 1px solid #d1d1d1;
+    text-decoration: none;
+}
+
+.pagination .item.selected{
+    color: #666666;
+    background: #e8e8e9;
+}
+
+.pagination .item:hover{
+    color: #666666;
+    background: #e8e8e9;
+}
+/*---------/PAGINATION------------*/
+
+
 /*---------FOOTER------------*/
 footer {
     position: relative;
