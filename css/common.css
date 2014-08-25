@@ -832,18 +832,211 @@ header .contacts {
 /*---------/TABS------------*/
 
 
-/*---------FORM------------*/
-form .item {
-    display: block;
-    margin: 0 0 10px 0;
-    position: relative;
+/*---------FORM CMS-NC------------*/
+form{
+    display:block;
+    margin:0px;
+    padding:0px;
+}
+form .item{
+    display:block;
+    margin:0px 0px 10px 0px;
+    position:relative;
+}
+form span{
+    display:inline-block;
+    font-size:14px;
+    font-family:Arial;
+    color:#333;
+    width:140px;
+    vertical-align:top;
+}
+input,textarea{
+    display:inline-block;
+    font-size:14px;
+    font-family:Arial;
+    color:#333;
+    border:1px solid #ccc;
+    border-radius:4px;
+    margin:0px;
+    -webkit-box-shadow:inset 0 1px 1px 1px #eee;
+    box-shadow:inset 0 1px 1px 1px #eee;
+    background-position:right center;
+    background-repeat:no-repeat;
+}
+input{
+    padding:0px 10px;
+    height:20px;
+    line-height:20px;
+}
+input.error,
+input.bad,
+textarea.error,
+textarea.bad,
+.item.error input,
+.item.bad input,
+.item.error textarea,
+.item.bad textarea{
+    background-image:url('../img/informer_02.png');
+    border-color:#cc0000;
+}
+input.warning,
+input.warn,
+textarea.warning,
+textarea.warn,
+.item.warning input,
+.item.warn input,
+.item.warning textarea,
+.item.warn textarea{
+    background-image:url('../img/informer_03.png');
+    border-color:#cc0000;
+}
+input.good,
+input.ok,
+textarea.good,
+textarea.ok,
+.item.good input,
+.item.ok input,
+.item.good textarea,
+.item.ok textarea{
+    background-image:url('../img/informer_01.png');
+    border-color:#00cc00;
+}
+textarea{
+    padding:5px 10px;
+    height:70px;
+}
+.right form input,.right form textarea{
+    width:160px;
+}
+input.info.name{
+    background:url('../img/inputname.png') 10px center no-repeat;
+}
+input.info.phone{
+    background:url('../img/inputphone.png') 10px center no-repeat;
+}
+input.info.email{
+    background:url('../img/inputemail.png') 10px center no-repeat;
+}
+textarea.info.coment{
+    background:url('../img/inputcoment.png') 10px center no-repeat;
+}
+.informer{
+    display:none;
+    position:relative;
+    padding:5px 10px;
+    border-radius:5px;
+    border:none;
+    background:#FFF7BD;
+}
+.informer.bad,
+.informer.error,
+.informer.good,
+.informer.ok,
+.informer.warning,
+.item.bad .informer,
+.item.error .informer,
+.item.good .informer,
+.item.ok .informer,
+.item.warning .informer{
+    display:block !important;
+}
+.informer .bg{
+    position:absolute;
+    right:49%;
+    top:-9px;
+    width:11px;
+    height:9px;
+    background:url('../img/informerbg.png') left top no-repeat;
+}
+form .status_message{
+    display:none;
+    margin:10px 0px;
+    padding:5px 10px;
+    border-radius:5px;
+    border:1px solid #F0F0B0;
+    background:#FFF7BD;
 }
 
-form .item span {
-    display: inline-block;
-    width: 100%;
+input.good{
+    border-color:#0F0;
 }
-/*---------/FORM------------*/
+input.bad{
+    border-color:#F00;
+}
+input.warning{
+    border-color:#FF8F00;
+}
+/*---------/FORM CMS-NC------------*/
+
+
+/* ВСПЛЫВАЮЩЕЕ ОКНО CMS-NC */
+.window {
+    z-index:3;
+    position:fixed;
+    left:0px;
+    top:0px;
+    width:100%;
+    display:none;
+    text-align:center;
+    vertical-align:middle;
+}
+.window .window_body{
+    position:relative;
+    vertical-align:middle;
+    text-align:left;
+    width:auto;
+    height:auto;
+    display:inline-block;
+    background:#fff;
+    border-radius:9px;
+    border:1px solid #ccc;
+    padding:20px 30px;
+}
+.window .close{
+    display:none;
+    cursor:pointer;
+    position:absolute;
+    right:-12px;
+    top:-12px;
+
+    text-align:center;
+
+    width:25px;
+    height:25px;
+    line-height:23px;
+
+    color:#fff;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+
+    -webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
+    border-radius: 13px;
+    -webkit-box-shadow: #aaa 0px 0px 3px;
+    -moz-box-shadow: #aaa 0px 0px 3px;
+    box-shadow: #aaa 0px 0px 3px;
+
+    background: #AAA;
+    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#CCCCCC), to(#999999));
+    background: -webkit-linear-gradient(#CCCCCC, #999999);
+    background: -moz-linear-gradient(#CCCCCC, #999999);
+    background: -ms-linear-gradient(#CCCCCC, #999999);
+    background: -o-linear-gradient(#CCCCCC, #999999);
+    background: linear-gradient(#CCCCCC, #999999);
+
+}
+.window .close.show{
+    display:block;
+}
+.window.show {
+    display:inline-block;
+}
+.window.show .window_body {
+
+}
+/* /ВСПЛЫВАЮЩЕЕ ОКНО CMS-NC */
 
 
 /*---------FAQ------------*/
