@@ -1042,7 +1042,6 @@ input.warning{
 /*---------FAQ------------*/
 .faq-container{
     margin-top: 20px;
-    background: #fff;
 }
 
 .faq .item {
@@ -1069,8 +1068,15 @@ input.warning{
     padding: 25px 0 10px 0;
 }
 
+.faq .item .answer p{
+    padding: 20px 40px;
+    background: #eee;
+    border-radius: 6px;
+}
+
 .faq .item .question {
     padding: 20px 40px;
+    margin-left: 30px;
     background: #eee;
     border-radius: 6px;
 }
