@@ -520,18 +520,18 @@ header .contacts {
 /*---------/CATALOG-MENU------------*/
 
 
-/*---------NEWS------------*/
+/*---------NEWS (BLOCK)------------*/
 .news .item{
     margin:10px 0;
-    border-bottom:1px dashed #000000;
+    border-bottom:1px solid #000000;
 }
 
-.news .date{
+.news .item .date{
     display:block;
     font-weight: bold;
 }
 
-.news .img-container{
+.news .item .img-container{
     float:left;
     width: 100px;
     height: 100px;
@@ -541,16 +541,49 @@ header .contacts {
     background: #fff;
 }
 
-.news .img-container img {
+.news .item .img-container img {
     max-width: 100px;
     max-height: 100px;
     vertical-align: middle;
 }
 
-.news .title{
+.news .item .title{
     display: block;
 }
-/*---------/NEWS------------*/
+/*---------/NEWS (BLOCK)------------*/
+
+
+/*---------NEWS (PAGE)------------*/
+.news.one .item{
+    margin:0 0 10px 0;
+    border: none;
+}
+
+.news.one .item .title{
+    margin: 0;
+}
+
+.news.one .item .date{
+    display:block;
+    font-weight: bold;
+}
+
+.news.one .item .img-container{
+    float:left;
+    width: 250px;
+    height: 250px;
+    line-height: 250px;
+    text-align: center;
+    margin: 5px 10px 5px 0;
+    background: #fff;
+}
+
+.news.one .item .img-container img {
+    max-width: 250px;
+    max-height: 250px;
+    vertical-align: middle;
+}
+/*---------/NEWS (PAGE)------------*/
 
 
 /*---------CATALOG------------*/
@@ -591,7 +624,7 @@ header .contacts {
     /*zoom : 1;*/
 }
 
-.catalog .img-container{
+.catalog .item .img-container{
     display: block;
     width: 150px;
     height: 150px;
@@ -601,7 +634,7 @@ header .contacts {
     background: grey;
 }
 
-.catalog .img-container img {
+.catalog .item .img-container img {
     max-width: 150px;
     max-height: 150px;
     vertical-align: middle;
