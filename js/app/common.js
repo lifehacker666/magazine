@@ -1,9 +1,38 @@
 ﻿$(function(){
 
+    /* Выравниваем элементы каталога по одной высоте */
+    $('.catalog .catalog-container').each(function(){
+
+        var catalog = $(this),
+            catalog_item_height = 0;
+
+        catalog.find('.item').each(function(){
+
+            /* Картинка по дефолту */
+            var cur_img = $(this).find('.img-container img').attr('src');
+            if( cur_img == "" )
+                $(this).find('.img-container img').attr({'src':'/img/empty_icon.jpg'});
+
+            /* Размер по дефолту */
+            var cur_height = $(this).height();
+            if( cur_height > catalog_item_height )
+                catalog_item_height = cur_height;
+        });
+        if( catalog_item_height > 0 )
+            catalog.find('.item').height(catalog_item_height);
+    });
+    /* /Выравниваем элементы каталога по одной высоте */
+
+
     /* Переносим правый блок вправо */
     $('.floatblock.center-min,.floatblock.center-middle').before( $('.floatblock.right').show() );
     $('.padding-right').hide();
     /* /Переносим правый блок вправо */
+
+
+    /* Стартуем стандартную ajax обработку */
+    $('form.standart_load,a.standart_load').standart_load();
+    /* /Стартуем стандартную ajax обработку */
 
 
     /* Активный пункт меню */
@@ -376,3 +405,42 @@ function clearInputFile(obj){
         .parent().parent().find('input[type=file]').val('')
 }
 /* /кастомный input file */
+
+
+var Load = function(url,param) { // Функция для стандартизации общения с сервером
+    $.post(
+        url,
+        param,
+        function(data){
+            var sc_ = '';
+            if(data['script']) {
+                sc_ = data['script'];
+                delete data['script'];
+            }
+            for( i in data ) {
+                $(i).html(data[i]);
+            }
+            eval(sc_);
+        },
+        'json'
+    );
+};
+
+var Message = function(message) { // Всплывающее сообщение на базе наработки standart_window
+
+    jQuery('.window.message').remove();/* Удалилил старое окно */
+    /* Добавлеяем новое окно */
+    jQuery('body').append(
+        '<div class="window message">' +
+        '    <div class="window_body">' +
+        '        <div class="close">x</div>' +
+        '        <div class="content">' +
+        '            <div class="block">' +
+        message +
+        '            </div>' +
+        '        </div>' +
+        '    </div>' +
+        '</div>');
+
+    jQuery('.window.message').standart_window();
+};

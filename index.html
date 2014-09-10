@@ -77,22 +77,22 @@
                                    <div class="overflower">
                                        <div class="item selected">
                                            <div class="img-container">
-                                               <img src="/img/test1.jpg">
+                                               <img src="/img/slide1.jpg">
                                            </div>
                                        </div>
                                        <div class="item">
                                            <div class="img-container">
-                                               <img src="/img/test2.jpg">
+                                               <img src="/img/slide2.jpg">
                                            </div>
                                        </div>
                                        <div class="item">
                                            <div class="img-container">
-                                               <img src="/img/test3.jpg">
+                                               <img src="/img/slide3.jpg">
                                            </div>
                                        </div>
                                        <div class="item">
                                            <div class="img-container">
-                                               <img src="/img/test4.jpg">
+                                               <img src="/img/slide4.jpg">
                                            </div>
                                        </div>
                                    </div>
@@ -187,28 +187,32 @@
                        <div class="floatblock right">
                          <div class="form block">
                              <h2>Отправить заявку</h2>
-                             <form action="">
+                             <form action="" method="">
                                  <div class="item">
-                                     <span>ФИО *</span>
-                                     <input type="text" placeholder="Введите ФИО"/>
-                                     <div class="informer">
-                                         <div class="text">Необходимо заполнить поле ФИО</div>
-                                         <div class="bg"></div>
-                                     </div>
+                                     <div class="marker">*</div>
+                                     <input class="name" name="order[fio]" type="text" placeholder="Введите ФИО...">
+                                     <div class="validation-informer"><span></span></div>
                                  </div>
                                  <div class="item">
-                                     <span>ФИО *</span>
-                                     <input class="error" type="text" placeholder="Введите ФИО"/>
+                                     <div class="marker">*</div>
+                                     <input class="name error" name="order[fio]" type="text" placeholder="Введите ФИО...">
+                                     <div class="validation-informer" style="display: block"><span>Необходимо заполнить поле ФИО</span></div>
                                  </div>
                                  <div class="item">
-                                     <span>ФИО *</span>
-                                     <input class="success" type="text" placeholder="Введите ФИО"/>
+                                     <div class="marker">*</div>
+                                     <input class="name warning" name="order[fio]" type="text" placeholder="Введите ФИО...">
+                                     <div class="validation-informer" style="display: block"><span>Необходимо заполнить поле ФИО</span></div>
                                  </div>
                                  <div class="item">
-                                     <span>Сообщение</span>
-                                     <textarea class="error" placeholder="Введите сообщение"></textarea>
+                                     <div class="marker">*</div>
+                                     <input class="name success" name="order[fio]" type="text" placeholder="Введите ФИО...">
+                                     <div class="validation-informer"><span></span></div>
                                  </div>
-
+                                 <div class="item">
+                                     <div class="marker"></div>
+                                     <textarea name="order[message]" placeholder="Введите сообщение..."></textarea>
+                                     <div class="validation-informer"><span></span></div>
+                                 </div>
                                  <a href="#" class="button">Отправить</a>
                              </form>
                          </div>
@@ -302,7 +306,7 @@
                <div class="copyright">
                    Разработка и продвижение сайта<br>
                    ООО "МастерВеб"
-                   <a href="http://mastweb.ru/"><img class="masterweb" src="/img/masterweb.png" alt=""></a>
+                   <a href="http://mastweb.ru/" target="_blank"><img class="masterweb" src="/img/masterweb.png" alt=""></a>
                </div>
            </div>
        </div>

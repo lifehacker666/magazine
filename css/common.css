@@ -24,7 +24,7 @@ img{
 input{
     font-family:tahoma;
     font-size:12px;
-    padding: 0 10px;
+    padding: 5px 10px;
 }
 
 textarea{
@@ -213,38 +213,6 @@ h4,.h4{
 :-ms-input-placeholder { /* Internet Explorer 10+ */
     color: #333;
 }
-
-input.success, textarea.success{
-    background: url('../img/informer-success.png') top right no-repeat #fff;
-    border-color:#00cc00;
-}
-
-input.warning, textarea.warning{
-    background: url('../img/informer-warning.png') top right no-repeat #fff;
-    border-color: #cc0000;
-}
-
-input.error, textarea.error{
-    background: url('../img/informer-error.png') top right no-repeat #fff;
-    border-color: #cc0000;
-}
-
-.informer {
-    position: relative;
-    padding: 5px 10px;
-    border-radius: 5px;
-    border: none;
-    background: #FFF7BD;
-}
-
-.informer .bg {
-    position: absolute;
-    right: 49%;
-    top: -9px;
-    width: 11px;
-    height: 9px;
-    background: url('../img/informer-bg.png') left top no-repeat;
-}
 /*/STANDART STYLES*/
 
 
@@ -325,8 +293,12 @@ header .contacts {
     text-align:center;
 }
 
-.menu-top > ul > li:hover{background-color: #c9c9c9;}
-.menu-top > ul > li.selected{background-color:#c9c9c9;}
+.menu-top > ul > li:hover{
+    background-color: #c9c9c9;
+}
+.menu-top > ul > li.selected{
+    background-color:#c9c9c9;
+}
 
 .menu-top > ul > li > a{
     display: block;
@@ -866,17 +838,69 @@ header .contacts {
 
 
 /*---------FORM CMS-NC------------*/
-form{
-    display:block;
-    margin:0px;
-    padding:0px;
+/*new form styles*/
+form input, form textarea {
+    display: inline-block;
+    border: 1px solid #e5e9ed;
+    margin-bottom: 15px;
 }
-form .item{
-    display:block;
-    margin:0px 0px 10px 0px;
-    position:relative;
+
+input.success, textarea.success{
+    background: url('../img/validation-informer-success.png') right 1px no-repeat #fff;
+    border-color:#00cc00;
 }
-form span{
+
+input.warning, textarea.warning{
+    background: url('../img/validation-informer-warning.png') right 1px no-repeat #fff;
+    border-color: #FF8F00;
+}
+
+input.error, textarea.error{
+    background: url('../img/validation-informer-error.png') right 1px no-repeat #fff;
+    border-color: #cc0000;
+}
+
+.item {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.item input, .item textarea{
+    margin: 0;
+}
+
+.item .marker {
+    position: absolute;
+    top: 9px;
+    left: -9px;
+    color: #F45B28;
+}
+
+.item .validation-informer {
+    margin-top: 9px;
+    display: none;
+}
+
+.item .validation-informer span{
+    position: relative;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: #FFF7BD;
+}
+
+.item .validation-informer span:before{
+    content: url('../img/validation-informer-bg.png');
+    width: 11px;
+    height: 9px;
+    position: absolute;
+    top: -9px;
+    left: 50%;
+    margin-left: -5px;
+}
+/*new form styles*/
+
+
+form span.title{
     display:inline-block;
     font-size:14px;
     font-family:Arial;
@@ -884,84 +908,11 @@ form span{
     width:140px;
     vertical-align:top;
 }
-input,textarea{
-    display:inline-block;
-    font-size:14px;
-    font-family:Arial;
-    color:#333;
-    border:1px solid #ccc;
-    border-radius:4px;
-    margin:0px;
-    -webkit-box-shadow:inset 0 1px 1px 1px #eee;
-    box-shadow:inset 0 1px 1px 1px #eee;
-    background-position:right center;
-    background-repeat:no-repeat;
-}
-input{
-    padding:0px 10px;
-    height:20px;
-    line-height:20px;
-}
-input.error,
-input.bad,
-textarea.error,
-textarea.bad,
-.item.error input,
-.item.bad input,
-.item.error textarea,
-.item.bad textarea{
-    background-image:url('../img/informer_02.png');
-    border-color:#cc0000;
-}
-input.warning,
-input.warn,
-textarea.warning,
-textarea.warn,
-.item.warning input,
-.item.warn input,
-.item.warning textarea,
-.item.warn textarea{
-    background-image:url('../img/informer_03.png');
-    border-color:#cc0000;
-}
-input.good,
-input.ok,
-textarea.good,
-textarea.ok,
-.item.good input,
-.item.ok input,
-.item.good textarea,
-.item.ok textarea{
-    background-image:url('../img/informer_01.png');
-    border-color:#00cc00;
-}
-textarea{
-    padding:5px 10px;
-    height:70px;
-}
+
 .right form input,.right form textarea{
     width:160px;
 }
-input.info.name{
-    background:url('../img/inputname.png') 10px center no-repeat;
-}
-input.info.phone{
-    background:url('../img/inputphone.png') 10px center no-repeat;
-}
-input.info.email{
-    background:url('../img/inputemail.png') 10px center no-repeat;
-}
-textarea.info.coment{
-    background:url('../img/inputcoment.png') 10px center no-repeat;
-}
-.informer{
-    display:none;
-    position:relative;
-    padding:5px 10px;
-    border-radius:5px;
-    border:none;
-    background:#FFF7BD;
-}
+
 .informer.bad,
 .informer.error,
 .informer.good,
@@ -974,14 +925,7 @@ textarea.info.coment{
 .item.warning .informer{
     display:block !important;
 }
-.informer .bg{
-    position:absolute;
-    right:49%;
-    top:-9px;
-    width:11px;
-    height:9px;
-    background:url('../img/informerbg.png') left top no-repeat;
-}
+
 form .status_message{
     display:none;
     margin:10px 0px;
@@ -989,16 +933,6 @@ form .status_message{
     border-radius:5px;
     border:1px solid #F0F0B0;
     background:#FFF7BD;
-}
-
-input.good{
-    border-color:#0F0;
-}
-input.bad{
-    border-color:#F00;
-}
-input.warning{
-    border-color:#FF8F00;
 }
 /*---------/FORM CMS-NC------------*/
 
@@ -1077,19 +1011,19 @@ input.warning{
     margin-top: 20px;
 }
 
-.faq .item {
+.faq .faq-container .item {
     position: relative;
     margin: 0 0 20px 0;
 }
 
-.faq .item .name {
+.faq. faq-container .item .name {
     position: absolute;
     top: 0;
     left: 0;
     color: #777;
 }
 
-.faq .item .date {
+.faq .faq-container .item .date {
     position: absolute;
     top: 0;
     right: 0;
@@ -1097,21 +1031,26 @@ input.warning{
     font-weight: bold;
 }
 
-.faq .item .answer {
+.faq .faq-container .item .answer {
     padding: 25px 0 10px 0;
 }
 
-.faq .item .answer p{
+.faq .faq-container .item .answer p{
     padding: 20px 40px;
     background: #eee;
     border-radius: 6px;
 }
 
-.faq .item .question {
+.faq .faq-container .item .question {
     padding: 20px 40px;
     margin-left: 30px;
     background: #eee;
     border-radius: 6px;
+}
+
+.faq textarea{
+    width: 450px;
+    height: 200px;
 }
 /*---------/FAQ------------*/
 
@@ -1178,6 +1117,8 @@ ul.style li:before{
     display:block;
     width: 0;
     height: 0;
+    padding: 0;
+    margin: 0;
     overflow: hidden;
 }
 
@@ -1329,22 +1270,5 @@ footer .masterweb {
     max-height: 200px;
     overflow: auto;
     background-color: #fff;
-}
-
-/* Формы. валидация*/
-.validation-container {
-    position: relative;
-}
-.validation-container .marker {
-    position: absolute;
-    top: 13px;
-    left: -13px;
-    color: #F45B28;
-}
-.validation-container .validation-informer {
-    display: none;
-    color: #F45B28;
-    margin: 1px 0 7px 0;
-    text-align: left;
 }
 /*---------/OTHER STYLES------------*/
