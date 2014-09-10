@@ -85,14 +85,14 @@
 
 
     /* Динамическое подключение fancybox */
-    if( jQuery("a").is(".fancybox-thumb") ){
-        jQuery('head').append("<link rel='stylesheet' type='text/css'  href='/css/fancybox/jquery.fancybox.css'/>"); /* Подключим стили */
-        jQuery('head').append("<link rel='stylesheet' type='text/css'  href='/css/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7'/>"); /* Подключим стили */
-        jQuery.getScript( '/js/lib/fancybox/jquery.fancybox.js?v=2.1.5', function() {/* Подключим скрипт */
-        jQuery.getScript( '/js/lib/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7', function() {/* Подключим скрипт */
+    if( $("a").is(".fancybox-thumb") ){
+        $('head').append("<link rel='stylesheet' type='text/css'  href='/css/fancybox/jquery.fancybox.css'/>"); /* Подключим стили */
+        $('head').append("<link rel='stylesheet' type='text/css'  href='/css/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7'/>"); /* Подключим стили */
+        $.getScript( '/js/lib/fancybox/jquery.fancybox.js?v=2.1.5', function() {/* Подключим скрипт */
+            $.getScript( '/js/lib/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7', function() {/* Подключим скрипт */
 
                 /* Подрубаем галерею */
-                jQuery(".fancybox-thumb").fancybox({
+                $(".fancybox-thumb").fancybox({
                     prevEffect	: 'none',
                     nextEffect	: 'none',
                     helpers	: {
@@ -110,7 +110,7 @@
                 var start_id = window.location.href.indexOf("#");
                 if( start_id > 0 ){
                     var id = window.location.href.substring( start_id+1 );
-                    jQuery('a.fancybox-thumb.id' + id ).click();
+                    $('a.fancybox-thumb.id' + id ).click();
                 }
 
             });
@@ -428,9 +428,9 @@ var Load = function(url,param) { // Функция для стандартиза
 
 var Message = function(message) { // Всплывающее сообщение на базе наработки standart_window
 
-    jQuery('.window.message').remove();/* Удалилил старое окно */
+    $('.window.message').remove();/* Удалилил старое окно */
     /* Добавлеяем новое окно */
-    jQuery('body').append(
+    $('body').append(
         '<div class="window message">' +
         '    <div class="window_body">' +
         '        <div class="close">x</div>' +
@@ -442,5 +442,5 @@ var Message = function(message) { // Всплывающее сообщение �
         '    </div>' +
         '</div>');
 
-    jQuery('.window.message').standart_window();
+    $('.window.message').standart_window();
 };

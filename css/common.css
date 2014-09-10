@@ -421,6 +421,30 @@ header .contacts {
     background: #66e3f1;
 }
 
+/* Обнуляем шрифт и line-height у родителя*/
+.index_slider .buttons{
+    /*text-align: justify;*/
+    line-height: 0;
+    font-size: 1px;
+}
+
+/* доп элемент для выравнивания по ширине */
+.index_slider .buttons .item.helper {
+    width: 100%;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.index_slider .buttons .item{
+    /* Востанавливаем у потомков, кроме последнего*/
+    line-height: normal;
+    font-size: 12px;
+
+    /* Без него в Opera будет отступ под элементами */
+    vertical-align: top;
+}
+
 .index_slider .to_left, .index_slider .to_right{
     width: 20px;
     height: 20px;
@@ -746,7 +770,6 @@ header .contacts {
 
 .tovar_slider .buttons {
     width: auto;
-    text-align: center;
 }
 
 .tovar_slider .buttons .item {
@@ -756,7 +779,6 @@ header .contacts {
     overflow: hidden;
     background: #6d6d6d;
     cursor: pointer;
-    margin-right: 5px;
 }
 
 .tovar_slider .buttons .item .img-container{
@@ -779,6 +801,30 @@ header .contacts {
 
 .tovar_slider .buttons .item.selected {
     background: #66e3f1;
+}
+
+/* Обнуляем шрифт и line-height у родителя*/
+.tovar_slider .buttons{
+    text-align: justify;
+    line-height: 0;
+    font-size: 1px;
+}
+
+/* доп элемент для выравнивания по ширине */
+.tovar_slider .buttons .item.helper {
+    width: 100%;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.tovar_slider .buttons .item{
+    /* Востанавливаем у потомков, кроме последнего*/
+    line-height: normal;
+    font-size: 12px;
+
+    /* Без него в Opera будет отступ под элементами */
+    vertical-align: top;
 }
 
 .tovar_slider .to_left, .tovar_slider .to_right{
@@ -837,8 +883,7 @@ header .contacts {
 /*---------/TABS------------*/
 
 
-/*---------FORM CMS-NC------------*/
-/*new form styles*/
+/*---------FORM------------*/
 form input, form textarea {
     display: inline-block;
     border: 1px solid #e5e9ed;
@@ -860,35 +905,35 @@ input.error, textarea.error{
     border-color: #cc0000;
 }
 
-.item {
+.item-form-element {
     position: relative;
     margin-bottom: 15px;
 }
 
-.item input, .item textarea{
+.item-form-element input, .item-form-element textarea{
     margin: 0;
 }
 
-.item .marker {
+.item-form-element .marker {
     position: absolute;
     top: 9px;
     left: -9px;
     color: #F45B28;
 }
 
-.item .validation-informer {
+.item-form-element .validation-informer {
     margin-top: 9px;
     display: none;
 }
 
-.item .validation-informer span{
+.item-form-element .validation-informer span{
     position: relative;
     padding: 5px 10px;
     border-radius: 5px;
     background: #FFF7BD;
 }
 
-.item .validation-informer span:before{
+.item-form-element .validation-informer span:before{
     content: url('../img/validation-informer-bg.png');
     width: 11px;
     height: 9px;
@@ -897,9 +942,8 @@ input.error, textarea.error{
     left: 50%;
     margin-left: -5px;
 }
-/*new form styles*/
 
-
+/*old styles CMS-NC*/
 form span.title{
     display:inline-block;
     font-size:14px;
@@ -926,23 +970,24 @@ form span.title{
     display:block !important;
 }
 
-form .status_message{
-    display:none;
-    margin:10px 0px;
-    padding:5px 10px;
-    border-radius:5px;
-    border:1px solid #F0F0B0;
-    background:#FFF7BD;
+form .status_message {
+    display: none;
+    margin: 10px 0px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #F0F0B0;
+    background: #FFF7BD;
 }
-/*---------/FORM CMS-NC------------*/
+/*old styles CMS-NC*/
+/*---------/FORM------------*/
 
 
-/* ВСПЛЫВАЮЩЕЕ ОКНО CMS-NC */
+/*---------ВСПЛЫВАЮЩЕЕ ОКНО CMS-NC------------*/
 .window {
     z-index:3;
     position:fixed;
-    left:0px;
-    top:0px;
+    left:0;
+    top:0;
     width:100%;
     display:none;
     text-align:center;
@@ -981,9 +1026,9 @@ form .status_message{
     -webkit-border-radius: 13px;
     -moz-border-radius: 13px;
     border-radius: 13px;
-    -webkit-box-shadow: #aaa 0px 0px 3px;
-    -moz-box-shadow: #aaa 0px 0px 3px;
-    box-shadow: #aaa 0px 0px 3px;
+    -webkit-box-shadow: #aaa 0 0 3px;
+    -moz-box-shadow: #aaa 0 0 3px;
+    box-shadow: #aaa 0 0 3px;
 
     background: #AAA;
     background: -webkit-gradient(linear, 0 0, 0 bottom, from(#CCCCCC), to(#999999));
@@ -1003,7 +1048,7 @@ form .status_message{
 .window.show .window_body {
 
 }
-/* /ВСПЛЫВАЮЩЕЕ ОКНО CMS-NC */
+/*---------/ВСПЛЫВАЮЩЕЕ ОКНО CMS-NC------------*/
 
 
 /*---------FAQ------------*/
