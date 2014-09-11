@@ -272,7 +272,7 @@ header .contacts {
 .menu-top > ul > li{
     display: inline-block;
     position: relative;
-    z-index: 5;
+    z-index: 2;
 
     /* Востанавливаем у потомков, кроме последнего*/
     line-height: normal;
@@ -844,7 +844,7 @@ header .contacts {
 /*---------FORM------------*/
 form input, form textarea {
     display: inline-block;
-    border: 1px solid #e5e9ed;
+    border: 1px solid #d0d4d8;
     margin-bottom: 15px;
 }
 
@@ -859,6 +859,21 @@ input.warning, textarea.warning{
 }
 
 input.error, textarea.error{
+    background: url('../img/validation-informer-error.png') right 1px no-repeat #fff;
+    border-color: #cc0000;
+}
+
+.item-form-element.success input, .item-form-element.success textarea{
+    background: url('../img/validation-informer-error.png') right 1px no-repeat #fff;
+    border-color: #cc0000;
+}
+
+.item-form-element.warning input, .item-form-element.warning textarea{
+    background: url('../img/validation-informer-error.png') right 1px no-repeat #fff;
+    border-color: #cc0000;
+}
+
+.item-form-element.error input, .item-form-element.error textarea{
     background: url('../img/validation-informer-error.png') right 1px no-repeat #fff;
     border-color: #cc0000;
 }
@@ -879,13 +894,25 @@ input.error, textarea.error{
     color: #F45B28;
 }
 
+.item-form-element .title{
+    display: inline-block;
+    width: 85px;
+    vertical-align: top;
+    margin-top: 6px;
+}
+
 .item-form-element .validation-informer {
-    margin-top: 9px;
+    margin-top: 11px;
     display: none;
+}
+
+.item-form-element.error .validation-informer, .item-form-element.warning .validation-informer {
+    display: block;
 }
 
 .item-form-element .validation-informer span{
     position: relative;
+    display: inline-block;
     padding: 5px 10px;
     border-radius: 5px;
     background: #FFF7BD;
@@ -901,48 +928,45 @@ input.error, textarea.error{
     margin-left: -5px;
 }
 
-/*old styles CMS-NC*/
-form span.title{
-    display:inline-block;
-    font-size:14px;
-    font-family:Arial;
-    color:#333;
-    width:140px;
-    vertical-align:top;
-}
-
-.right form input,.right form textarea{
-    width:160px;
-}
-
-.informer.bad,
-.informer.error,
-.informer.good,
-.informer.ok,
-.informer.warning,
-.item.bad .informer,
-.item.error .informer,
-.item.good .informer,
-.item.ok .informer,
-.item.warning .informer{
-    display:block !important;
-}
-
 form .status_message {
     display: none;
-    margin: 10px 0px;
+    margin: 10px 0;
     padding: 5px 10px;
     border-radius: 5px;
     border: 1px solid #F0F0B0;
     background: #FFF7BD;
 }
-/*old styles CMS-NC*/
+
+
+.form-zakaz-item{
+    width: 220px;
+    text-align: center;
+    display: inline-block;
+}
+
+.form-zakaz-item .img-container{
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+}
+
+.form-zakaz-item .img-container img{
+    max-width: 150px;
+    max-height: 150px;
+    vertical-align: middle;
+}
+
+.form-zakaz-item .title{
+    width: 220px;
+}
 /*---------/FORM------------*/
 
 
-/*---------ВСПЛЫВАЮЩЕЕ ОКНО CMS-NC------------*/
+/*---------ВСПЛЫВАЮЩЕЕ ОКНО------------*/
 .window {
-    z-index:3;
+    z-index:99;
     position:fixed;
     left:0;
     top:0;
@@ -951,6 +975,17 @@ form .status_message {
     text-align:center;
     vertical-align:middle;
 }
+
+.window-popup-overflower{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 98;
+}
+
 .window .window_body{
     position:relative;
     vertical-align:middle;
@@ -963,6 +998,12 @@ form .status_message {
     border:1px solid #ccc;
     padding:20px 30px;
 }
+
+.window .window_body .content{
+    width: auto;
+    background: #fff;
+}
+
 .window .close{
     display:none;
     cursor:pointer;
@@ -1000,13 +1041,15 @@ form .status_message {
 .window .close.show{
     display:block;
 }
+
 .window.show {
     display:inline-block;
 }
+
 .window.show .window_body {
 
 }
-/*---------/ВСПЛЫВАЮЩЕЕ ОКНО CMS-NC------------*/
+/*---------/ВСПЛЫВАЮЩЕЕ ОКНО------------*/
 
 
 /*---------FAQ------------*/
@@ -1209,7 +1252,7 @@ footer {
     min-width: 1000px;
     height: 150px;
     overflow: hidden;
-    z-index: 99;
+    z-index: 97;
 
     background: #6d6d6d;
 }
@@ -1253,6 +1296,7 @@ footer .masterweb {
     left:10px;
     cursor:pointer;
     display:none;
+    z-index: 100;
 }
 
 /*Кнопка Свернуть-развернуть*/

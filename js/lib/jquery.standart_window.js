@@ -10,7 +10,7 @@ jQuery.fn.standart_window = function(options){
 		show_close:true,
 		show_shadow:true,
 		show:true,
-		absolute:true, /* Позволит спозиционировать абсолютно и реагировать на прокрутку, помогает избегать проблем с большими блоками */
+		absolute:true /* Позволит спозиционировать абсолютно и реагировать на прокрутку, помогает избегать проблем с большими блоками */
 	},options);
 	
 	return this.each(function() {
@@ -37,6 +37,7 @@ jQuery.fn.standart_window = function(options){
 		/* Скрытие */
 		$close.click(function(){
 			$this.removeClass('show');
+            jQuery('.window-popup-overflower').hide();
 		});
 		
 		/* Центрируем и позиционируем абсолютно */
