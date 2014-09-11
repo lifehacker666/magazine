@@ -901,6 +901,13 @@ input.error, textarea.error{
     margin-top: 6px;
 }
 
+.item-form-element > span{
+    display: inline-block;
+    width: 85px;
+    vertical-align: top;
+    margin-top: 6px;
+}
+
 .item-form-element .validation-informer {
     margin-top: 11px;
     display: none;
@@ -1096,7 +1103,7 @@ form .status_message {
 
 .faq textarea{
     width: 450px;
-    height: 200px;
+    height: 100px;
 }
 /*---------/FAQ------------*/
 
