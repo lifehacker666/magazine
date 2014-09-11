@@ -385,6 +385,7 @@ header .contacts {
 }
 
 .index_slider .viewport .item .img-container{
+    display: block;
     margin: 0 auto;
     width: 360px;
     height: 360px;
@@ -1120,13 +1121,8 @@ form .status_message {
     border: 1px solid #a5a5a5;
 }
 
-.price-table td span{
+.price-table td a{
     float: left;
-    line-height: 24px;
-}
-
-.price-table td .button{
-    float: right;
 }
 /*---------/PRICE------------*/
 
