@@ -129,10 +129,6 @@ label{
     margin-bottom: 30px;
 }
 
-.block h2{
-    margin: 0 0 15px 0;
-}
-
 .clear{
     clear: both;
 }
@@ -171,6 +167,10 @@ h4,.h4{
 }
 
 .right h2, .right .h2 {
+    margin: 0 0 15px 0;
+}
+
+.center-min > h1, .center-middle > h1, .center-full > h1 {
     margin: 0 0 15px 0;
 }
 
