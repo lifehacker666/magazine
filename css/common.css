@@ -999,7 +999,6 @@ form .status_message {
 
 /*---------ВСПЛЫВАЮЩЕЕ ОКНО------------*/
 .window {
-    z-index:99;
     position:fixed;
     left:0;
     top:0;
@@ -1007,6 +1006,7 @@ form .status_message {
     display:none;
     text-align:center;
     vertical-align:middle;
+    z-index: 98;
 }
 
 .window-popup-overflower{
@@ -1030,6 +1030,7 @@ form .status_message {
     border-radius:9px;
     border:1px solid #ccc;
     padding:20px 30px;
+    z-index:99;
 }
 
 .window .window_body .content{
