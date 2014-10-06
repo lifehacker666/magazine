@@ -4,7 +4,7 @@
  */
 jQuery.fn.standart_slider = function(options){
 	var options = jQuery.extend({
-		viewport: 'viewport', /* Окно показа слайдов */
+        viewport: 'viewport', /* Окно показа слайдов */
 		list: 'overflower', /* Лист слайдов */
 		item: 'item', /* Сами слайды */
 		to_left: 'to_left', /* Кнопка в лево */
@@ -19,27 +19,45 @@ jQuery.fn.standart_slider = function(options){
 		timer:1, /* Включение-выключение перелистывания */
 		size:1, /* Количество отображаемых обьектов в окне показов */
         type: 'scroll_horiz', /* тип анимации слайдера (scroll_horiz - горизонатальная прокрутка, fade - затухание) */
-        action: 'click' /*по какому событию будут срабатывать кнопки перелистывания (напр,'click, mouseover') */
+        action: 'click', /*по какому событию будут срабатывать кнопки перелистывания (напр,'click, mouseover') */
+        resize: 0 /*резиновый слайдер*/
 	},options);
 
 	return this.each(function() { /* Пробегаемся по каждому слайдеру */
-		var $this = $(this);
-		var current_item = 1;
+		var $this = $(this),
+            current_item = 1,
+            $viewport = $this.find('.' + options.viewport);
+
 		/* Фиксируем размер листа */
-		var $button = $this.find('.' + options.buttons + ' .' + options.button);
-		var $list = $this.find('.' + options.list);
-		var $item = $list.find('.' + options.item);
-		var item_cnt = $item.size();
-		var item_width = $item.width() + parseInt($item.css('marginRight'), 10) + parseInt($item.css('marginLeft'), 10) + parseInt($item.css('paddingRight'), 10) + parseInt($item.css('paddingLeft'), 10);
-		$list.width(item_width*(item_cnt+1));
+		var $button = $this.find('.' + options.buttons + ' .' + options.button),
+            $list = $this.find('.' + options.list),
+            $item = $list.find('.' + options.item),
+            item_cnt = $item.size(),
+            sigma_indents = parseInt($item.css('marginRight'), 10) + parseInt($item.css('marginLeft'), 10) + parseInt($item.css('paddingRight'), 10) + parseInt($item.css('paddingLeft'), 10),
+            item_width = ($viewport.width() - (options.size - 1) * sigma_indents ) / (options.size);
+
+        $item.width(item_width);
+        $list.width((item_width + sigma_indents)*(item_cnt+1));
+
 		/* Убираем / Показываем специальный слой */
-		var $block = $this.find('.' + options.show_hide_block);
-		var $first_block_checker = $item.first().find('.' + options.show_hide_checker);
+		var $block = $this.find('.' + options.show_hide_block),
+            $first_block_checker = $item.first().find('.' + options.show_hide_checker);
+
+        //для резинового слайдера пересчитываем величины
+        if ( options.resize == 1) {
+            $( window ).resize(function() {
+                //item_width = $item.width() + parseInt($item.css('marginRight'), 10) + parseInt($item.css('marginLeft'), 10) + parseInt($item.css('paddingRight'), 10) + parseInt($item.css('paddingLeft'), 10);
+                item_width = ($viewport.width() - (options.size - 1) * sigma_indents ) / (options.size);
+                $item.width(item_width);
+                $list.width((item_width + sigma_indents)*(item_cnt+1));
+                $list.css('left', -(current_item - 1) * (item_width + sigma_indents));
+            });
+        }
 
         //ф-я выбора анимации
         function animateType(){
             if ( options.type == 'scroll_horiz') {
-                $list.animate({left: -(current_item - 1) * item_width}, options.time);
+                $list.animate({left: -(current_item - 1) * (item_width + sigma_indents)}, options.time);
             } else if ( options.type == 'fade' ) {
                 $list.find('.' + options.item + '.' + options.selected).removeClass(options.selected).animate({opacity: 0}, options.time);
                 $item.eq(current_item-1).addClass(options.selected).animate({opacity: 1}, options.time);
