@@ -120,11 +120,11 @@
 
 
     /* Табы */
-    $('.tabs-controls .item').on('click', function(e){
+    $('.tabs-controls > .item').on('click', function(e){
         e.preventDefault();
 
         var item = $(this),
-            contentItem = $('.tabs-list .item'),
+            contentItem = $(this).parent().parent().find('.tabs-list > .item'),
             itemPosition = item.index();
 
         contentItem.eq(itemPosition)
@@ -346,13 +346,49 @@
     /* /свернуть-развенуть */
 
 
+    /* развернуть список услуг */
+    $('.uslugi .item .button.more').click(function(e) {
+        e.preventDefault();
+
+        var block = $(this).parent().find('.text-container'),
+            heightBlockFull = block.find('.text').height(),
+            btnTextOpened = 'Свернуть';
+
+        if( typeof heightBlock == 'undefined'  ) {
+            heightBlock = block.height();
+        }
+
+        if( typeof btnTextClosed == 'undefined'  ) {
+            btnTextClosed = $(this).html();
+        }
+
+        if ( $(this).hasClass('opened') ){
+
+            block.animate({
+                height: heightBlock
+            }, 500);
+            $(this).removeClass('opened');
+            $(this).html(btnTextClosed);
+
+        } else {
+
+            block.animate({
+                height: heightBlockFull
+            }, 500);
+            $(this).addClass('opened');
+            $(this).html(btnTextOpened);
+        }
+    });
+    /* развернуть список услуг/
+
+
     /* jquery.form*/
     if( $(".open-popup").is('div') ){
         $.getScript( '/js/lib/jquery.form.min.js', function() {});
     }
     /* jquery.form*/
 
-});
+}); // END READY
 
 
 /* условия, проверяющие, заданы ли параметры слайдера range через php, либо подставляющие дефолтные значения */

@@ -223,11 +223,11 @@ h4,.h4{
 /*---------HEADER------------*/
 header{
     height: 70px;
-    background: #a1d2e8;
+    background: #658397;
 }
 
-.content-wraper.header{
-    background: #658397;
+header .content{
+    background: #a1d2e8;
 }
 
 header .logo{
@@ -355,6 +355,36 @@ header .contacts {
 /*---------/PATH------------*/
 
 
+/*--------- SLIDER------------*/
+.viewport .item{
+    display: inline-block;
+    width: 160px;
+    background: #bababa;
+    vertical-align: top;
+    margin: 0 0 15px 0;
+}
+
+.viewport .item .img-container{
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    width: 160px;
+    height: 160px;
+}
+
+.viewport .item .img-container img {
+    max-width: 160px;
+    max-height: 160px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+/*--------- SLIDER------------*/
+
+
 /*---------/CATALOG-MENU------------*/
 .catalog-menu ul{
     list-style:none;
@@ -403,7 +433,7 @@ header .contacts {
 /*---------NEWS (BLOCK)------------*/
 .news .item{
     margin:10px 0;
-    border-bottom:1px solid #000000;
+    border-bottom:1px solid #a5a5a5;
 }
 
 .news .item .date{

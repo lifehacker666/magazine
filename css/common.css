@@ -221,13 +221,13 @@ h4,.h4{
 
 
 /*---------HEADER------------*/
-header{
+header.content-wraper{
     height: 70px;
-    background: #a1d2e8;
+    background: #658397;
 }
 
-.content-wraper.header{
-    background: #658397;
+header .content{
+    background: #a1d2e8;
 }
 
 header .logo{
@@ -526,7 +526,7 @@ header .contacts {
 /*---------NEWS (BLOCK)------------*/
 .news .item{
     margin:10px 0;
-    border-bottom:1px solid #000000;
+    border-bottom:1px solid #a5a5a5;
 }
 
 .news .item .date{
@@ -841,23 +841,23 @@ header .contacts {
     overflow: hidden;
 }
 
-.tabs-controls .item{
+.tabs-controls > .item{
     float: left;
     cursor: pointer;
     padding: 15px 10px;
 }
 
-.tabs-controls .item.active{
+.tabs-controls > .item.active{
     background: #fff;
     cursor: default;
 }
 
-.tabs-list .item{
+.tabs-list > .item{
     display: none;
     padding: 10px;
 }
 
-.tabs-list .item.active{
+.tabs-list > .item.active{
     display: block;
 }
 /*---------/TABS------------*/
@@ -1345,5 +1345,11 @@ footer .masterweb {
     max-height: 200px;
     overflow: auto;
     background-color: #fff;
+}
+
+/*колонки с чем-либо*/
+.table-block .colomn{
+    display: table-cell;
+    vertical-align: top;
 }
 /*---------/OTHER STYLES------------*/

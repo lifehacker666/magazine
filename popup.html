@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Товар</title>
+    <title>Прайс-лист</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <!-- STANDART -->
@@ -72,26 +72,6 @@
                        <!--center-block-->
                        <div class="floatblock center-middle">
 
-                           <!--path-->
-                           <div class="path">
-                               <a href="/">Главная</a>
-                               <span class="separator"> »  </span>
-                               <a href="#">Телевизоры</a>
-                               <span class="separator"> »  </span>
-                               <a href="#" class="selected">Ламповый телевизор</a>
-                           </div>
-
-                           <h1>Заголовок новости</h1>
-                           <div class="news one block clearfix">
-                               <div class="item">
-                                   <span class="date">21.02.2014</span>
-                                   <a href="#" class="img-container"><img src="/img/logo.png" alt=""></a>
-                                   Текст новости Текст новости Текст новости
-                                   <div class="clear"></div>
-                               </div>
-                               <a href="#" class="button">Назад</a>
-                           </div>
-
                        </div>
 
                        <!--left-block-->
@@ -158,6 +138,52 @@
            </div>
        </div>
        <div class="hFooter"></div>
+   </div>
+
+   <!--popup-->
+   <div class="window show">
+       <div class="window-popup-overflower">
+           <div class="window_body" style="top:80px;">
+               <div class="close show">x</div>
+               <div class="content">
+                   <div class="block">
+                       <form action="/json/windoworder/" id="order_17" enctype="multipart/form-data" class="" method="post">
+                           <div class="h2">Отправить сообщение</div>
+                           <input type="hidden" name="js" value="phl5c861rqqt95uhlbkbsvuha6">
+
+                           <div class="status_message status_message_17"></div>
+                           <div class="item-form-element fio">
+                               <div class="title">ФИО *</div>
+                               <input type="text" name="order_17[fio]" placeholder="Введите ФИО" style="width:200px;"  value="">
+                               <div class="validation-informer">
+                                   <span></span>
+                               </div>
+                           </div>
+
+                           <div class="item-form-element message">
+                               <div class="title">Сообщение</div>
+                               <textarea name="order_17[message]" placeholder="Введите сообщение" style="width:200px;"> </textarea>
+                               <div class="validation-informer">
+                                   <div class="content"></div>
+                               </div>
+                           </div>
+
+                           <div class="item-form-element fileup">
+                               <div class="title">Приложенный документ</div>
+                               <input type="file" name="order_17[fileup]">
+                               <input type="hidden" name="filesend" class="filesend" value="0">
+                               <iframe name="fileup_iframe" style="display: none;"></iframe>
+                               <div class="validation-informer">
+                                   <div class="content"></div>
+                               </div>
+                           </div>
+                           <div style="">Внимание! Все поля отмеченные * необходимо заполнить.</div>
+                           <a class="button" href="#">Отправить</a>
+                       </form>
+                   </div>
+               </div>
+           </div>
+       </div>
    </div>
 
    <!--footer-->
