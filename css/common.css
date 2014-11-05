@@ -241,7 +241,7 @@ header .contacts {
 
 
 /*---------MENU-TOP------------*/
-/*---------/core menu top------------*/
+/*---------core menu top------------*/
 .menu-top{
 
 }
@@ -355,7 +355,7 @@ header .contacts {
 /*---------/PATH------------*/
 
 
-/*---------/INDEX SLIDER------------*/
+/*---------INDEX SLIDER------------*/
 .index_slider {
     position: relative;
     width: 400px;
@@ -478,7 +478,7 @@ header .contacts {
 /*---------/INDEX SLIDER------------*/
 
 
-/*---------/CATALOG-MENU------------*/
+/*---------CATALOG-MENU------------*/
 .catalog-menu ul{
     list-style:none;
     margin:0;
@@ -691,7 +691,7 @@ header .contacts {
 /*---------/TOVAR PAGE------------*/
 
 
-/*---------/TOVAR SLIDER------------*/
+/*---------TOVAR SLIDER------------*/
 .tovar_slider {
     float: left;
     position: relative;
@@ -886,13 +886,13 @@ input.error, textarea.error{
 }
 
 .item-form-element.success input, .item-form-element.success textarea{
-    background: url('../img/validation-informer-error.png') right 1px no-repeat #fff;
-    border-color: #cc0000;
+    background: url('../img/validation-informer-success.png') right 1px no-repeat #fff;
+    border-color:#00cc00;
 }
 
 .item-form-element.warning input, .item-form-element.warning textarea{
-    background: url('../img/validation-informer-error.png') right 1px no-repeat #fff;
-    border-color: #cc0000;
+    background: url('../img/validation-informer-warning.png') right 1px no-repeat #fff;
+    border-color: #FF8F00;
 }
 
 .item-form-element.error input, .item-form-element.error textarea{
