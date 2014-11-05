@@ -1015,7 +1015,7 @@ form .status_message {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: url('../img/opacity.png');
     z-index: 98;
 }
 
@@ -1023,8 +1023,6 @@ form .status_message {
     position:relative;
     vertical-align:middle;
     text-align:left;
-    width:auto;
-    height:auto;
     display:inline-block;
     background:#fff;
     border-radius:9px;
@@ -1049,29 +1047,43 @@ form .status_message {
 
     width:25px;
     height:25px;
-    line-height:23px;
+    line-height:24px;
 
     color:#fff;
     font-family:Arial;
     font-size:15px;
     font-weight:bold;
 
-    -webkit-border-radius: 13px;
-    -moz-border-radius: 13px;
-    border-radius: 13px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
     -webkit-box-shadow: #aaa 0 0 3px;
     -moz-box-shadow: #aaa 0 0 3px;
     box-shadow: #aaa 0 0 3px;
 
-    background: #AAA;
-    background: -webkit-gradient(linear, 0 0, 0 bottom, from(#CCCCCC), to(#999999));
-    background: -webkit-linear-gradient(#CCCCCC, #999999);
-    background: -moz-linear-gradient(#CCCCCC, #999999);
-    background: -ms-linear-gradient(#CCCCCC, #999999);
-    background: -o-linear-gradient(#CCCCCC, #999999);
-    background: linear-gradient(#CCCCCC, #999999);
-
+    background-color: #cccccc;
+    background-image: -webkit-linear-gradient(#cccccc, #999999);
+    background-image: -moz-linear-gradient(#cccccc, #999999);
+    background-image: -o-linear-gradient(#cccccc, #999999);
+    background-image: linear-gradient(#cccccc, #999999);
 }
+
+.window .close:hover{
+    background-color: #999999;
+    background-image: -webkit-linear-gradient(#999999, #cccccc);
+    background-image: -moz-linear-gradient(#999999, #cccccc);
+    background-image: -o-linear-gradient(#999999, #cccccc);
+    background-image: linear-gradient(#999999, #cccccc);
+}
+
+.window .close:active{
+    background-color: #cccccc;
+    background-image: -webkit-linear-gradient(#cccccc, #999999);
+    background-image: -moz-linear-gradient(#cccccc, #999999);
+    background-image: -o-linear-gradient(#cccccc, #999999);
+    background-image: linear-gradient(#cccccc, #999999);
+}
+
 .window .close.show{
     display:block;
 }
