@@ -53,17 +53,12 @@ label{
 
 .content-wraper {
     position: relative;
-
-    background: #8ab375;
 }
 
 .content {
     position: relative;
     margin: 0 auto;
     width: 1000px;
-
-    background: linear-gradient(to top, #d1feaf, #9cf18a);
-    background-color: #d1feaf;
 }
 
 .content-hidden{
@@ -1052,12 +1047,9 @@ footer {
     height: 150px;
     overflow: hidden;
     z-index: 97;
-
-    background: #6d6d6d;
 }
 
 footer .content{
-    background: #a7a7a7;
     height: 100%;
 }
 

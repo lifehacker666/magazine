@@ -530,11 +530,14 @@ header .contacts {
 }
 
 .news .item .date{
-    display:block;
     font-weight: bold;
 }
 
-.news .item .img-container{
+.news .item .title{
+
+}
+
+.news .item .float-container .img-container{
     position: relative;
     float:left;
     width: 100px;
@@ -543,7 +546,7 @@ header .contacts {
     background: #fff;
 }
 
-.news .item .img-container img {
+.news .item .float-container .img-container img {
     max-width: 100px;
     max-height: 100px;
     position: absolute;
@@ -554,8 +557,8 @@ header .contacts {
     margin: auto;
 }
 
-.news .item .title{
-    display: block;
+.news .item .float-container .anons{
+    display: inline;
 }
 /*---------/NEWS (BLOCK)------------*/
 
@@ -1135,6 +1138,10 @@ form .status_message {
     margin-left: 30px;
     background: #eee;
     border-radius: 6px;
+}
+
+.faq .faq-container .item .answer p, .faq .faq-container .item .question p{
+    margin: 0 5px;
 }
 
 .faq textarea{
