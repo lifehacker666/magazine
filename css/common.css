@@ -66,11 +66,6 @@ label{
     background-color: #d1feaf;
 }
 
-.content-hidden{
-    width: 1000px;
-    overflow: hidden;
-}
-
 .viewport{
     position: relative;
     overflow: hidden;
@@ -419,7 +414,7 @@ header .contacts {
     overflow: hidden;
     background: #6d6d6d;
     cursor: pointer;
-    margin-right: 5px;
+    margin: 0 5px;
 }
 
 .index_slider .buttons .item:hover{
@@ -1126,14 +1121,14 @@ form .status_message {
     font-weight: bold;
 }
 
-.faq .faq-container .item .answer {
+.faq .faq-container .item .question {
     margin: 25px 0 10px 0;
     padding: 20px 40px 20px 40px;
     background: #eee;
     border-radius: 6px;
 }
 
-.faq .faq-container .item .question {
+.faq .faq-container .item .answer {
     padding: 20px 40px;
     margin-left: 30px;
     background: #eee;
@@ -1246,25 +1241,21 @@ ul.style li:before{
     display: inline-block;
     width: 30px;
     height: 30px;
-    background: url('../img/socials-sprite.png') no-repeat;
-    margin-right: 14px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    margin: 0 5px;
 }
 
-.socials .item.vk{
-    background-position: 0 0;
+.socials .item.v{
+    background: url('../img/v.png') center no-repeat;
 }
 
-.socials .item.fb{
-    background-position: -30px 0;
+.socials .item.f{
+    background: url('../img/f.png') center no-repeat;
 }
 
-.socials .item.twitter{
-    background-position: -60px 0;
-}
-
-.socials .item.gplus{
-    background-position: -90px 0;
-    margin-right: 0;
+.socials .item.t{
+    background: url('../img/t.png') center no-repeat;
 }
 /*---------/SOCIALS------------*/
 
@@ -1278,7 +1269,7 @@ ul.style li:before{
     display: inline-block;
     text-align: center;
     padding: 4px 6px;
-    margin-right: 6px;
+    margin: 0 5px;
     background: #fff;
     border: 1px solid #d1d1d1;
     text-decoration: none;
@@ -1339,16 +1330,16 @@ footer .masterweb {
 /*---------OTHER STYLES------------*/
 /*Кнопка Наверх*/
 .toTop {
-    width:100px;
-    padding: 5px;
-    background:#f7f7f7;
-    text-align:center;
-    position:fixed;
-    top:50px;
-    left:10px;
-    cursor:pointer;
-    display:none;
+    width: 61px;
+    height: 61px;
+    background: url('../img/toTop.png');
+    position: fixed;
+    top: 50px;
+    left: 14%;
+    cursor: pointer;
+    display: none;
     z-index: 100;
+    opacity: 0.3;
 }
 
 /*Кнопка Свернуть-развернуть*/

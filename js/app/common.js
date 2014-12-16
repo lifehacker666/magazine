@@ -25,7 +25,7 @@
 
 
     /* Переносим правый блок вправо */
-    $('.floatblock.center-min,.floatblock.center-middle').before( $('.floatblock.right').show() );
+    $('.floatblock.center-min, .floatblock.center-middle').before( $('.floatblock.right').show() );
     $('.padding-right').hide();
     /* /Переносим правый блок вправо */
 
@@ -33,14 +33,6 @@
     /* Стартуем стандартную ajax обработку */
     $('form.standart_load,a.standart_load').standart_load();
     /* /Стартуем стандартную ajax обработку */
-
-
-    /* Активный пункт меню */
-    $('.menu-top ul > li').click(function() {
-        $(this).parent().find('.selected').removeClass("selected");
-        $(this).addClass("selected");
-    });
-    /* /Активный пункт меню */
 
 
     /* Стартуем слайдеры */
@@ -300,19 +292,33 @@
 
     /* кнопка Наверх */
     $(function() {
-        $('body').append('<div class="toTop">НАВЕРХ</div>');
+        $('body').append('<div class="toTop"></div>');
+
+        var toTop = $('.toTop');
+
         $(window).scroll(function() {
             if($(this).scrollTop() != 0) {
-                $('.toTop').fadeIn();
+                toTop.fadeIn();
             } else {
-                $('.toTop').fadeOut();
+                toTop.fadeOut();
             }
         });
 
-        $('.toTop').click(function() {
+        toTop.click(function() {
             $('body,html').animate({scrollTop:0},500);
 
-        });
+        })
+            .hover(
+            function() {
+                $( this ).animate({
+                    opacity: 1
+                }, 250);
+            }, function() {
+                $( this ).animate({
+                    opacity: 0.3
+                }, 250);
+            }
+        );
     });
     /* /кнопка Наверх */
 
