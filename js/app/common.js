@@ -298,9 +298,9 @@
 
         $(window).scroll(function() {
             if($(this).scrollTop() != 0) {
-                toTop.fadeIn();
+                toTop.stop().fadeIn();
             } else {
-                toTop.fadeOut();
+                toTop.stop().fadeOut();
             }
         });
 
@@ -310,11 +310,11 @@
         })
             .hover(
             function() {
-                $( this ).animate({
+                $( this ).stop().animate({
                     opacity: 1
                 }, 250);
             }, function() {
-                $( this ).animate({
+                $( this ).stop().animate({
                     opacity: 0.3
                 }, 250);
             }
