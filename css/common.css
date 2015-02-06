@@ -49,21 +49,19 @@ label{
     min-width: 1000px;
     min-height: 100%;
     overflow: hidden;
+
+    background: #afd9bf;
 }
 
 .content-wraper {
     position: relative;
-
-    background: #8ab375;
 }
 
 .content {
     position: relative;
     margin: 0 auto;
     width: 1000px;
-
-    background: linear-gradient(to top, #d1feaf, #9cf18a);
-    background-color: #d1feaf;
+    background: #c9f4da;
 }
 
 .viewport{
@@ -212,7 +210,7 @@ h4,.h4{
 :-ms-input-placeholder { /* Internet Explorer 10+ */
     color: #333;
 }
-/*---------/STANDART STYLES*------------*/
+/*---------/STANDART STYLES------------*/
 
 
 /*---------HEADER------------*/
@@ -237,6 +235,10 @@ header .contacts {
 
 /*---------MENU-TOP------------*/
 /*---------core menu top------------*/
+.menu-top-container{
+    background: #dedede;
+}
+
 .menu-top{
 
 }
@@ -252,7 +254,7 @@ header .contacts {
     text-align: justify;
     line-height: 0;
     font-size: 1px;
-    background: #F5F5F5;
+    background: #f5f5f5;
 }
 
 /* доп элемент для выравнивания по ширине */
@@ -354,7 +356,7 @@ header .contacts {
 .index_slider {
     position: relative;
     width: 400px;
-    background: #b9b9b9;
+    background: #d3d3d3;
 }
 
 .index_slider .viewport {
@@ -485,17 +487,17 @@ header .contacts {
 }
 
 .catalog-menu ul li:hover a:hover{
-    background: #B9B9B9;
+    background: #c9c9c9;
 }
 
 .catalog-menu ul li.selected.active-link > a{
-    background: #B9B9B9;
+    background: #c9c9c9;
 }
 
 .catalog-menu ul li a{
     display:block;
     border-radius:4px;
-    background:#f1f1f1;
+    background:#f5f5f5;
     padding:7px 10px;
 }
 
@@ -520,7 +522,7 @@ header .contacts {
 
 /*---------NEWS (BLOCK)------------*/
 .news .item{
-    margin:10px 0;
+    margin: 15px 0;
     border-bottom:1px solid #a5a5a5;
 }
 
@@ -529,7 +531,12 @@ header .contacts {
 }
 
 .news .item .title{
+    margin-top: 5px;
+    display: inline-block;
+}
 
+.news .item .float-container{
+    margin: 10px 0;
 }
 
 .news .item .float-container .img-container{
@@ -537,7 +544,7 @@ header .contacts {
     float:left;
     width: 100px;
     height: 100px;
-    margin: 5px 10px 5px 0;
+    margin: 0 10px 0 0;
     background: #fff;
 }
 
@@ -578,7 +585,7 @@ header .contacts {
     float:left;
     width: 250px;
     height: 250px;
-    margin: 5px 10px 5px 0;
+    margin: 0 10px 0 0;
     background: #fff;
 }
 
@@ -597,36 +604,36 @@ header .contacts {
 
 /*---------CATALOG------------*/
 .catalog .catalog-bg {
-    background: #dedede;
-    padding: 1px 0;
+    /*background: #dedede;*/
+    /*padding: 1px 0;*/
     /*padding для того чтобы скрыть выступающий снизу бэграунд марджином*/
 }
 
 .catalog .catalog-container{
     text-align: justify;
-    /*либо  text-align: center;*/
-    /*скрываем марджинами бэграунд сверху (от паддинга в 1px) и снизу (от псевдоэлемента)*/
     margin-bottom: -43px;
-    margin-top: -1px;
-    padding: 10px 0;
+
+    /*скрываем марджинами бэграунд сверху (от паддинга в 1px) и снизу (от псевдоэлемента)*/
+    /*margin-top: -1px;*/
 }
 
 .catalog .catalog-container:after {
     content: ' i i i i i i i i ';
-    word-spacing: 158px;
-    padding-left: 158px;
+    word-spacing: 208px;
+    padding-left: 208px;
     /*паддинг и word-spacing равны на несколько пикс меньще, чем ширина блока (или вообще равны)*/
     visibility: hidden;
 }
 
 .catalog .item {
     display : inline-block;
-    width : 160px;
-    background: #bababa;
+    width : 210px;
     vertical-align: top;
-    margin: 0 0 15px 0;
-    padding: 5px 0;
+    margin: 0 0 20px 0;
+    padding: 15px 0;
     text-align: center;
+    border: 2px solid #c5c5c5;
+    border-radius: 10px;
 
     /*эмуляция inline-block для IE6-7*/
     /*display : inline;*/
@@ -636,15 +643,14 @@ header .contacts {
 .catalog .item .img-container{
     position: relative;
     display: block;
-    width: 150px;
-    height: 150px;
-    margin: 0 auto 3px auto;
-    background: grey;
+    width: 180px;
+    height: 160px;
+    margin: 0 auto;
 }
 
 .catalog .item .img-container img {
-    max-width: 150px;
-    max-height: 150px;
+    max-width: 180px;
+    max-height: 160px;
     position: absolute;
     top: 0;
     left: 0;
@@ -661,7 +667,7 @@ header .contacts {
 }
 
 .catalog .item .name{
-    display: block;
+    display: inline-block;
     margin: 5px 0 0 0 ;
 }
 
@@ -963,7 +969,6 @@ form .status_message {
     border: 1px solid #F0F0B0;
     background: #FFF7BD;
 }
-
 
 .form-zakaz-item{
     width: 220px;
@@ -1297,11 +1302,11 @@ footer {
     overflow: hidden;
     z-index: 97;
 
-    background: #6d6d6d;
+    background: #5e87aa;
 }
 
 footer .content{
-    background: #a7a7a7;
+    background: #73a0c6;
     height: 100%;
 }
 
@@ -1313,16 +1318,13 @@ footer .contacts {
     float: left;
 }
 
-footer .copyright {
-    float: right;
-    width: 195px;
-    color: #fffbe5;
-    text-align: right;
-    line-height: 19px;
+footer .counter {
+    float: left;
 }
 
-footer .masterweb {
-    margin-top: 12px;
+footer .copyright {
+    float: right;
+    text-align: right;
 }
 /*---------/FOOTER------------*/
 
