@@ -12,34 +12,33 @@ jQuery.fn.standart_window = function(options){
 		show:true,
 		absolute:true /* Позволит спозиционировать абсолютно и реагировать на прокрутку, помогает избегать проблем с большими блоками */
 	},options);
-	
+
 	return this.each(function() {
 		var $this = jQuery(this);
 		var $close = $this.find('.close');
 		var $body = $this.find('.window_body');
-		
+
 		if( options.show ){
 			$this.addClass('show');
 		} else {
 			$this.removeClass('show');
 		}
-		
+
 		if( options.show_close ){
 			$close.addClass('show');
 		} else {
 			$close.removeClass('show');
 		}
-		
+
 		/* Сначала фиксируем блок вверх */
 		$this.css( { position:"fixed" , left:0 , top:0 } );
 		//$body.css( { "margin-top":0 } );
-		
+
 		/* Скрытие */
 		$close.click(function(){
 			$this.removeClass('show');
-            jQuery('.window-popup-overflower').hide();
 		});
-		
+
 		/* Центрируем и позиционируем абсолютно */
 		var resize_body = function(){
 			var offset = $this.offset();
