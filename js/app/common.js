@@ -1,54 +1,58 @@
 ﻿$(function(){
 
     /* ЭЛЕМЕНТЫ КАТАЛОГА */
-    var curPositionTop =  $('.catalog .catalog-container > .item').eq(0).position().top, //берем позицию первого эл-та
-        elementsInRow = []; //массив, в кот-й помещаем элементы, находящиеся на одной строке
+    if ( $('.catalog .catalog-container').size()>0){
 
-    $('.catalog .catalog-container').each(function(){
+	    var curPositionTop =  $('.catalog .catalog-container > .item').eq(0).position().top, //берем позицию первого эл-та
+	        elementsInRow = []; //массив, в кот-й помещаем элементы, находящиеся на одной строке
 
-        var catalog = $(this),
-            catalog_item_height = 0;
+	    $('.catalog .catalog-container').each(function(){
 
-        catalog.find('.item').each(function(){
+	        var catalog = $(this),
+	            catalog_item_height = 0;
 
-            /* Картинка по дефолту */
-            var cur_img = $(this).find('.img-container img').attr('src');
-            if( cur_img == "" )
-                $(this).find('.img-container img').attr({'src':'/img/empty_icon.jpg'});
-            /* /Картинка по дефолту */
+	        catalog.find('.item').each(function(){
+
+	            /* Картинка по дефолту */
+	            var cur_img = $(this).find('.img-container img').attr('src');
+	            if( cur_img == "" )
+	                $(this).find('.img-container img').attr({'src':'/img/empty_icon.jpg'});
+	            /* /Картинка по дефолту */
 
 
-            /* Выравнивание высоты*/
-            //если эл-ты находятся на одной строке
-            if(  $(this).position().top !=curPositionTop ){
+	            /* Выравнивание высоты*/
+	            //если эл-ты находятся на одной строке
+	            if(  $(this).position().top !=curPositionTop ){
 
-                curPositionTop = $(this).position().top;
+	                curPositionTop = $(this).position().top;
 
-                 for (var k in elementsInRow){
-                     elementsInRow[k].height(catalog_item_height);
-                 }
+	                 for (var k in elementsInRow){
+	                     elementsInRow[k].height(catalog_item_height);
+	                 }
 
-                catalog_item_height = $(this).height();
+	                catalog_item_height = $(this).height();
 
-                elementsInRow = [];
+	                elementsInRow = [];
 
-            }
+	            }
 
-            elementsInRow.push($(this));
+	            elementsInRow.push($(this));
 
-            var cur_height = $(this).height();
-                if( cur_height > catalog_item_height )
-                    catalog_item_height = cur_height;
+	            var cur_height = $(this).height();
+	                if( cur_height > catalog_item_height )
+	                    catalog_item_height = cur_height;
 
-            /* Выравнивание высоты*/
-        });
+	            /* Выравнивание высоты*/
+	        });
 
-        //для последней строки элементов, если она не полная, повторяем
-        for (var k in elementsInRow){
-            elementsInRow[k].height(catalog_item_height);
-        }
-        elementsInRow = [];
-    });
+	        //для последней строки элементов, если она не полная, повторяем
+	        for (var k in elementsInRow){
+	            elementsInRow[k].height(catalog_item_height);
+	        }
+	        elementsInRow = [];
+	    });
+
+	}
     /* /ЭЛЕМЕНТЫ КАТАЛОГА */
 
 
