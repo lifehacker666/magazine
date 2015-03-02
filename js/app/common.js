@@ -1,6 +1,9 @@
 ﻿$(function(){
 
-    /* Выравниваем элементы каталога по одной высоте */
+    /* ЭЛЕМЕНТЫ КАТАЛОГА */
+    var curPositionTop =  $('.catalog .catalog-container > .item').eq(0).position().top, //берем позицию первого эл-та
+        elementsInRow = []; //массив, в кот-й помещаем элементы, находящиеся на одной строке
+
     $('.catalog .catalog-container').each(function(){
 
         var catalog = $(this),
@@ -12,16 +15,41 @@
             var cur_img = $(this).find('.img-container img').attr('src');
             if( cur_img == "" )
                 $(this).find('.img-container img').attr({'src':'/img/empty_icon.jpg'});
+            /* /Картинка по дефолту */
 
-            /* Размер по дефолту */
+
+            /* Выравнивание высоты*/
+            //если эл-ты находятся на одной строке
+            if(  $(this).position().top !=curPositionTop ){
+
+                curPositionTop = $(this).position().top;
+
+                 for (var k in elementsInRow){
+                     elementsInRow[k].height(catalog_item_height);
+                 }
+
+                catalog_item_height = $(this).height();
+
+                elementsInRow = [];
+
+            }
+
+            elementsInRow.push($(this));
+
             var cur_height = $(this).height();
-            if( cur_height > catalog_item_height )
-                catalog_item_height = cur_height;
+                if( cur_height > catalog_item_height )
+                    catalog_item_height = cur_height;
+
+            /* Выравнивание высоты*/
         });
-        if( catalog_item_height > 0 )
-            catalog.find('.item').height(catalog_item_height);
+
+        //для последней строки элементов, если она не полная, повторяем
+        for (var k in elementsInRow){
+            elementsInRow[k].height(catalog_item_height);
+        }
+        elementsInRow = [];
     });
-    /* /Выравниваем элементы каталога по одной высоте */
+    /* /ЭЛЕМЕНТЫ КАТАЛОГА */
 
 
     /* Переносим правый блок вправо */
