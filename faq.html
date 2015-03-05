@@ -74,29 +74,10 @@
                        </div>
 
                        <h1>Вопрос - ответ</h1>
-                        <div class="faq block">
-                            <form id="faq-form" action="" method="">
-                                <div class="item-form-element">
-                                    <div class="marker">*</div>
-                                    <input class="name" name="question[name]" type="text" placeholder="Введите Ваше имя...">
-                                    <div class="validation-informer"><span></span></div>
-                                </div>
-                                <div class="item-form-element">
-                                    <div class="marker">*</div>
-                                    <input class="phone" name="question[phone]" type="text" placeholder="Введите Ваш телефон...">
-                                    <div class="validation-informer"><span></span></div>
-                                </div>
-                                <div class="item-form-element">
-                                    <input class="email" name="question[email]" type="text" placeholder="Введите Ваш e-mail...">
-                                    <div class="validation-informer"><span></span></div>
-                                </div>
-                                <div class="item-form-element">
-                                    <div class="marker">*</div>
-                                    <textarea name="question[text]" placeholder="Введите Ваш вопрос..."></textarea>
-                                    <div class="validation-informer"><span></span></div>
-                                </div>
-                                <input class="button" type="submit" value="Задать вопрос">
-                            </form>
+
+                       <a href="#" class="button" onclick=" $('.window').standart_window();return false;">Задать вопрос</a>
+
+                       <div class="faq block">
 
                             <div class="faq-container">
 
@@ -184,6 +165,7 @@
                                         <a href="#" class="name">Телевизор ламповый</a>
                                     </div>
                                 </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -191,6 +173,47 @@
            </div>
        </div>
        <div class="hFooter"></div>
+   </div>
+
+   <!--popup-->
+   <div class="window">
+       <div class="window-popup-overflower"></div>
+       <div class="window_body">
+           <div class="close show">x</div>
+           <div class="content">
+               <div class="block">
+                   <form class="nc-form faq" enctype="multipart/form-data" method="post" action="/json/faq/">
+                       <div class="h2">Задать вопрос</div>
+                       <div class="item-form-element question">
+                           <span>Вопрос (*):</span>
+                           <textarea name="question[_text]"></textarea>
+                           <div class="validation-informer"><span></span></div>
+                       </div>
+                       <div class="item-form-element answer">
+                           <span>Ответ:</span>
+                           <textarea name="question[answer]"></textarea>
+                           <div class="validation-informer"><span></span></div>
+                       </div>
+                       <div class="item-form-element name">
+                           <span>ФИО:</span>
+                           <input class="name" name="question[name]" type="text">
+                           <div class="validation-informer"><span></span></div>
+                       </div>
+                       <div class="item-form-element email">
+                           <span>Email (*):<br>(на сайте не публикуется)</span>
+                           <input class="name" name="question[email]" type="text">
+                           <div class="validation-informer"><span></span></div>
+                       </div>
+                       <div class="item-form-element phone">
+                           <span>Телефон:<br>(на сайте не публикуется)</span>
+                           <input class="name" name="question[phone]" type="text">
+                           <div class="validation-informer"><span></span></div>
+                       </div>
+                       <a class="button" href="#">Отправить</a>
+                   </form>
+               </div>
+           </div>
+       </div>
    </div>
 
    <!--footer-->
