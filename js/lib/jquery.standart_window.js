@@ -16,7 +16,8 @@ jQuery.fn.standart_window = function(options){
 	return this.each(function() {
 		var $this = jQuery(this);
 		var $close = $this.find('.close');
-		var $body = $this.find('.window_body');
+		var $body = $this.find('.window_body'),
+            $popupOverflower = $this.find('.window-popup-overflower');
 
 		if( options.show ){
 			$this.addClass('show');
@@ -38,6 +39,11 @@ jQuery.fn.standart_window = function(options){
 		$close.click(function(){
 			$this.removeClass('show');
 		});
+
+        /* Скрытие при клике на темную область*/
+        $popupOverflower.click(function(){
+            $close.trigger('click');
+        });
 
 		/* Центрируем и позиционируем абсолютно */
 		var resize_body = function(){

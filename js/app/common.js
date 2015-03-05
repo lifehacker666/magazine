@@ -506,6 +506,7 @@ var Message = function(message) { // Всплывающее сообщение �
     /* Добавлеяем новое окно */
     $('body').append(
         '<div class="window message">' +
+        '<div class="window-popup-overflower"></div>' +
         '    <div class="window_body">' +
         '        <div class="close">x</div>' +
         '        <div class="content">' +
