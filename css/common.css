@@ -355,6 +355,7 @@ header .contacts {
 }
 
 .path .separator {
+    display: inline-block;
     color: #666666;
 }
 
@@ -670,6 +671,12 @@ header .contacts {
 
 .catalog.one .catalog-container{
     text-align: center;
+}
+
+.catalog.one .catalog-container:after{
+    content: '';
+    word-spacing: normal;
+    padding-left: 0;
 }
 /*---------/CATALOG------------*/
 
