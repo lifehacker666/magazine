@@ -27,6 +27,13 @@ a:hover {
     text-decoration: none;
 }
 
+a, a:hover {
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
 img {
     border: none;
 }
@@ -34,11 +41,23 @@ img {
 input {
     font-family: tahoma;
     font-size: 12px;
-    padding: 5px 10px;
 }
 
-input[type='text'] {
+input[type='text'], input[type='file'], input[type='password'] {
     padding: 5px 10px;
+    outline: 0;
+    border: 1px solid #d0d4d8;
+    -webkit-transition: border,box-shadow ease-in-out 0.2s;
+    -moz-transition: border,box-shadow ease-in-out 0.2s;
+    -o-transition: border,box-shadow ease-in-out 0.2s;
+    transition: border,box-shadow ease-in-out 0.2s;
+}
+
+input[type='text']:focus, input[type='password']:focus {
+    border: 1px solid #869791;
+    -webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.4);
 }
 
 textarea {
@@ -47,6 +66,20 @@ textarea {
     padding: 5px 10px;
     height: 70px;
     overflow: auto;
+    border: 1px solid #d0d4d8;
+
+    outline: 0;
+    -webkit-transition: border,box-shadow ease-in-out 0.2s;
+    -moz-transition: border,box-shadow ease-in-out 0.2s;
+    -o-transition: border,box-shadow ease-in-out 0.2s;
+    transition: border,box-shadow ease-in-out 0.2s;
+}
+
+textarea:focus{
+    border: 1px solid #869791;
+    -webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.4);
 }
 
 select {
@@ -305,23 +338,23 @@ header .contacts {
 /*---------/core menu top------------*/
 
 /*---------main menu-top------------*/
-.menu-top > ul > li {
-    background-color: #F5F5F5;
+.menu-top > ul > li{
     text-align: center;
 }
 
-.menu-top > ul > li:hover {
+.menu-top > ul > li:hover > a{
     background-color: #c9c9c9;
 }
 
-.menu-top > ul > li.selected {
+.menu-top > ul > li.selected > a{
     background-color: #c9c9c9;
 }
 
 .menu-top > ul > li > a {
     display: block;
     padding: 10px 10px;
-    border: 1px solid #c9c9c9;
+    border-right: 1px solid #c9c9c9;
+    background-color: #F5F5F5;
     text-decoration: none;
 }
 /*---------/main menu-top------------*/
@@ -334,11 +367,12 @@ header .contacts {
 
 .menu-top ul li ul li {
     text-align: left;
-    padding: 5px 15px 5px 15px;
 }
 
 .menu-top ul li ul li a {
     text-decoration: none;
+    padding: 5px 10px;
+    display: block;
 }
 
 .menu-top ul li ul li a:hover {
@@ -528,10 +562,15 @@ header .contacts {
 }
 
 .catalog-menu ul li a {
+    position: relative;
     display: block;
     border-radius: 4px;
     background: #f5f5f5;
     padding: 7px 10px;
+}
+
+.catalog-menu ul li a:hover{
+    padding-left: 17px;
 }
 
 .catalog-menu ul li ul {
@@ -902,10 +941,6 @@ header .contacts {
 
 
 /*---------FORM------------*/
-form input, form textarea {
-    border: 1px solid #d0d4d8;
-}
-
 .item-form-element {
     position: relative;
     margin-bottom: 15px;
@@ -940,9 +975,23 @@ input.success, .item-form-element.success input {
     border-color: #00cc00;
 }
 
+input.success:focus, .item-form-element.success input:focus{
+    border-color: #00cc00;
+    -webkit-box-shadow: 0 0 2px 0 #009400;
+    -moz-box-shadow: 0 0 2px 0  #009400;
+    box-shadow: 0 0 2px 0  #009400;
+}
+
 input.warning, .item-form-element.warning input {
     background: url('../img/validation-informer-warning.png') right center no-repeat #fff;
     border-color: #FF8F00;
+}
+
+input.warning:focus, .item-form-element.warning input:focus{
+    border-color: #FF8F00;
+    -webkit-box-shadow: 0 0 2px 0  #FF8F00;
+    -moz-box-shadow: 0 0 2px 0  #FF8F00;
+    box-shadow: 0 0 2px 0  #FF8F00;
 }
 
 input.error, .item-form-element.error input {
@@ -950,9 +999,23 @@ input.error, .item-form-element.error input {
     border-color: #cc0000;
 }
 
+input.error:focus, .item-form-element.error input:focus{
+    border-color: #cc0000;
+    -webkit-box-shadow: 0 0 2px 0 #cc0000;
+    -moz-box-shadow: 0 0 2px 0 #cc0000;
+    box-shadow: 0 0 2px 0 #cc0000;
+}
+
 textarea.success, .item-form-element.success textarea {
     background: url('../img/validation-informer-success.png') right 1px no-repeat #fff;
     border-color: #00cc00;
+}
+
+textarea.success:focus, .item-form-element.success textarea:focus{
+    border-color: #00cc00;
+    -webkit-box-shadow: 0 0 2px 0 #009400;
+    -moz-box-shadow: 0 0 2px 0  #009400;
+    box-shadow: 0 0 2px 0  #009400;
 }
 
 textarea.warning, .item-form-element.warning textarea {
@@ -960,9 +1023,23 @@ textarea.warning, .item-form-element.warning textarea {
     border-color: #FF8F00;
 }
 
+textarea.warning:focus, .item-form-element.warning textarea:focus{
+    border-color: #FF8F00;
+    -webkit-box-shadow: 0 0 2px 0  #FF8F00;
+    -moz-box-shadow: 0 0 2px 0  #FF8F00;
+    box-shadow: 0 0 2px 0  #FF8F00;
+}
+
 textarea.error, .item-form-element.error textarea {
     background: url('../img/validation-informer-error.png') right 1px no-repeat #fff;
     border-color: #cc0000;
+}
+
+textarea.error:focus, .item-form-element.error textarea:focus{
+    border-color: #cc0000;
+    -webkit-box-shadow: 0 0 2px 0 #cc0000;
+    -moz-box-shadow: 0 0 2px 0 #cc0000;
+    box-shadow: 0 0 2px 0 #cc0000;
 }
 
 /*всплывающее сообщение*/
