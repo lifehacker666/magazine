@@ -28,10 +28,10 @@ a:hover {
 }
 
 a, a:hover {
-    -webkit-transition: all 0.1s ease-in-out;
-    -moz-transition: all 0.1s ease-in-out;
-    -o-transition: all 0.1s ease-in-out;
-    transition: all 0.1s ease-in-out;
+    -webkit-transition: background 0.1s ease-in-out, border 0.1s ease-in-out;
+    -moz-transition: background 0.1s ease-in-out, border 0.1s ease-in-out;
+    -o-transition: background 0.1s ease-in-out, border 0.1s ease-in-out;
+    transition: background 0.1s ease-in-out, border 0.1s ease-in-out;
 }
 
 img {
@@ -47,10 +47,10 @@ input[type='text'], input[type='file'], input[type='password'] {
     padding: 5px 10px;
     outline: 0;
     border: 1px solid #d0d4d8;
-    -webkit-transition: border,box-shadow ease-in-out 0.2s;
-    -moz-transition: border,box-shadow ease-in-out 0.2s;
-    -o-transition: border,box-shadow ease-in-out 0.2s;
-    transition: border,box-shadow ease-in-out 0.2s;
+    -webkit-transition: border ease-in-out 0.2s,box-shadow ease-in-out 0.2s;
+    -moz-transition: border ease-in-out 0.2s,box-shadow ease-in-out 0.2s;
+    -o-transition: border ease-in-out 0.2s,box-shadow ease-in-out 0.2s;
+    transition: border ease-in-out 0.2s,box-shadow ease-in-out 0.2s;
 }
 
 input[type='text']:focus, input[type='password']:focus {
@@ -69,10 +69,10 @@ textarea {
     border: 1px solid #d0d4d8;
 
     outline: 0;
-    -webkit-transition: border,box-shadow ease-in-out 0.2s;
-    -moz-transition: border,box-shadow ease-in-out 0.2s;
-    -o-transition: border,box-shadow ease-in-out 0.2s;
-    transition: border,box-shadow ease-in-out 0.2s;
+    -webkit-transition: border ease-in-out 0.2s,box-shadow ease-in-out 0.2s;
+    -moz-transition: border ease-in-out 0.2s,box-shadow ease-in-out 0.2s;
+    -o-transition: border ease-in-out 0.2s,box-shadow ease-in-out 0.2s;
+    transition: border ease-in-out 0.2s,box-shadow ease-in-out 0.2s;
 }
 
 textarea:focus{
