@@ -1560,8 +1560,10 @@ footer .copyright {
 }
 
 /*показать лупу, если фэнсибокс увеличивает картинку*/
-a.fancybox-thumb[href$=".jpg"]:hover:before,
-a.fancybox-thumb[href$=".png"]:hover:before{
+a.fancybox-thumb.img-container[href$=".jpg"]:hover:before,
+a.fancybox-thumb.img-container[href$=".png"]:hover:before,
+a.fancybox-thumb[href$=".jpg"]:hover .img-container:before,
+a.fancybox-thumb[href$=".png"]:hover .img-container:before{
     content: '';
     position: absolute;
     top: 0;
