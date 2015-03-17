@@ -573,6 +573,14 @@ header .contacts {
     padding-left: 17px;
 }
 
+.catalog-menu ul li a,
+.catalog-menu ul li a:hover{
+    -webkit-transition: padding-left 0.1s ease-in-out;
+    -moz-transition: padding-left 0.1s ease-in-out;
+    -o-transition: padding-left 0.1s ease-in-out;
+    transition: padding-left 0.1s ease-in-out;
+}
+
 .catalog-menu ul li ul {
     margin: 10px 0 10px 10px;
     padding: 0;
