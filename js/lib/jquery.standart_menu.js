@@ -2,6 +2,7 @@
  * @author A1exandr Bel|kh
  * @email zimovchanin@gmail.com
  * @description Стандартное меню
+ * version: 0.0.1
  *
  * Создан 03.02.2014 Будет генерировать меню по указаному шаблону. В шаблоне можно задать префикс, суффикс, активный элемент, пассивный элемент, разделитель. Данные необходимо передавать в определенном формате как data ( 0JHQtdC70YvRhSDQkNC70LXQutGB0LDQvdC00YAg0KHQtdGA0LPQtdC10LLQuNGHIHppbW92Y2hhbmluQGdtYWlsLmNvbQ== )
  */

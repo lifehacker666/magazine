@@ -1599,6 +1599,404 @@ form .status_message {
 /*---------/PAGINATION------------*/
 
 
+/*--------- WIDGET-PHONE ------------*/
+.widget-phone {
+    display: none;
+    position: fixed;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    z-index: 98;
+    opacity: .6;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+    filter: alpha(opacity=60);
+    bottom: 50px;
+    right: 14%;
+}
+
+.widget-phone .widget-phone-circle{
+    border: 2px solid #00aff2;
+    opacity: .5;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+
+    -webkit-animation: widget-phone-circle-anim 2.2s infinite ease-in-out;
+    -moz-animation: widget-phone-circle-anim 2.2s infinite ease-in-out;
+    -ms-animation: widget-phone-circle-anim 2.2s infinite ease-in-out;
+    -o-animation: widget-phone-circle-anim 2.2s infinite ease-in-out;
+    animation: widget-phone-circle-anim 2.2s infinite ease-in-out;
+
+    width: 160px;
+    height: 160px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: transparent;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.widget-phone .widget-phone-circle-fill{
+    background-color: #00aff2;
+    opacity: .75;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
+    filter: alpha(opacity=75);
+
+    -webkit-animation: widget-phone-circle-fill-anim 2.3s infinite ease-in-out;
+    -moz-animation: widget-phone-circle-fill-anim 2.3s infinite ease-in-out;
+    -ms-animation: widget-phone-circle-fill-anim 2.3s infinite ease-in-out;
+    -o-animation: widget-phone-circle-fill-anim 2.3s infinite ease-in-out;
+    animation: widget-phone-circle-fill-anim 2.3s infinite ease-in-out;
+
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 2px solid transparent;
+}
+
+.widget-phone .widget-phone-img{
+    opacity: 0.7;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+    filter: alpha(opacity=70);
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    background: url('../img/widget-phone.png') center no-repeat #00aff2;
+
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 2px solid transparent;
+}
+
+.widget-phone:hover{
+    opacity: 1;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+}
+
+.widget-phone:hover .widget-phone-circle{
+    border: 2px solid #75eb50;
+
+    -webkit-animation: widget-phone-circle-anim 1.2s infinite ease-in-out;
+    -moz-animation: widget-phone-circle-anim 1.2s infinite ease-in-out;
+    -ms-animation: widget-phone-circle-anim 1.2s infinite ease-in-out;
+    -o-animation: widget-phone-circle-anim 1.2s infinite ease-in-out;
+    animation: widget-phone-circle-anim 1.2s infinite ease-in-out;
+}
+
+.widget-phone:hover .widget-phone-circle-fill{
+    background-color: #75eb50;
+    opacity: 0.5;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
+}
+
+.widget-phone:hover .widget-phone-img{
+    opacity: 1;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    filter: alpha(opacity=100);
+    background-color: #75eb50;
+    -webkit-animation: widget-phone-img-anim 1s infinite ease-in-out;
+    -moz-animation: widget-phone-img-anim 1s infinite ease-in-out;
+    -ms-animation: widget-phone-img-anim 1s infinite ease-in-out;
+    -o-animation: widget-phone-img-anim 1s infinite ease-in-out;
+    animation: widget-phone-img-anim 1s infinite ease-in-out;
+}
+
+.widget-phone-popup{
+    display: none;
+    padding: 15px 20px;
+    width: 300px;
+}
+
+.widget-phone-popup .text{
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.widget-phone-popup .item-form-element input{
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.widget-phone-popup .button{
+    display: block;
+}
+
+/*netcat*/
+.widget-phone-form{
+    padding: 15px 20px;
+    width: 300px;
+}
+
+.widget-phone-form .h2{
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+.widget-phone-form .item-form-element input{
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.widget-phone-form .item-form-element .title{
+    display: none;
+}
+
+.widget-phone-form .button{
+    display: block;
+}
+
+.widget-phone-form div:nth-child(6){
+    display: none;
+}
+
+@-moz-keyframes widget-phone-circle-anim {
+    0% {
+        -moz-transform: rotate(0deg) scale(0.5) skew(1deg);
+        opacity: .1;
+        -moz-opacity: .1;
+        -webkit-opacity: .1;
+        -o-opacity: .1
+    }
+    30% {
+        -moz-transform: rotate(0deg) scale(.7) skew(1deg);
+        opacity: .5;
+        -moz-opacity: .5;
+        -webkit-opacity: .5;
+        -o-opacity: .5
+    }
+    100% {
+        -moz-transform: rotate(0deg) scale(1) skew(1deg);
+        opacity: .6;
+        -moz-opacity: .6;
+        -webkit-opacity: .6;
+        -o-opacity: .1
+    }
+}
+
+@-webkit-keyframes widget-phone-circle-anim {
+    0% {
+        -webkit-transform: rotate(0deg) scale(0.5) skew(1deg);
+        -webkit-opacity: .1
+    }
+    30% {
+        -webkit-transform: rotate(0deg) scale(.7) skew(1deg);
+        -webkit-opacity: .5
+    }
+    100% {
+        -webkit-transform: rotate(0deg) scale(1) skew(1deg);
+        -webkit-opacity: .1
+    }
+}
+
+@-o-keyframes widget-phone-circle-anim {
+    0% {
+        -o-transform: rotate(0deg) scale(0.5) skew(1deg);
+        -o-opacity: .1
+    }
+    30% {
+        -o-transform: rotate(0deg) scale(.7) skew(1deg);
+        -o-opacity: .5
+    }
+    100% {
+        -o-transform: rotate(0deg) scale(1) skew(1deg);
+        -o-opacity: .1
+    }
+}
+
+@keyframes widget-phone-circle-anim {
+    0% {
+        transform: rotate(0deg) scale(0.5) skew(1deg);
+        opacity: .1
+    }
+    30% {
+        transform: rotate(0deg) scale(.7) skew(1deg);
+        opacity: .5
+    }
+    100% {
+        transform: rotate(0deg) scale(1) skew(1deg);
+        opacity: .1
+    }
+}
+
+@-moz-keyframes widget-phone-circle-fill-anim {
+    0% {
+        -moz-transform: rotate(0deg) scale(0.7) skew(1deg);
+        opacity: .2
+    }
+    50% {
+        -moz-transform: rotate(0deg) -moz-scale(1) skew(1deg);
+        opacity: .2
+    }
+    100% {
+        -moz-transform: rotate(0deg) scale(0.7) skew(1deg);
+        opacity: .2
+    }
+}
+
+@-webkit-keyframes widget-phone-circle-fill-anim {
+    0% {
+        -webkit-transform: rotate(0deg) scale(0.7) skew(1deg);
+        opacity: .2
+    }
+    50% {
+        -webkit-transform: rotate(0deg) scale(1) skew(1deg);
+        opacity: .2
+    }
+    100% {
+        -webkit-transform: rotate(0deg) scale(0.7) skew(1deg);
+        opacity: .2
+    }
+}
+
+@-o-keyframes widget-phone-circle-fill-anim {
+    0% {
+        -o-transform: rotate(0deg) scale(0.7) skew(1deg);
+        opacity: .2
+    }
+    50% {
+        -o-transform: rotate(0deg) scale(1) skew(1deg);
+        opacity: .2
+    }
+    100% {
+        -o-transform: rotate(0deg) scale(0.7) skew(1deg);
+        opacity: .2
+    }
+}
+
+@keyframes widget-phone-circle-fill-anim {
+    0% {
+        transform: rotate(0deg) scale(0.7) skew(1deg);
+        opacity: .2
+    }
+    50% {
+        transform: rotate(0deg) scale(1) skew(1deg);
+        opacity: .2
+    }
+    100% {
+        transform: rotate(0deg) scale(0.7) skew(1deg);
+        opacity: .2
+    }
+}
+
+@keyframes widget-phone-img-anim {
+    0% {
+        transform: rotate(0deg) scale(1) skew(1deg)
+    }
+    10% {
+        transform: rotate(-25deg) scale(1) skew(1deg)
+    }
+    20% {
+        transform: rotate(25deg) scale(1) skew(1deg)
+    }
+    30% {
+        transform: rotate(-25deg) scale(1) skew(1deg)
+    }
+    40% {
+        transform: rotate(25deg) scale(1) skew(1deg)
+    }
+    50% {
+        transform: rotate(0deg) scale(1) skew(1deg)
+    }
+    100% {
+        transform: rotate(0deg) scale(1) skew(1deg)
+    }
+}
+
+@-moz-keyframes widget-phone-img-anim {
+    0% {
+        transform: rotate(0deg) scale(1) skew(1deg)
+    }
+    10% {
+        -moz-transform: rotate(-25deg) scale(1) skew(1deg)
+    }
+    20% {
+        -moz-transform: rotate(25deg) scale(1) skew(1deg)
+    }
+    30% {
+        -moz-transform: rotate(-25deg) scale(1) skew(1deg)
+    }
+    40% {
+        -moz-transform: rotate(25deg) scale(1) skew(1deg)
+    }
+    50% {
+        -moz-transform: rotate(0deg) scale(1) skew(1deg)
+    }
+    100% {
+        -moz-transform: rotate(0deg) scale(1) skew(1deg)
+    }
+}
+
+@-webkit-keyframes widget-phone-img-anim {
+    0% {
+        -webkit-transform: rotate(0deg) scale(1) skew(1deg)
+    }
+    10% {
+        -webkit-transform: rotate(-25deg) scale(1) skew(1deg)
+    }
+    20% {
+        -webkit-transform: rotate(25deg) scale(1) skew(1deg)
+    }
+    30% {
+        -webkit-transform: rotate(-25deg) scale(1) skew(1deg)
+    }
+    40% {
+        -webkit-transform: rotate(25deg) scale(1) skew(1deg)
+    }
+    50% {
+        -webkit-transform: rotate(0deg) scale(1) skew(1deg)
+    }
+    100% {
+        -webkit-transform: rotate(0deg) scale(1) skew(1deg)
+    }
+}
+
+@-o-keyframes widget-phone-img-anim {
+    0% {
+        -o-transform: rotate(0deg) scale(1) skew(1deg)
+    }
+    10% {
+        -o-transform: rotate(-25deg) scale(1) skew(1deg)
+    }
+    20% {
+        -o-transform: rotate(25deg) scale(1) skew(1deg)
+    }
+    30% {
+        -o-transform: rotate(-25deg) scale(1) skew(1deg)
+    }
+    40% {
+        -o-transform: rotate(25deg) scale(1) skew(1deg)
+    }
+    50% {
+        -o-transform: rotate(0deg) scale(1) skew(1deg)
+    }
+    100% {
+        -o-transform: rotate(0deg) scale(1) skew(1deg)
+    }
+}
+/*--------- /WIDGET-PHONE ------------*/
+
+
 /*---------FOOTER------------*/
 footer {
     position: relative;
@@ -1647,7 +2045,7 @@ footer .copyright {
     left: 14%;
     cursor: pointer;
     display: none;
-    z-index: 100;
+    z-index: 98;
     opacity: 0.3;
 }
 

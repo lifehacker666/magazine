@@ -308,6 +308,24 @@
     <div class="hFooter"></div>
 </div>
 
+<!--widget-phone-->
+<div class="widget-phone">
+    <div class="widget-phone-circle"></div>
+    <div class="widget-phone-circle-fill"></div>
+    <div class="widget-phone-img"></div>
+    <div class="widget-phone-popup">
+        <form class="widget-phone-popup-form" action="/widgetPhoneMailer.php" method="post">
+            <div class="text">Оставьте свой номер телефона<br>и мы Вам перезвоним</div>
+            <input name="url_page" type="hidden"/>
+            <div class="item-form-element phone">
+                <input class="phone" name="widgetPhone[phone]" type="text" placeholder="+7 (999) 123-45-67">
+                <div class="validation-informer"><span></span></div>
+            </div>
+            <a class="button" href="javascript:void(jQuery('.window.message .widget-phone-popup-form').standart_load({force:1, url:'/widgetPhoneMailer.php'} ));">Жду звонка!</a>
+        </form>
+    </div>
+</div>
+
 <!--footer-->
 <footer>
     <div class="content">
@@ -341,6 +359,8 @@
 <!-- scripts -->
 <script src="/js/lib/jquery.standart_load.js"></script>
 <script src="/js/lib/jquery.standart_window.js"></script>
+<script src="/js/lib/jquery.standart_widgetPhone.js"></script>
+<script src="/js/lib/jquery.cookie.js"></script>
 <script src="/js/app/common.js?v=01"></script>
 <!-- /scripts -->
 

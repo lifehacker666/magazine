@@ -1,7 +1,8 @@
 /**
- * Standart Slider v1.0.1
  * @author Alexandr Belikh
  * @email zimovchanin@gmail.com
+ * @description Standart Slider
+ * version: 0.0.1
  */
 jQuery.fn.standart_slider = function(options){
 	var options = jQuery.extend({

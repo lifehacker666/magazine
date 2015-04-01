@@ -1,4 +1,9 @@
-﻿$(function(){
+﻿/**
+ * @description Основные скрипты
+ * version: 0.0.1
+ */
+
+$(function(){
 
     /* ЭЛЕМЕНТЫ КАТАЛОГА */
     if ($('.catalog .catalog-container').size() > 0) {
@@ -324,7 +329,7 @@
 
     /* кнопка Наверх */
     $(function () {
-        $('body').append('<div class="toTop"></div>');
+        $('body').append('<div class="toTop" title="Наверх"></div>');
 
         var toTop = $('.toTop');
 
@@ -426,6 +431,15 @@
         });
     }
     /* jquery.form*/
+
+
+    /* WIDGET PHONE */
+    if( $('.widget-phone').size()> 0){
+        $('.widget-phone').standart_widgetPhone({
+            // widgetTimer: 0 // таймер ,по истечении которого появится виджет
+        });
+    }
+    /* /WIDGET PHONE */
 
 }); // END READY
 
