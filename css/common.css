@@ -1,3 +1,4 @@
+/*version: 0.0.3*/
 /*---------STANDART STYLES------------*/
 html, body {
     width: 100%;
@@ -104,11 +105,15 @@ label {
     position: relative;
 }
 
+.content-wraper.content-center .content{
+    background: #c9f4da;
+}
+
 .content {
     position: relative;
     margin: 0 auto;
-    width: 1000px;
-    background: #c9f4da;
+    width: 960px;
+    padding: 0 20px;
 }
 
 .viewport {
@@ -130,7 +135,8 @@ label {
 }
 
 .floatblock.left {
-    width: 250px;
+    width: 210px;
+    margin-right: 20px;
 }
 
 .floatblock.center-min {
@@ -138,16 +144,17 @@ label {
 }
 
 .floatblock.center-middle {
-    width: 750px;
+    width: 730px;
 }
 
 .floatblock.center-full {
-    width: 1000px;
+    width: 960px;
 }
 
 .floatblock.right {
-    width: 250px;
+    width: 210px;
     display: none;
+    margin-left: 20px;
 }
 
 .floatblock.padding-right {
@@ -158,11 +165,11 @@ label {
 }
 
 .left .block {
-    margin: 0 20px 40px 10px;
+    margin: 0 0 40px 0;
 }
 
 .right .block {
-    margin: 0 10px 40px 20px;
+    margin: 0 0 40px 0;
 }
 
 .center-min .block, .center-middle .block, .center-full .block {
@@ -773,11 +780,35 @@ header .contacts {
     padding-left: 0;
 }
 
-.catalog.one .item:hover {
-    border: 2px solid #939393;
+.catalog.one .item{
+    width: 210px;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+}
+
+.catalog.one .item:hover .img-container img {
     -webkit-box-shadow: 0 2px 20px 0 #b3b6ba;
     -moz-box-shadow: 0 2px 20px 0 #b3b6ba;
     box-shadow: 0 2px 20px 0 #b3b6ba;
+}
+.catalog.one .item .img-container img,
+.catalog.one .item:hover .img-container img{
+    -webkit-transition: box-shadow 0.1s ease-in-out;
+    -moz-transition: box-shadow 0.1s ease-in-out;
+    -o-transition: box-shadow 0.1s ease-in-out;
+    transition: box-shadow 0.1s ease-in-out;
+}
+
+.catalog.one .item .img-container {
+    width: 210px;
+    height: 139px;
+}
+
+.catalog.one .item .img-container img {
+    max-width: 190px;
+    max-height: 119px;
+    border: 10px solid #fff;
 }
 
 /*catalog.sections*/
@@ -815,23 +846,33 @@ header .contacts {
 
 .catalog.gallery .item {
     width: 230px;
+    padding: 0;
+    border: none;
+    border-radius: 0;
 }
 
-.catalog.gallery .item:hover {
-    border: 2px solid #939393;
+.catalog.gallery .item:hover .img-container img {
     -webkit-box-shadow: 0 2px 20px 0 #b3b6ba;
     -moz-box-shadow: 0 2px 20px 0 #b3b6ba;
     box-shadow: 0 2px 20px 0 #b3b6ba;
 }
+.catalog.gallery .item .img-container img,
+.catalog.gallery .item:hover .img-container img{
+    -webkit-transition: box-shadow 0.1s ease-in-out;
+    -moz-transition: box-shadow 0.1s ease-in-out;
+    -o-transition: box-shadow 0.1s ease-in-out;
+    transition: box-shadow 0.1s ease-in-out;
+}
 
 .catalog.gallery .item .img-container {
-    width: 210px;
-    height: 119px;
+    width: 230px;
+    height: 139px;
 }
 
 .catalog.gallery .item .img-container img {
     max-width: 210px;
     max-height: 119px;
+    border: 10px solid #fff;
 }
 /*---------/CATALOG------------*/
 
@@ -1341,6 +1382,17 @@ form .status_message {
     text-align: center;
     margin-top: 0;
 }
+
+.window .button.close-btn{
+    display: block;
+    width: 80px;
+    margin: 15px auto 0 auto;
+    text-transform: uppercase;
+}
+
+.window .form-input-warning{
+    margin-bottom: 15px;
+}
 /*---------/ВСПЛЫВАЮЩЕЕ ОКНО------------*/
 
 
@@ -1766,10 +1818,6 @@ form .status_message {
     display: block;
 }
 
-.widget-phone-form div:nth-child(6){
-    display: none;
-}
-
 @-moz-keyframes widget-phone-circle-anim {
     0% {
         -moz-transform: rotate(0deg) scale(0.5) skew(1deg);
@@ -2107,6 +2155,12 @@ a.fancybox-thumb[href$=".png"]:hover .img-container:before{
     height: 40px;
     background: url('../img/zoom.png') center no-repeat;
     z-index: 1;
+}
+
+#map{
+    width: 100%;
+    height: 450px;
+    margin-top: 20px;
 }
 /*---------/OTHER STYLES------------*/
 

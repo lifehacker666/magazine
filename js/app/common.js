@@ -1,6 +1,6 @@
 ﻿/**
  * @description Основные скрипты
- * version: 0.0.1
+ * version: 0.0.3
  */
 
 $(function(){
@@ -434,12 +434,70 @@ $(function(){
 
 
     /* WIDGET PHONE */
-    if( $('.widget-phone').size()> 0){
-        $('.widget-phone').standart_widgetPhone({
-            // widgetTimer: 0 // таймер ,по истечении которого появится виджет
-        });
-    }
+    //if( $('.widget-phone').size()> 0){
+    //    $('.widget-phone').standart_widgetPhone({
+    //        // widgetTimer: 0 // таймер ,по истечении которого появится виджет
+    //    });
+    //}
     /* /WIDGET PHONE */
+
+
+    /* КАРТА YANDEX*/
+    if($('#map').size()>0){
+        var myMap;
+
+        // Дождёмся загрузки API и готовности DOM.
+        ymaps.ready(init);
+
+        function init () {
+            // Создание экземпляра карты и его привязка к контейнеру с
+            // заданным id ("map").
+            myMap = new ymaps.Map('map', {
+                // При инициализации карты обязательно нужно указать
+                // её центр и коэффициент масштабирования.
+                center:  [55.76, 37.64],
+                zoom: 10
+            });
+
+            // Создаем геообъект с типом геометрии "Точка".
+            myGeoObject = new ymaps.GeoObject({
+                // Описание геометрии.
+                geometry: {
+                    type: "Point",
+                    coordinates: [55.76, 37.64]
+                },
+                // Свойства.
+                properties: {
+                    // Контент метки.
+                    iconContent: 'Москва златоглавая',
+                    hintContent: 'Дополнительная инфа всплывает'
+                }
+            }, {
+                // Опции.
+                // Иконка метки будет растягиваться под размер ее содержимого.
+                preset: 'islands#blackStretchyIcon',
+                // Метку можно перемещать.
+                draggable: false
+            });
+
+            myMap.geoObjects
+                .add(myGeoObject);
+
+            // ховер на геообъект
+            myGeoObject.events
+                .add('mouseenter', function (e) {
+                    // Ссылку на объект, вызвавший событие,
+                    // можно получить из поля 'target'.
+                    e.get('target').options.set('preset', 'islands#redStretchyIcon');
+                })
+                .add('mouseleave', function (e) {
+                    e.get('target').options.set('preset', 'islands#blackStretchyIcon');
+                });
+
+        }
+    }
+    /* /КАРТА YANDEX*/
+
 
 }); // END READY
 
