@@ -446,9 +446,6 @@ $(function(){
     if($('#map').size()>0){
         var myMap;
 
-        // Дождёмся загрузки API и готовности DOM.
-        ymaps.ready(init);
-
         function init () {
             // Создание экземпляра карты и его привязка к контейнеру с
             // заданным id ("map").
@@ -495,6 +492,9 @@ $(function(){
                 });
 
         }
+
+        // Дождёмся загрузки API и готовности DOM.
+        ymaps.ready(init);
     }
     /* /КАРТА YANDEX*/
 
