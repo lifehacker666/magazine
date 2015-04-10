@@ -2139,6 +2139,10 @@ footer .copyright {
     font-family: 'PTRoubleSans';
 }
 
+.fancybox-title{
+    text-align: center;
+}
+
 /*показать лупу, если фэнсибокс увеличивает картинку*/
 a.fancybox-thumb.img-container[href$=".jpg"]:hover:before,
 a.fancybox-thumb.img-container[href$=".png"]:hover:before,
@@ -2151,8 +2155,8 @@ a.fancybox-thumb[href$=".png"]:hover .img-container:before{
     right: 0;
     bottom: 0;
     margin: auto;
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
     background: url('../img/zoom.png') center no-repeat;
     z-index: 1;
 }
