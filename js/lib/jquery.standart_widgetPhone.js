@@ -1,7 +1,7 @@
 /**
  * @author Serega K.
  * @description Виджет сбора номера телефона и URL страницы, на которой находится клиент
- * version: 0.0.3
+ * version: 0.0.4
  *
  */
 jQuery.fn.standart_widgetPhone = function(options){
@@ -83,7 +83,7 @@ jQuery.fn.standart_widgetPhone = function(options){
                             jQuery(i).html(data[i]);
                         }
                         eval(sc_);
-                        $('.window .close').bind( "click", function() {
+                        $('.window .close, .window .close-btn').bind( "click", function() {
                             widgetPhone.stop().fadeIn(450);
                         });
                     }
