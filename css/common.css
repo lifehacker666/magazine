@@ -1805,12 +1805,14 @@ form .status_message {
     font-weight: normal;
 }
 
-.widget-phone-form .item-form-element input{
+.widget-phone-form .item-form-element input,
+.widget-phone-form .item.phone input{
     box-sizing: border-box;
     width: 100%;
 }
 
-.widget-phone-form .item-form-element .title{
+.widget-phone-form .item-form-element .title,
+.widget-phone-form .item.phone span{
     display: none;
 }
 
