@@ -1,6 +1,6 @@
 ﻿/**
  * @description Основные скрипты
- * version: 0.0.3
+ * version: 0.0.4
  */
 
 $(function(){
@@ -328,10 +328,17 @@ $(function(){
 
 
     /* кнопка Наверх */
-    $(function () {
+    toTop ();
+    function toTop () {
         $('body').append('<div class="toTop" title="Наверх"></div>');
 
-        var toTop = $('.toTop');
+        var toTop = $('.toTop'),
+            contentBlock = $('#overflow_div'), // блок с контентом сайта
+            toTopOffset = 30, // отступ кнопки от контента в px
+            documentWidth,
+            contentBlockWidth,
+            contentOfsetLeft,
+            toTopWidth = toTop.width();
 
         $(window).scroll(function () {
             if ($(this).scrollTop() != 0) {
@@ -356,7 +363,30 @@ $(function(){
                 }, 250);
             }
         );
-    });
+
+
+        //определение позиции кнопки "Наверх"
+        if ( contentBlock.size()> 0 ){ // если указанный блок с контентом существует
+            toTopPosition();
+
+            $(window).resize(function () {
+                toTopPosition();
+            });
+        }
+        function toTopPosition() {
+            documentWidth = $(document).width();
+            contentBlockWidth = parseInt(contentBlock.css('minWidth'));
+            contentOfsetLeft = (documentWidth - contentBlockWidth)/2;
+
+            if ( documentWidth <= (contentBlockWidth + (toTopOffset + toTopWidth)*2 ) ){
+                // когда ширина окна браузера меньше чем ширина контента + ширина кнопки Назад
+                toTop.css('left', 15);
+            } else{
+                // когда ширина окна браузера больше чем ширина контента + ширина кнопки Назад
+                toTop.css('left', contentOfsetLeft - toTopWidth - toTopOffset);
+            }
+        }
+    }
     /* /кнопка Наверх */
 
 
@@ -434,11 +464,12 @@ $(function(){
 
 
     /* WIDGET PHONE */
-    //if( $('.widget-phone').size()> 0){
-    //    $('.widget-phone').standart_widgetPhone({
-    //        // widgetTimer: 0 // таймер ,по истечении которого появится виджет
-    //    });
-    //}
+    if( $('.widget-phone').size()> 0){
+        $('.widget-phone').standart_widgetPhone({
+            // widgetTimer: 0, // таймер ,по истечении которого появится виджет
+            //contentBlock: $('#overflow_div'), // блок с контентом сайта (для позиционирования виджета)
+        });
+    }
     /* /WIDGET PHONE */
 
 
