@@ -1,4 +1,4 @@
-/*version: 0.0.4*/
+/*version: 0.0.5*/
 /*---------STANDART STYLES------------*/
 html, body {
     width: 100%;
@@ -476,6 +476,28 @@ header .contacts {
 }
 /*---------/ vertical-menu animate------------*/
 /*---------/VERTICAL MENU------------*/
+
+
+/*---------PATH------------*/
+.path {
+    padding: 4px 0 16px 0;
+}
+
+.path a {
+    color: #255f99;
+}
+
+.path .separator {
+    display: inline-block;
+    color: #666666;
+}
+
+.path a.selected {
+    color: #666666;
+    text-decoration: none;
+    cursor: default;
+}
+/*---------/PATH------------*/
 
 
 /*---------INDEX SLIDER------------*/
