@@ -1,4 +1,4 @@
-/*version: 0.0.5*/
+/*version: 0.0.7*/
 /*---------STANDART STYLES------------*/
 html, body {
     width: 100%;
@@ -492,7 +492,7 @@ header .contacts {
     color: #666666;
 }
 
-.path a.selected {
+.path span.selected {
     color: #666666;
     text-decoration: none;
     cursor: default;
@@ -666,19 +666,19 @@ header .contacts {
 /*---------/INDEX SLIDER------------*/
 
 
-/*---------NEWS (BLOCK)------------*/
+/*---------NEWS (ALL)------------*/
 .news .item {
     margin: 15px 0;
     border-bottom: 1px solid #a5a5a5;
 }
 
 .news .item .date {
-    font-weight: bold;
+    color: #6c6c6c;
+    margin-bottom: 5px;
 }
 
 .news .item .title {
-    margin-top: 5px;
-    display: inline-block;
+
 }
 
 .news .item .float-container {
@@ -702,24 +702,15 @@ header .contacts {
 }
 
 .news .item .float-container .anons {
-    display: inline;
+
 }
-/*---------/NEWS (BLOCK)------------*/
+/*---------/NEWS (ALL)------------*/
 
 
-/*---------NEWS (PAGE)------------*/
+/*---------NEWS (ONE)------------*/
 .news.one .item {
     margin: 0 0 10px 0;
     border: none;
-}
-
-.news.one .item .title {
-    margin: 0;
-}
-
-.news.one .item .date {
-    display: block;
-    font-weight: bold;
 }
 
 .news.one .item .img-container {
@@ -727,7 +718,7 @@ header .contacts {
     float: left;
     width: auto;
     height: auto;
-    margin: 0 10px 0 0;
+    margin: 0 10px 10px 0;
 }
 
 .news.one .item .img-container img {
@@ -737,6 +728,11 @@ header .contacts {
 }
 /*---------/NEWS (PAGE)------------*/
 
+/*---------NEWS (WIDGET)------------*/
+.news.widget{
+
+}
+/*---------/NEWS (WIDGET)------------*/
 
 /*---------CATALOG------------*/
 .catalog .catalog-bg {
