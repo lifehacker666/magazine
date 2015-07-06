@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Главная</title>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
 
@@ -9,7 +10,11 @@
     <!--[if IE]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+    <link rel="stylesheet" type="text/css"  href="/css/owl-carousel/owl.carousel.css"/>
+    <link rel="stylesheet" type="text/css"  href="/css/owl-carousel/owl.theme.css"/>
+    <link rel="stylesheet" type="text/css"  href="/css/owl-carousel/owl.transitions.css"/>
     <link rel="stylesheet" href="/css/common.css?v=01">
+    <link rel="stylesheet" href="/css/responsive.css?v=01">
 </head>
 
 <body>
@@ -59,49 +64,41 @@
 
     <!--content-->
     <div class="content-wraper content-center">
+
+        <div class="content">
+            <!--slider-->
+            <div class="index_slider">
+                <div class="owl-carousel">
+                    <div class="item">
+                        <a href="#" class="img-container">
+                            <img src="/img/slide1.jpg">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#" class="img-container">
+                            <img src="/img/slide2.jpg">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#" class="img-container">
+                            <img src="/img/slide3.jpg">
+                        </a>
+                    </div>
+                    <div class="item">
+                        <a href="#" class="img-container">
+                            <img src="/img/slide4.jpg">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="content">
             <div class="overflower rightfloating clearfix">
                 <div class="floatblock padding-right"></div>
 
                 <!--center-block-->
                 <div class="floatblock center-min">
-
-                    <!--slider-->
-                    <div class="standart_slider index_slider">
-                        <div class="viewport">
-                            <div class="overflower clearfix">
-                                <div class="item selected">
-                                    <div class="img-container">
-                                        <img src="/img/slide1.jpg">
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="img-container">
-                                        <img src="/img/slide2.jpg">
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="img-container">
-                                        <img src="/img/slide3.jpg">
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <div class="img-container">
-                                        <img src="/img/slide4.jpg">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="buttons">
-                            <div class="item btn"><span></span></div>
-                            <div class="item btn"><span></span></div>
-                            <div class="item btn"><span></span></div>
-                            <div class="item btn"><span></span></div>
-                            <div class="item btn helper"><span></span></div>
-                        </div>
-                        <div class="to_left"></div>
-                        <div class="to_right"></div>
-                    </div>
 
                     <div class="test">
                         <div class="radio-container">
@@ -363,6 +360,7 @@
 <script src="/js/lib/jquery.standart_window.js"></script>
 <script src="/js/lib/jquery.standart_widgetPhone.js"></script>
 <script src="/js/lib/jquery.cookie.js"></script>
+<script src="/js/lib/owl.carousel.min.js"></script>
 <script src="/js/app/common.js?v=01"></script>
 <!-- /scripts -->
 

@@ -1,6 +1,6 @@
 ﻿/**
  * @description Основные скрипты
- * version: 0.0.4
+ * version: 0.0.5
  */
 
 $(function(){
@@ -73,10 +73,10 @@ $(function(){
 
 
     /* Стартуем слайдеры */
-    if ($(".standart_slider").is(".index_slider")) {
+    if ($(".standart_slider").is(".index_slider2")) {
         $.getScript('/js/lib/jquery.standart.slider.js', function () {
 
-            $('.index_slider').standart_slider({
+            $('.index_slider2').standart_slider({
                 timeout: 12000,
                 time: 400,
                 timer: 1, /* Включение-выключение перелистывания */
@@ -86,10 +86,10 @@ $(function(){
 
         });
     }
-    if ($(".standart_slider").is(".tovar_slider")) {
+    if ($(".standart_slider").is(".tovar_slider2")) {
         $.getScript('/js/lib/jquery.standart.slider.js', function () {
 
-            $('.tovar_slider').standart_slider({
+            $('.tovar_slider2').standart_slider({
                 timeout: 12000,
                 time: 400,
                 timer: 1, /* Включение-выключение перелистывания */
@@ -101,6 +101,121 @@ $(function(){
     }
     /* /Стартуем слайдеры */
 
+
+    /* Owl Index Slider */
+    $(function() {
+        if( $(".index_slider .owl-carousel").is("div") ){
+
+            var owl =  $('.index_slider .owl-carousel');
+
+            owl.owlCarousel({
+                singleItem : true,
+                autoPlay : 12000,
+                stopOnHover : true,
+                navigation: true,
+                responsiveBaseWidth: '.index_slider .owl-carousel',
+                transitionStyle : "backSlide"
+            });
+
+            // Custom Navigation Events
+//                    owl.parent().find(".to_right").click(function(){
+//                        owl.trigger('owl.next');
+//                    });
+//
+//                    owl.parent().find(".to_left").click(function(){
+//                        owl.trigger('owl.prev');
+//                    })
+
+        }
+    });
+    /* /Owl Index Slider */
+
+
+    /* SYNCED Owl Slider */
+    if( $(".synced_slider1 .owl-carousel").is("div") ) {
+
+        var sync1 = $(".synced_slider1 .owl-carousel");
+        var sync2 = $(".synced_slider2 .owl-carousel");
+
+        sync1.owlCarousel({
+            singleItem: true,
+            autoPlay : 12000,
+            stopOnHover : true,
+            slideSpeed: 1000,
+            navigation: false,
+            pagination: false,
+            afterAction: syncPosition,
+            responsiveRefreshRate: 200,
+            touchDrag: false,
+            mouseDrag : false
+
+        });
+
+        sync2.owlCarousel({
+            items: 4,
+            itemsDesktop: [1199, 4],
+            itemsDesktopSmall: [979, 3],
+            itemsTablet: [768, 3],
+            itemsMobile: [479, 2],
+            navigation: true,
+            pagination: false,
+            navigationText: [
+                "",
+                ""
+            ],
+            responsiveRefreshRate: 100,
+            afterInit: function (el) {
+                el.find(".owl-item").eq(0).addClass("synced");
+            }
+        });
+
+        $(".synced_slider2 .owl-carousel").on("click", ".owl-item", function (e) {
+            e.preventDefault();
+            var number = $(this).data("owlItem");
+            sync1.trigger("owl.goTo", number);
+        });
+
+    }
+
+    function syncPosition(el) {
+        var current = this.currentItem;
+        $(".synced_slider2 .owl-carousel")
+            .find(".owl-item")
+            .removeClass("synced")
+            .eq(current)
+            .addClass("synced");
+        if ($(".synced_slider2 .owl-carousel").data("owlCarousel") !== undefined) {
+            center(current)
+        }
+    }
+
+    function center(number) {
+        var sync2visible = sync2.data("owlCarousel").owl.visibleItems;
+        var num = number;
+        var found = false;
+        for (var i in sync2visible) {
+            if (num === sync2visible[i]) {
+                found = true;
+            }
+        }
+
+        if (found === false) {
+            if (num > sync2visible[sync2visible.length - 1]) {
+                sync2.trigger("owl.goTo", num - sync2visible.length + 2)
+            } else {
+                if (num - 1 === -1) {
+                    num = 0;
+                }
+                sync2.trigger("owl.goTo", num);
+            }
+        } else if (num === sync2visible[sync2visible.length - 1]) {
+            sync2.trigger("owl.goTo", sync2visible[1])
+        } else if (num === sync2visible[0]) {
+            sync2.trigger("owl.goTo", num - 1)
+        }
+
+    }
+    /* /SYNCED Owl Slider */
 
     /* placeholder */
     if ($('input').attr('placeholder') || $('textarea').attr('placeholder')) {
@@ -375,13 +490,17 @@ $(function(){
         }
         function toTopPosition() {
             documentWidth = $(document).width();
-            contentBlockWidth = parseInt(contentBlock.css('minWidth'));
+            if ( contentBlock.css('minWidth') == '0px'){
+                contentBlockWidth = parseInt(contentBlock.css('width'));
+            } else {
+                contentBlockWidth = parseInt(contentBlock.css('minWidth'));
+            }
             contentOfsetLeft = (documentWidth - contentBlockWidth)/2;
 
             if ( documentWidth <= (contentBlockWidth + (toTopOffset + toTopWidth)*2 ) ){
                 // когда ширина окна браузера меньше чем ширина контента + ширина кнопки Назад
                 toTop.css('left', 15);
-            } else{
+            } else {
                 // когда ширина окна браузера больше чем ширина контента + ширина кнопки Назад
                 toTop.css('left', contentOfsetLeft - toTopWidth - toTopOffset);
             }
@@ -507,6 +626,8 @@ $(function(){
                 // Метку можно перемещать.
                 draggable: false
             });
+
+            myMap.behaviors.disable('scrollZoom');
 
             myMap.geoObjects
                 .add(myGeoObject);
