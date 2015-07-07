@@ -431,8 +431,17 @@
     .widget-phone{
         display: none!important;
     }
+
+    .menu-top {
+        display:none;
+    }
+
+    .slicknav_menu {
+        display:block;
+    }
     /*--------- /RESPONSIVE OTHER STYLES------------*/
 
 }
 /* /FOR PHONE - max-width: 650px */
 /*---------RESPONSIVE STYLES------------*/
+

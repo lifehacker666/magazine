@@ -105,8 +105,9 @@ label {
     position: relative;
 }
 
-.content-wraper.content-center + .content{
-    padding: 20px 0 40px 0;
+.content-wraper.content-center > .content{
+    padding-top: 20px;
+    padding-bottom: 40px;
 }
 
 .content-wraper.content-center .content{
@@ -2407,6 +2408,10 @@ a.fancybox-thumb[href$=".png"]:hover .img-container:before{
     width: 100%;
     height: 450px;
     margin-top: 20px;
+}
+
+.slicknav_menu {
+    display:none;
 }
 /*---------/OTHER STYLES------------*/
 

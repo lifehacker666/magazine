@@ -72,6 +72,14 @@ $(function(){
     /* /Стартуем стандартную ajax обработку */
 
 
+    /* Адаптивное верхнее меню */
+    $('.menu-top').eq(0).slicknav({
+        label: 'МЕНЮ',
+        prependTo:'.menu-top-container'
+    });
+    /* /Адаптивное верхнее меню */
+
+
     /* Стартуем слайдеры */
     if ($(".standart_slider").is(".index_slider2")) {
         $.getScript('/js/lib/jquery.standart.slider.js', function () {
