@@ -277,13 +277,14 @@
 
 
     /*--------- RESPONSIVE WIDGET-PHONE ------------*/
-    .widget-phone-popup{
-        width: 100%;
+    .widget-phone-form .item-form-element input{
+        width: 100%!important;
         box-sizing: border-box;
     }
 
-    .widget-phone-popup .item-form-element input{
-        width: 100%!important;
+    .widget-phone-form{
+        width: 100%;
+        padding: 0;
     }
     /*--------- /RESPONSIVE WIDGET-PHONE ------------*/
 
@@ -420,6 +421,17 @@
         width: 100%!important;
     }
     /*---------/RESPONSIVE FAQ------------*/
+
+
+    /*---------RESPONSIVE OTHER STYLES------------*/
+    .toTop{
+        display: none!important;
+    }
+
+    .widget-phone{
+        display: none!important;
+    }
+    /*--------- /RESPONSIVE OTHER STYLES------------*/
 
 }
 /* /FOR PHONE - max-width: 650px */
