@@ -352,7 +352,8 @@ header .contacts {
 
 
 /*--------- SLIDER------------*/
-.viewport .item{
+.viewport .item,
+.owl-carousel .item{
     display: inline-block;
     width: 160px;
     background: #bababa;
@@ -360,7 +361,8 @@ header .contacts {
     margin: 0 0 15px 0;
 }
 
-.viewport .item .img-container{
+.viewport .item .img-container,
+.owl-carousel .item .img-container{
     position: relative;
     display: block;
     margin: 0 auto;
@@ -368,7 +370,8 @@ header .contacts {
     height: 160px;
 }
 
-.viewport .item .img-container img {
+.viewport .item .img-container img,
+.owl-carousel .item .img-container img{
     max-width: 160px;
     max-height: 160px;
     position: absolute;
