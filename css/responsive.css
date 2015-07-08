@@ -2,7 +2,7 @@
 
 /*---------RESPONSIVE STYLES------------*/
 /* FOR TABLET - max-width: 1000px */
-@media screen and (max-width: 1000px) {
+@media only screen and (max-width: 1000px) {
 
     /*---------RESPONSIVE STANDART STYLES------------*/
     img{
@@ -299,7 +299,7 @@
 
 
 /* FOR PHONE - max-width: 650px */
-@media screen and (max-width: 650px) {
+@media only screen and (max-width: 650px) {
 
     /*---------RESPONSIVE STANDART STYLES------------*/
     .floatblock.center-min{
