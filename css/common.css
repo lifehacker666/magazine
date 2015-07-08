@@ -1037,6 +1037,7 @@ header .contacts {
 .synced_slider2{
     width: 420px;
     margin-left: 32px;
+    margin-top: 10px;
 }
 
 .synced_slider2 .owl-carousel .item{

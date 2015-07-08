@@ -439,6 +439,10 @@
     .slicknav_menu {
         display:block;
     }
+
+    .path{
+        display: none;
+    }
     /*--------- /RESPONSIVE OTHER STYLES------------*/
 
 }
