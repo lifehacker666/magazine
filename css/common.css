@@ -998,7 +998,8 @@ header .contacts {
 
 .tovar-container .info {
     float: left;
-    width: 230px;
+    width: 249px;
+    margin-left: 10px;
 }
 /*---------/TOVAR PAGE------------*/
 
