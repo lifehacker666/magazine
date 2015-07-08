@@ -227,7 +227,7 @@ $(function(){
 
     /* placeholder */
     if ($('input').attr('placeholder') || $('textarea').attr('placeholder')) {
-        $.getScript('/js/lib/jquery.placeholder.js', function () {
+        $.getScript('/js/lib/jquery.placeholder.min.js', function () {
 
             $('input[placeholder], textarea[placeholder]').placeholder();
 
