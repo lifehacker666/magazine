@@ -1,4 +1,4 @@
-/*version: 0.0.1*/
+/*version: 0.0.2*/
 /*---------STANDART STYLES*------------*/
 html, body {
     width:100%;
@@ -820,20 +820,12 @@ form .status_message {
     font-family:Arial;
     font-size:15px;
     font-weight:bold;
-
-    -webkit-border-radius: 13px;
-    -moz-border-radius: 13px;
     border-radius: 13px;
-    -webkit-box-shadow: #aaa 0 0 3px;
-    -moz-box-shadow: #aaa 0 0 3px;
     box-shadow: #aaa 0 0 3px;
 
     background: #AAA;
     background: -webkit-gradient(linear, 0 0, 0 bottom, from(#CCCCCC), to(#999999));
     background: -webkit-linear-gradient(#CCCCCC, #999999);
-    background: -moz-linear-gradient(#CCCCCC, #999999);
-    background: -ms-linear-gradient(#CCCCCC, #999999);
-    background: -o-linear-gradient(#CCCCCC, #999999);
     background: linear-gradient(#CCCCCC, #999999);
 
 }

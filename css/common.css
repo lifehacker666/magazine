@@ -1,4 +1,4 @@
-/*version: 0.0.9*/
+/*version: 0.1.0*/
 /*---------STANDART STYLES------------*/
 html, body {
     width: 100%;
@@ -30,8 +30,6 @@ a:hover {
 
 a, a:hover {
     -webkit-transition: background 0.1s ease-in-out, border 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
-    -moz-transition: background 0.1s ease-in-out, border 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
-    -o-transition: background 0.1s ease-in-out, border 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
     transition: background 0.1s ease-in-out, border 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
 }
 
@@ -49,15 +47,11 @@ input[type='text'], input[type='file'], input[type='password'] {
     outline: 0;
     border: 1px solid #d0d4d8;
     -webkit-transition: border ease-in-out 0.2s,box-shadow ease-in-out 0.2s;
-    -moz-transition: border ease-in-out 0.2s,box-shadow ease-in-out 0.2s;
-    -o-transition: border ease-in-out 0.2s,box-shadow ease-in-out 0.2s;
     transition: border ease-in-out 0.2s,box-shadow ease-in-out 0.2s;
 }
 
 input[type='text']:focus, input[type='password']:focus {
     border: 1px solid #869791;
-    -webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.4);
-    -moz-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.4);
     box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.4);
 }
 
@@ -71,15 +65,11 @@ textarea {
 
     outline: 0;
     -webkit-transition: border ease-in-out 0.2s,box-shadow ease-in-out 0.2s;
-    -moz-transition: border ease-in-out 0.2s,box-shadow ease-in-out 0.2s;
-    -o-transition: border ease-in-out 0.2s,box-shadow ease-in-out 0.2s;
     transition: border ease-in-out 0.2s,box-shadow ease-in-out 0.2s;
 }
 
 textarea:focus{
     border: 1px solid #869791;
-    -webkit-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.4);
-    -moz-box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.4);
     box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.4);
 }
 
@@ -474,8 +464,6 @@ header .contacts {
 .vertical-menu ul li a,
 .vertical-menu ul li a:hover{
     -webkit-transition: padding-left 0.1s ease-in-out;
-    -moz-transition: padding-left 0.1s ease-in-out;
-    -o-transition: padding-left 0.1s ease-in-out;
     transition: padding-left 0.1s ease-in-out;
 }
 /*---------/ vertical-menu animate------------*/
@@ -577,8 +565,6 @@ header .contacts {
 .index_slider .owl-controls .owl-buttons div,
 .index_slider .owl-controls .owl-buttons div:hover{
     -webkit-transition: opacity 0.1s ease-in-out;
-    -moz-transition: opacity 0.1s ease-in-out;
-    -o-transition: opacity 0.1s ease-in-out;
     transition: opacity 0.1s ease-in-out;
 }
 /*---------/INDEX OWL SLIDER------------*/
@@ -673,8 +659,6 @@ header .contacts {
 .index_slider2 .buttons .item span,
 .index_slider2 .buttons .item:hover span{
     -webkit-transition: opacity 0.1s ease-in-out;
-    -moz-transition: opacity 0.1s ease-in-out;
-    -o-transition: opacity 0.1s ease-in-out;
     transition: opacity 0.1s ease-in-out;
 }
 
@@ -718,8 +702,6 @@ header .contacts {
 .index_slider2 .to_left, .index_slider2 .to_left:hover,
 .index_slider2 .to_right, .index_slider2 .to_right:hover{
     -webkit-transition: opacity 0.1s ease-in-out;
-    -moz-transition: opacity 0.1s ease-in-out;
-    -o-transition: opacity 0.1s ease-in-out;
     transition: opacity 0.1s ease-in-out;
 }
 
@@ -898,15 +880,11 @@ header .contacts {
 }
 
 .catalog.one .item:hover .img-container img {
-    -webkit-box-shadow: 0 2px 20px 0 #b3b6ba;
-    -moz-box-shadow: 0 2px 20px 0 #b3b6ba;
     box-shadow: 0 2px 20px 0 #b3b6ba;
 }
 .catalog.one .item .img-container img,
 .catalog.one .item:hover .img-container img{
     -webkit-transition: box-shadow 0.1s ease-in-out;
-    -moz-transition: box-shadow 0.1s ease-in-out;
-    -o-transition: box-shadow 0.1s ease-in-out;
     transition: box-shadow 0.1s ease-in-out;
 }
 
@@ -933,8 +911,6 @@ header .contacts {
 
 .catalog.sections .item:hover {
     border: 1px solid #939393;
-    -webkit-box-shadow: 0 2px 20px 0 #b3b6ba;
-    -moz-box-shadow: 0 2px 20px 0 #b3b6ba;
     box-shadow: 0 2px 20px 0 #b3b6ba;
 }
 
@@ -962,15 +938,11 @@ header .contacts {
 }
 
 .catalog.gallery .item:hover .img-container img {
-    -webkit-box-shadow: 0 2px 20px 0 #b3b6ba;
-    -moz-box-shadow: 0 2px 20px 0 #b3b6ba;
     box-shadow: 0 2px 20px 0 #b3b6ba;
 }
 .catalog.gallery .item .img-container img,
 .catalog.gallery .item:hover .img-container img{
     -webkit-transition: box-shadow 0.1s ease-in-out;
-    -moz-transition: box-shadow 0.1s ease-in-out;
-    -o-transition: box-shadow 0.1s ease-in-out;
     transition: box-shadow 0.1s ease-in-out;
 }
 
@@ -1073,8 +1045,6 @@ header .contacts {
 .synced_slider2 .owl-carousel .item,
 .synced_slider2 .owl-carousel .item:hover{
     -webkit-transition: border 0.1s ease-in-out;
-    -moz-transition: border 0.1s ease-in-out;
-    -o-transition: border 0.1s ease-in-out;
     transition: border 0.1s ease-in-out;
 }
 
@@ -1125,8 +1095,6 @@ header .contacts {
 .synced_slider2 .owl-controls .owl-buttons div,
 .synced_slider2 .owl-controls .owl-buttons div:hover{
     -webkit-transition: opacity 0.1s ease-in-out;
-    -moz-transition: opacity 0.1s ease-in-out;
-    -o-transition: opacity 0.1s ease-in-out;
     transition: opacity 0.1s ease-in-out;
 }
 /*---------/TOVAR OWL SLIDER------------*/
@@ -1224,8 +1192,6 @@ header .contacts {
 .tovar_slider2 .buttons .item,
 .tovar_slider2 .buttons .item:hover{
     -webkit-transition: border 0.1s ease-in-out;
-    -moz-transition: border 0.1s ease-in-out;
-    -o-transition: border 0.1s ease-in-out;
     transition: border 0.1s ease-in-out;
 }
 
@@ -1274,8 +1240,6 @@ header .contacts {
 .tovar_slider2 .to_left, .tovar_slider2 .to_left:hover,
 .tovar_slider2 .to_right, .tovar_slider2 .to_right:hover{
     -webkit-transition: opacity 0.1s ease-in-out;
-    -moz-transition: opacity 0.1s ease-in-out;
-    -o-transition: opacity 0.1s ease-in-out;
     transition: opacity 0.1s ease-in-out;
 }
 
@@ -1374,8 +1338,6 @@ input.success, .item-form-element.success input {
 
 input.success:focus, .item-form-element.success input:focus{
     border-color: #00cc00;
-    -webkit-box-shadow: 0 0 2px 0 #009400;
-    -moz-box-shadow: 0 0 2px 0  #009400;
     box-shadow: 0 0 2px 0  #009400;
 }
 
@@ -1386,8 +1348,6 @@ input.warning, .item-form-element.warning input {
 
 input.warning:focus, .item-form-element.warning input:focus{
     border-color: #FF8F00;
-    -webkit-box-shadow: 0 0 2px 0  #FF8F00;
-    -moz-box-shadow: 0 0 2px 0  #FF8F00;
     box-shadow: 0 0 2px 0  #FF8F00;
 }
 
@@ -1398,8 +1358,6 @@ input.error, .item-form-element.error input {
 
 input.error:focus, .item-form-element.error input:focus{
     border-color: #cc0000;
-    -webkit-box-shadow: 0 0 2px 0 #cc0000;
-    -moz-box-shadow: 0 0 2px 0 #cc0000;
     box-shadow: 0 0 2px 0 #cc0000;
 }
 
@@ -1410,8 +1368,6 @@ textarea.success, .item-form-element.success textarea {
 
 textarea.success:focus, .item-form-element.success textarea:focus{
     border-color: #00cc00;
-    -webkit-box-shadow: 0 0 2px 0 #009400;
-    -moz-box-shadow: 0 0 2px 0  #009400;
     box-shadow: 0 0 2px 0  #009400;
 }
 
@@ -1422,8 +1378,6 @@ textarea.warning, .item-form-element.warning textarea {
 
 textarea.warning:focus, .item-form-element.warning textarea:focus{
     border-color: #FF8F00;
-    -webkit-box-shadow: 0 0 2px 0  #FF8F00;
-    -moz-box-shadow: 0 0 2px 0  #FF8F00;
     box-shadow: 0 0 2px 0  #FF8F00;
 }
 
@@ -1434,8 +1388,6 @@ textarea.error, .item-form-element.error textarea {
 
 textarea.error:focus, .item-form-element.error textarea:focus{
     border-color: #cc0000;
-    -webkit-box-shadow: 0 0 2px 0 #cc0000;
-    -moz-box-shadow: 0 0 2px 0 #cc0000;
     box-shadow: 0 0 2px 0 #cc0000;
 }
 
@@ -1568,38 +1520,23 @@ form .status_message {
     font-size: 15px;
     font-weight: bold;
     text-align: center;
-
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
     border-radius: 50%;
-
-    -webkit-box-shadow: 0 1px 1px rgba(22, 22, 22, .3), inset 0 0 0 2px rgba(246, 246, 246, .5);
-    -moz-box-shadow: 0 1px 1px rgba(22, 22, 22, .3), inset 0 0 0 2px rgba(246, 246, 246, .5);
     box-shadow: 0 1px 1px rgba(22, 22, 22, .3), inset 0 0 0 2px rgba(246, 246, 246, .5);
     border: solid 1px #a8adb3;
     background-color: #b7bec5;
     background-image: -webkit-linear-gradient(bottom, #b7bec5, #e4e8ed);
-    background-image: -moz-linear-gradient(bottom, #b7bec5, #e4e8ed);
-    background-image: -o-linear-gradient(bottom, #b7bec5, #e4e8ed);
-    background-image: -ms-linear-gradient(bottom, #b7bec5, #e4e8ed);
     background-image: linear-gradient(to top, #b7bec5, #e4e8ed);
 }
 
 .window .close:hover {
     background-color: #e4e8ed;
     background-image: -webkit-linear-gradient(top, #b7bec5, #e4e8ed);
-    background-image: -moz-linear-gradient(top, #b7bec5, #e4e8ed);
-    background-image: -o-linear-gradient(top, #b7bec5, #e4e8ed);
-    background-image: -ms-linear-gradient(top, #b7bec5, #e4e8ed);
     background-image: linear-gradient(to bottom, #b7bec5, #e4e8ed);
 }
 
 .window .close:active {
     background-color: #b7bec5;
     background-image: -webkit-linear-gradient(bottom, #b7bec5, #e4e8ed);
-    background-image: -moz-linear-gradient(bottom, #b7bec5, #e4e8ed);
-    background-image: -o-linear-gradient(bottom, #b7bec5, #e4e8ed);
-    background-image: -ms-linear-gradient(bottom, #b7bec5, #e4e8ed);
     background-image: linear-gradient(to top, #b7bec5, #e4e8ed);
 }
 
@@ -1743,8 +1680,6 @@ form .status_message {
 
 .price-table tr td, .price-table tr:hover td {
     -webkit-transition: background 0.1s ease-in-out, border 0.1s ease-in-out;
-    -moz-transition: background 0.1s ease-in-out, border 0.1s ease-in-out;
-    -o-transition: background 0.1s ease-in-out, border 0.1s ease-in-out;
     transition: background 0.1s ease-in-out, border 0.1s ease-in-out;
 }
 
@@ -1914,9 +1849,6 @@ form .status_message {
     filter: alpha(opacity=50);
 
     -webkit-animation: widget-phone-circle-anim 2.2s infinite ease-in-out;
-    -moz-animation: widget-phone-circle-anim 2.2s infinite ease-in-out;
-    -ms-animation: widget-phone-circle-anim 2.2s infinite ease-in-out;
-    -o-animation: widget-phone-circle-anim 2.2s infinite ease-in-out;
     animation: widget-phone-circle-anim 2.2s infinite ease-in-out;
 
     width: 160px;
@@ -1928,8 +1860,6 @@ form .status_message {
     bottom: 0;
     margin: auto;
     background-color: transparent;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
     border-radius: 50%;
 }
 
@@ -1940,9 +1870,6 @@ form .status_message {
     filter: alpha(opacity=75);
 
     -webkit-animation: widget-phone-circle-fill-anim 2.3s infinite ease-in-out;
-    -moz-animation: widget-phone-circle-fill-anim 2.3s infinite ease-in-out;
-    -ms-animation: widget-phone-circle-fill-anim 2.3s infinite ease-in-out;
-    -o-animation: widget-phone-circle-fill-anim 2.3s infinite ease-in-out;
     animation: widget-phone-circle-fill-anim 2.3s infinite ease-in-out;
 
     width: 100px;
@@ -1953,8 +1880,6 @@ form .status_message {
     left: 0;
     bottom: 0;
     margin: auto;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
     border-radius: 50%;
     border: 2px solid transparent;
 }
@@ -1972,9 +1897,6 @@ form .status_message {
     bottom: 0;
     margin: auto;
     background: url('../img/widget-phone.png') center no-repeat #00aff2;
-
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
     border-radius: 50%;
     border: 2px solid transparent;
 }
@@ -1989,9 +1911,6 @@ form .status_message {
     border: 2px solid #75eb50;
 
     -webkit-animation: widget-phone-circle-anim 1.2s infinite ease-in-out;
-    -moz-animation: widget-phone-circle-anim 1.2s infinite ease-in-out;
-    -ms-animation: widget-phone-circle-anim 1.2s infinite ease-in-out;
-    -o-animation: widget-phone-circle-anim 1.2s infinite ease-in-out;
     animation: widget-phone-circle-anim 1.2s infinite ease-in-out;
 }
 
@@ -2008,9 +1927,6 @@ form .status_message {
     filter: alpha(opacity=100);
     background-color: #75eb50;
     -webkit-animation: widget-phone-img-anim 1s infinite ease-in-out;
-    -moz-animation: widget-phone-img-anim 1s infinite ease-in-out;
-    -ms-animation: widget-phone-img-anim 1s infinite ease-in-out;
-    -o-animation: widget-phone-img-anim 1s infinite ease-in-out;
     animation: widget-phone-img-anim 1s infinite ease-in-out;
 }
 
@@ -2061,30 +1977,6 @@ form .status_message {
     display: block;
 }
 
-@-moz-keyframes widget-phone-circle-anim {
-    0% {
-        -moz-transform: rotate(0deg) scale(0.5) skew(1deg);
-        opacity: .1;
-        -moz-opacity: .1;
-        -webkit-opacity: .1;
-        -o-opacity: .1
-    }
-    30% {
-        -moz-transform: rotate(0deg) scale(.7) skew(1deg);
-        opacity: .5;
-        -moz-opacity: .5;
-        -webkit-opacity: .5;
-        -o-opacity: .5
-    }
-    100% {
-        -moz-transform: rotate(0deg) scale(1) skew(1deg);
-        opacity: .6;
-        -moz-opacity: .6;
-        -webkit-opacity: .6;
-        -o-opacity: .1
-    }
-}
-
 @-webkit-keyframes widget-phone-circle-anim {
     0% {
         -webkit-transform: rotate(0deg) scale(0.5) skew(1deg);
@@ -2100,48 +1992,21 @@ form .status_message {
     }
 }
 
-@-o-keyframes widget-phone-circle-anim {
-    0% {
-        -o-transform: rotate(0deg) scale(0.5) skew(1deg);
-        -o-opacity: .1
-    }
-    30% {
-        -o-transform: rotate(0deg) scale(.7) skew(1deg);
-        -o-opacity: .5
-    }
-    100% {
-        -o-transform: rotate(0deg) scale(1) skew(1deg);
-        -o-opacity: .1
-    }
-}
-
 @keyframes widget-phone-circle-anim {
     0% {
+        -webkit-transform: rotate(0deg) scale(0.5) skew(1deg);
         transform: rotate(0deg) scale(0.5) skew(1deg);
         opacity: .1
     }
     30% {
+        -webkit-transform: rotate(0deg) scale(.7) skew(1deg);
         transform: rotate(0deg) scale(.7) skew(1deg);
         opacity: .5
     }
     100% {
+        -webkit-transform: rotate(0deg) scale(1) skew(1deg);
         transform: rotate(0deg) scale(1) skew(1deg);
         opacity: .1
-    }
-}
-
-@-moz-keyframes widget-phone-circle-fill-anim {
-    0% {
-        -moz-transform: rotate(0deg) scale(0.7) skew(1deg);
-        opacity: .2
-    }
-    50% {
-        -moz-transform: rotate(0deg) -moz-scale(1) skew(1deg);
-        opacity: .2
-    }
-    100% {
-        -moz-transform: rotate(0deg) scale(0.7) skew(1deg);
-        opacity: .2
     }
 }
 
@@ -2160,31 +2025,19 @@ form .status_message {
     }
 }
 
-@-o-keyframes widget-phone-circle-fill-anim {
-    0% {
-        -o-transform: rotate(0deg) scale(0.7) skew(1deg);
-        opacity: .2
-    }
-    50% {
-        -o-transform: rotate(0deg) scale(1) skew(1deg);
-        opacity: .2
-    }
-    100% {
-        -o-transform: rotate(0deg) scale(0.7) skew(1deg);
-        opacity: .2
-    }
-}
-
 @keyframes widget-phone-circle-fill-anim {
     0% {
+        -webkit-transform: rotate(0deg) scale(0.7) skew(1deg);
         transform: rotate(0deg) scale(0.7) skew(1deg);
         opacity: .2
     }
     50% {
+        -webkit-transform: rotate(0deg) scale(1) skew(1deg);
         transform: rotate(0deg) scale(1) skew(1deg);
         opacity: .2
     }
     100% {
+        -webkit-transform: rotate(0deg) scale(0.7) skew(1deg);
         transform: rotate(0deg) scale(0.7) skew(1deg);
         opacity: .2
     }
@@ -2192,49 +2045,32 @@ form .status_message {
 
 @keyframes widget-phone-img-anim {
     0% {
+        -webkit-transform: rotate(0deg) scale(1) skew(1deg);
         transform: rotate(0deg) scale(1) skew(1deg)
     }
     10% {
+        -webkit-transform: rotate(-25deg) scale(1) skew(1deg);
         transform: rotate(-25deg) scale(1) skew(1deg)
     }
     20% {
+        -webkit-transform: rotate(25deg) scale(1) skew(1deg);
         transform: rotate(25deg) scale(1) skew(1deg)
     }
     30% {
+        -webkit-transform: rotate(-25deg) scale(1) skew(1deg);
         transform: rotate(-25deg) scale(1) skew(1deg)
     }
     40% {
+        -webkit-transform: rotate(25deg) scale(1) skew(1deg);
         transform: rotate(25deg) scale(1) skew(1deg)
     }
     50% {
+        -webkit-transform: rotate(0deg) scale(1) skew(1deg);
         transform: rotate(0deg) scale(1) skew(1deg)
     }
     100% {
+        -webkit-transform: rotate(0deg) scale(1) skew(1deg);
         transform: rotate(0deg) scale(1) skew(1deg)
-    }
-}
-
-@-moz-keyframes widget-phone-img-anim {
-    0% {
-        transform: rotate(0deg) scale(1) skew(1deg)
-    }
-    10% {
-        -moz-transform: rotate(-25deg) scale(1) skew(1deg)
-    }
-    20% {
-        -moz-transform: rotate(25deg) scale(1) skew(1deg)
-    }
-    30% {
-        -moz-transform: rotate(-25deg) scale(1) skew(1deg)
-    }
-    40% {
-        -moz-transform: rotate(25deg) scale(1) skew(1deg)
-    }
-    50% {
-        -moz-transform: rotate(0deg) scale(1) skew(1deg)
-    }
-    100% {
-        -moz-transform: rotate(0deg) scale(1) skew(1deg)
     }
 }
 
@@ -2259,30 +2095,6 @@ form .status_message {
     }
     100% {
         -webkit-transform: rotate(0deg) scale(1) skew(1deg)
-    }
-}
-
-@-o-keyframes widget-phone-img-anim {
-    0% {
-        -o-transform: rotate(0deg) scale(1) skew(1deg)
-    }
-    10% {
-        -o-transform: rotate(-25deg) scale(1) skew(1deg)
-    }
-    20% {
-        -o-transform: rotate(25deg) scale(1) skew(1deg)
-    }
-    30% {
-        -o-transform: rotate(-25deg) scale(1) skew(1deg)
-    }
-    40% {
-        -o-transform: rotate(25deg) scale(1) skew(1deg)
-    }
-    50% {
-        -o-transform: rotate(0deg) scale(1) skew(1deg)
-    }
-    100% {
-        -o-transform: rotate(0deg) scale(1) skew(1deg)
     }
 }
 /*--------- /WIDGET-PHONE ------------*/
