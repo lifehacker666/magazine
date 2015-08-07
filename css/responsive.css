@@ -13,6 +13,7 @@
 
     #overflow_div{
         min-width: inherit;
+        min-height: auto;
     }
 
     .content{
