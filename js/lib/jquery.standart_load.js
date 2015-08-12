@@ -2,11 +2,12 @@
  * @author Alexandr Belikh
  * @email zimovchanin@gmail.com
  * @description Общение с сервером
- * version: 0.0.2
+ * version: 0.0.3
  *
  * Создан 19.03.2014 Позволяет удобно общаться с сервером. Отправляет пост запрос, получает ответ в формате json ( 0JHQtdC70YvRhSDQkNC70LXQutGB0LDQvdC00YAg0KHQtdGA0LPQtdC10LLQuNGHIHppbW92Y2hhbmluQGdtYWlsLmNvbQ== )
  */
 jQuery.fn.standart_load = function(options){
+	var $this = {};
 	var options = jQuery.extend({
 		url:false,/* Спец урл */
 		func:function(data){/* Обработчик ответа */
@@ -23,26 +24,26 @@ jQuery.fn.standart_load = function(options){
 		data:false,/* Данные */
 		force:false, /* Насильная отправка без ожидания события */
 	},options);
-	
+
 	return this.each(function(event) {
-		var $this = jQuery(this);		
+		$this = jQuery(this);
 		var action = function() {/* Основные действия */
 			var url = '/ajax/';
 			var post_data = {};
-			
+
 			if( $this.is('a') ){/* Если ссылка */
 				url = $this.attr('href'); /* УРЛ из хреф */
 			} else if( $this.is('form') ){/* Если форма */
 				url = $this.attr('action'); /* УРЛ из акшион */
 				post_data = $this.serializeArray(); /* Данные из формы */
 			}
-			
+
 			if( options.url ) /* Специфический урл */
 				url = options.url;
-				
+
 			if( options.data ) /* Специфические данные */
 				post_data = options.data;
-				
+
 			/* ПОЕХАЛИ */
 			jQuery.post(
 				url,
@@ -65,11 +66,11 @@ jQuery.fn.standart_load = function(options){
 					event.preventDefault();
 					if( $this.is('form') )
 						action();
-					
+
 				}
 			});
 		}
-		
+
 	});
 };
 /* d5b8675f7f6f9cfa7c296c91eb970dd2 */
