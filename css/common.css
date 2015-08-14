@@ -1,4 +1,4 @@
-/*version: 0.1.0*/
+/*version: 0.1.1*/
 /*---------STANDART STYLES------------*/
 html, body {
     width: 100%;
@@ -2227,6 +2227,27 @@ a.fancybox-thumb[href$=".png"]:hover .img-container:before{
 
 .slicknav_menu {
     display:none;
+}
+
+/* preloader */
+.page-preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+    z-index: 100500;
+}
+
+.page-preloader .spinner {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: url('/img/preloader.gif') no-repeat 50% 50%;
+    margin: -75px 0 0 -75px;
 }
 /*---------/OTHER STYLES------------*/
 

@@ -1,6 +1,6 @@
 ﻿/**
  * @description Основные скрипты
- * version: 0.0.5
+ * version: 0.0.6
  */
 
 $(function(){
@@ -73,11 +73,19 @@ $(function(){
 
 
     /* Адаптивное верхнее меню */
-    $('.menu-top').eq(0).slicknav({
-        label: 'МЕНЮ',
-        prependTo:'.menu-top-container'
-    });
+    try {
+        $('.menu-top').eq(0).slicknav({
+            label: 'МЕНЮ',
+            prependTo:'.header-sticky'
+        });
+    } catch(err) {
+
+    }
     /* /Адаптивное верхнее меню */
+
+
+    // Отменить перетаскивание картинок и ссылок
+    $("img, a").on("dragstart", function(event) { event.preventDefault(); });
 
 
     /* Стартуем слайдеры */
@@ -733,6 +741,7 @@ var Load = function (url, param) { // Функция для стандартиз
     );
 };
 
+
 var Message = function (message) { // Всплывающее сообщение на базе наработки standart_window
 
     $('.window.message').remove(); /* Удалилил старое окно */
@@ -752,3 +761,24 @@ var Message = function (message) { // Всплывающее сообщение 
 
     $('.window.message').standart_window();
 };
+
+
+//Баг в ie с прыгающим рывками элементом с position: fixed
+if(navigator.userAgent.match(/Trident.*rv[ :]*11\.| Edge\/12\./) || navigator.userAgent.match(/MSIE 10/i) || navigator.userAgent.match(/MSIE 9/i)) {
+    $('body').on("mousewheel", function (e) {
+        e.preventDefault();
+
+        var wheelDelta = event.wheelDelta;
+
+        var currentScrollPosition = window.pageYOffset;
+        window.scrollTo(0, currentScrollPosition - wheelDelta);
+    });
+}
+
+//preloader
+$(window).on('load', function () {
+
+    $(".page-preloader").fadeOut();
+    $(".page-preloader .spinner").delay(400).fadeOut("slow");
+
+});
