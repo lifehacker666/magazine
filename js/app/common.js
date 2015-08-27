@@ -76,7 +76,7 @@ $(function(){
     try {
         $('.menu-top').eq(0).slicknav({
             label: 'МЕНЮ',
-            prependTo:'.header-sticky'
+            prependTo:'.menu-top-container'
         });
     } catch(err) {
 
