@@ -1,11 +1,13 @@
-/*version: 0.0.2*/
+/*version: 0.0.3*/
 
 /*---------RESPONSIVE STYLES------------*/
 /* FOR TABLET - max-width: 1000px */
 @media only screen and (max-width: 1000px) {
 
     /*---------RESPONSIVE STANDART STYLES------------*/
-    img{
+    img,
+    iframe,
+    video{
         max-width: 100%;
         height: auto;
         width: auto\9;
@@ -295,6 +297,26 @@
         min-width: inherit;
     }
     /*---------/RESPONSIVE FOOTER------------*/
+
+
+    /*---------/RESPONSIVE OTHER STYLES------------*/
+    .sendmessage_form table.sendmessgae{
+        width: 100%;
+    }
+
+    .sendmessage_form tr td.left{
+        width: 30%;
+    }
+
+    .sendmessage_form tr td.right{
+        width: 70%;
+    }
+
+    .sendmessage_form input[type=text], .sendmessage_form textarea{
+        width: 100%;
+        box-sizing: border-box;
+    }
+    /*---------/RESPONSIVE OTHER STYLES------------*/
 }
 /* /FOR TABLET - max-width: 1000px */
 
@@ -443,6 +465,18 @@
 
     .path{
         display: none;
+    }
+
+    .sendmessage_form tr td.left{
+        width: 100%;
+        display: block;
+        padding-right: 0;
+        padding-bottom: 0;
+    }
+
+    .sendmessage_form tr td.right{
+        width: 100%;
+        display: block;
     }
     /*--------- /RESPONSIVE OTHER STYLES------------*/
 
