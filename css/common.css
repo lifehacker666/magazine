@@ -75,6 +75,7 @@ textarea:focus{
 
 select {
     cursor: pointer;
+    font-family: tahoma;
 }
 
 label {
@@ -334,7 +335,7 @@ header .contacts {
 }
 
 .menu-top > ul > li:hover > ul {
-    display: block
+    display: block;
 }
 /*---------/core menu top------------*/
 
