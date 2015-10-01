@@ -5,6 +5,14 @@
 
 $(function(){
 
+	/* MINI КОРЗИНА */
+	$('body').standart_load({ force:1, url:'/cart.php?dont_show=1' });
+	
+	$('.mini-cart-show-button').click(function(){
+		$(this).closest('.mini-cart').toggleClass('show');
+	});
+	/* /MINI КОРЗИНА */
+
     /* ЭЛЕМЕНТЫ КАТАЛОГА */
     if ($('.catalog .catalog-container').size() > 0) {
 
@@ -244,42 +252,98 @@ $(function(){
     /* /placeholder */
 
 
-    /* Динамическое подключение fancybox */
-    if ($("a").is(".fancybox-thumb")) {
-        $('head').append("<link rel='stylesheet' type='text/css'  href='/css/fancybox/jquery.fancybox.css'/>"); /* Подключим стили */
-        $('head').append("<link rel='stylesheet' type='text/css'  href='/css/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7'/>");
-        $.getScript('/js/lib/fancybox/jquery.fancybox.js?v=2.1.5', function () {/* Подключим скрипт */
-            $.getScript('/js/lib/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7', function () {
+    ///* Динамическое подключение fancybox */
+    //if ($("a").is(".fancybox-thumb")) {
+    //    $('head').append("<link rel='stylesheet' type='text/css'  href='/css/fancybox/jquery.fancybox.css'/>"); /* Подключим стили */
+    //    $('head').append("<link rel='stylesheet' type='text/css'  href='/css/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7'/>");
+    //    $.getScript('/js/lib/fancybox/jquery.fancybox.js?v=2.1.5', function () {/* Подключим скрипт */
+    //        $.getScript('/js/lib/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7', function () {
+    //
+    //            /* Подрубаем галерею */
+    //            $(".fancybox-thumb").fancybox({
+    //                prevEffect: 'none',
+    //                nextEffect: 'none',
+    //                helpers: {
+    //                    title: {
+    //                        type: 'outside'
+    //                    },
+    //                    thumbs: {
+    //                        width: 50,
+    //                        height: 50
+    //                    },
+    //                    //overlay: {
+    //                    //    locked: false
+    //                    //}
+    //                }
+    //            });
+    //
+    //            /* Открываем автоматом по id через класс */
+    //            var start_id = window.location.href.indexOf("#");
+    //            if (start_id > 0) {
+    //                var id = window.location.href.substring(start_id + 1);
+    //                $('a.fancybox-thumb.id' + id).click();
+    //            }
+    //
+    //        });
+    //    });
+    //}
+    ///* /Динамическое подключение fancybox */
 
-                /* Подрубаем галерею */
-                $(".fancybox-thumb").fancybox({
-                    prevEffect: 'none',
-                    nextEffect: 'none',
-                    helpers: {
-                        title: {
-                            type: 'outside'
-                        },
-                        thumbs: {
-                            width: 50,
-                            height: 50
-                        },
-                        //overlay: {
-                        //    locked: false
-                        //}
+
+    /* /fancybox3 beta1 */
+    try {
+        if ($("a").is(".fancybox-thumb")) {
+
+            /* Подрубаем галерею */
+            $(".fancybox-thumb").fancybox({
+                openEffect  : 'none',
+                closeEffect : 'elastic',
+                prevEffect: 'fade',
+                nextEffect: 'fade',
+                //theme : 'dark',
+                //locked : false,
+                padding : 0,
+                caption : {
+                    type : 'outside'
+                },
+                arrows : '!isTouch',
+                helpers: {
+                    thumbs: {
+                        width: 50,
+                        height: 50
                     }
-                });
-
-                /* Открываем автоматом по id через класс */
-                var start_id = window.location.href.indexOf("#");
-                if (start_id > 0) {
-                    var id = window.location.href.substring(start_id + 1);
-                    $('a.fancybox-thumb.id' + id).click();
+                },
+                locale  : 'ru',
+                locales : {
+                    'ru' : {
+                        CLOSE      : 'Закрыть',
+                        NEXT       : 'Следующий',
+                        PREV       : 'Предыдущий',
+                        ERROR      : 'Запрашиваемый слайд не может быть загружен.<br/> Пожалуйста, повторите попытку позже.',
+                        EXPAND     : 'Показать оригинальный размер',
+                        SHRINK     : 'Вписать в экран',
+                        PLAY_START : 'Просмотр слайдшоу',
+                        PLAY_STOP  : 'Поставить показ слайдов на паузу'
+                    }
                 }
-
             });
-        });
+
+            /* Открываем автоматом по id через класс */
+            var start_id = window.location.href.indexOf("#");
+            if (start_id > 0) {
+                var id = window.location.href.substring(start_id + 1);
+                $('a.fancybox-thumb.id' + id).click();
+            }
+
+            /* обновляем при ресайзе */
+            $( window ).resize(function() {
+                $.fancybox.update();
+            });
+        }
+    } catch(err) {
+
     }
-    /* /Динамическое подключение fancybox */
+    /* /fancybox3 beta1 */
 
 
     /* Табы */
